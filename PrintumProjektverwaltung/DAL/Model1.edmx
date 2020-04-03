@@ -1,0 +1,1287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PrintumProjekteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adressen">
+          <Key>
+            <PropertyRef Name="AdressID" />
+          </Key>
+          <Property Name="AdressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Strasse" Type="nvarchar(max)" />
+          <Property Name="PLZ" Type="nvarchar(max)" />
+          <Property Name="Ort" Type="nvarchar(max)" />
+          <Property Name="Land" Type="nvarchar(max)" />
+          <Property Name="ZuHaendenVon" Type="nvarchar(max)" />
+          <Property Name="Firmenname" Type="nvarchar(max)" />
+          <Property Name="Email1Adresse" Type="nvarchar(max)" />
+          <Property Name="Email2Adresse" Type="nvarchar(max)" />
+          <Property Name="Telefon1" Type="nvarchar(max)" />
+          <Property Name="PLZundORT" Type="nvarchar(max)" />
+          <Property Name="Matchcode" Type="nvarchar(max)" />
+          <Property Name="JobTitle" Type="nvarchar(max)" />
+          <Property Name="FileAs" Type="nvarchar(max)" />
+          <Property Name="businessHomePage" Type="nvarchar(max)" />
+          <Property Name="Categories" Type="nvarchar(max)" />
+          <Property Name="ID" Type="nvarchar(max)" />
+          <Property Name="TelefonMobile" Type="nvarchar(max)" />
+          <Property Name="Vorname" Type="nvarchar(max)" />
+          <Property Name="Nachname" Type="nvarchar(max)" />
+          <Property Name="RechnungName" Type="nvarchar(max)" />
+          <Property Name="RechnungStrasse" Type="nvarchar(max)" />
+          <Property Name="RechnungPLZ" Type="nvarchar(max)" />
+          <Property Name="RechnungOrt" Type="nvarchar(max)" />
+          <Property Name="RechnungLand" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Artikel">
+          <Key>
+            <PropertyRef Name="ArtikelID" />
+          </Key>
+          <Property Name="ArtikelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Artikelnummer" Type="nvarchar(max)" />
+          <Property Name="Beschreibung" Type="nvarchar(max)" />
+          <Property Name="BeschreibungEnglish" Type="nvarchar(max)" />
+          <Property Name="Mengeneinheit" Type="nvarchar(max)" />
+          <Property Name="Preis" Type="money" />
+          <Property Name="Einheit" Type="nvarchar(max)" />
+          <Property Name="IstBaugruppe" Type="bit" />
+        </EntityType>
+        <EntityType Name="Bestellungen">
+          <Key>
+            <PropertyRef Name="Bestellung_ID" />
+          </Key>
+          <Property Name="Bestellung_ID" Type="int" Nullable="false" />
+          <Property Name="BestellungIDText" Type="nvarchar(max)" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="Adresse" Type="nvarchar(max)" />
+          <Property Name="Speicherort" Type="nvarchar(max)" />
+          <Property Name="Vorlage" Type="nvarchar(max)" />
+          <Property Name="Datum" Type="datetime" />
+          <Property Name="ErstelltVon" Type="nvarchar" MaxLength="50" />
+          <Property Name="GeaendertVon" Type="nvarchar" MaxLength="50" />
+          <Property Name="geaendert" Type="datetime" />
+          <Property Name="PDFpfad" Type="nvarchar(max)" />
+          <Property Name="istAbgeschickt" Type="bit" />
+          <Property Name="AdressID" Type="nvarchar(max)" />
+          <Property Name="EmailAdresse" Type="nvarchar(max)" />
+          <Property Name="AB" Type="bit" />
+          <Property Name="WA" Type="bit" />
+        </EntityType>
+        <EntityType Name="BestellungPositionen">
+          <Key>
+            <PropertyRef Name="BestellPos_ID" />
+          </Key>
+          <Property Name="BestellPos_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="BestellnungIDTest" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Pos" Type="int" />
+          <Property Name="Stueck" Type="int" />
+          <Property Name="Artikelbezeichnung" Type="nvarchar(max)" />
+          <Property Name="Liefertermin" Type="datetime" />
+          <Property Name="Einzelpreis" Type="float" />
+          <Property Name="Gesammtpreis" Type="float" />
+          <Property Name="Besteller" Type="nvarchar(max)" />
+          <Property Name="Bestelldatum" Type="datetime" />
+          <Property Name="AB_datum" Type="datetime" />
+          <Property Name="ABestaetiger" Type="nvarchar(max)" />
+          <Property Name="WE_datum" Type="datetime" />
+          <Property Name="WEingaenger" Type="nvarchar(max)" />
+          <Property Name="Lagerort" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Dateien">
+          <Key>
+            <PropertyRef Name="Datei_ID" />
+          </Key>
+          <Property Name="Datei_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Pfad" Type="nvarchar(max)" />
+          <Property Name="Typ" Type="nvarchar(max)" />
+          <Property Name="Schlagworte" Type="nvarchar(max)" />
+          <Property Name="erstellt" Type="datetime" />
+          <Property Name="geaendert" Type="datetime" />
+          <Property Name="erstelltVon" Type="nvarchar(max)" />
+          <Property Name="geaendertVon" Type="nvarchar(max)" />
+          <Property Name="Projektnummer" Type="int" />
+        </EntityType>
+        <EntityType Name="Einheit">
+          <Key>
+            <PropertyRef Name="EinheitID" />
+          </Key>
+          <Property Name="EinheitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EinheitNummer" Type="nvarchar(max)" />
+          <Property Name="Bezeichnung" Type="nvarchar(max)" />
+          <Property Name="Beschreibung" Type="nvarchar(max)" />
+          <Property Name="BezeichnungEnglich" Type="nvarchar(max)" />
+          <Property Name="BeschreibungEnglish" Type="nvarchar(max)" />
+          <Property Name="Preis" Type="money" />
+          <Property Name="Rabatt" Type="int" />
+          <Property Name="Zahlungsstaffel1" Type="int" />
+          <Property Name="Zahlungsstaffel2" Type="int" />
+          <Property Name="Zahlungsstaffel3" Type="int" />
+          <Property Name="Zahlungsbedingung" Type="nvarchar(max)" />
+          <Property Name="ZahlungsbedingungEnglish" Type="nvarchar(max)" />
+          <Property Name="Garantie" Type="nvarchar(max)" />
+          <Property Name="GarantieEnglish" Type="nvarchar(max)" />
+          <Property Name="TechnischAbnahme" Type="nvarchar(max)" />
+          <Property Name="TechnischAbnahmeEnglish" Type="nvarchar(max)" />
+          <Property Name="Eigentumsvorbehalt" Type="nvarchar(max)" />
+          <Property Name="EigentumsvorbehaltEnglish" Type="nvarchar(max)" />
+          <Property Name="Gerichtsstand" Type="nvarchar(max)" />
+          <Property Name="GerichtsstandEnglish" Type="nvarchar(max)" />
+          <Property Name="AGB" Type="nvarchar(max)" />
+          <Property Name="AGBEnglish" Type="nvarchar(max)" />
+          <Property Name="Wichtig" Type="nvarchar(max)" />
+          <Property Name="WichtigEnglish" Type="nvarchar(max)" />
+          <Property Name="Lieferzeit" Type="int" />
+          <Property Name="Lieferbedingunen" Type="nvarchar(max)" />
+          <Property Name="LieferbedingungenEnglish" Type="nvarchar(max)" />
+          <Property Name="Montagebedingungen" Type="nvarchar(max)" />
+          <Property Name="MontagebedingungenEnglish" Type="nvarchar(max)" />
+          <Property Name="Preisbindung" Type="nvarchar(max)" />
+          <Property Name="PreisbindungEnglish" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Lieferung">
+          <Key>
+            <PropertyRef Name="AuftagID" />
+          </Key>
+          <Property Name="AuftagID" Type="int" Nullable="false" />
+          <Property Name="AuftragNummer" Type="nvarchar(max)" />
+          <Property Name="Bezeichnung" Type="nvarchar(max)" />
+          <Property Name="AdressLieferName" Type="nvarchar(max)" />
+          <Property Name="AdressLieferStrasse" Type="nvarchar(max)" />
+          <Property Name="AdressLieferPLZ" Type="nvarchar(max)" />
+          <Property Name="AdressLieferOrt" Type="nvarchar(max)" />
+          <Property Name="AdressLieferLand" Type="nvarchar(max)" />
+          <Property Name="AdressRechnungName" Type="nvarchar(max)" />
+          <Property Name="AdressRechnungStrasse" Type="nvarchar(max)" />
+          <Property Name="AdressRechnungPLZ" Type="nvarchar(max)" />
+          <Property Name="AdressRechnungOrt" Type="nvarchar(max)" />
+          <Property Name="AdressRechnungLand" Type="nvarchar(max)" />
+          <Property Name="RechnungID1" Type="int" />
+          <Property Name="RechnungNummer1" Type="nvarchar(max)" />
+          <Property Name="RechnungID2" Type="int" />
+          <Property Name="RechnungNummer2" Type="nvarchar(max)" />
+          <Property Name="RechnungID3" Type="int" />
+          <Property Name="RechnungNummer3" Type="nvarchar(max)" />
+          <Property Name="RechnungID4" Type="int" />
+          <Property Name="RechnungNummer4" Type="nvarchar(max)" />
+          <Property Name="LieferscheinID" Type="int" />
+          <Property Name="LieferscheinNummer" Type="nvarchar(max)" />
+          <Property Name="EinheitID" Type="int" />
+          <Property Name="EinheitNummer" Type="nvarchar(max)" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="Projektname" Type="nvarchar(max)" />
+          <Property Name="aktiv" Type="int" />
+        </EntityType>
+        <EntityType Name="LieferungLieferschein">
+          <Key>
+            <PropertyRef Name="LieferscheinID" />
+          </Key>
+          <Property Name="LieferscheinID" Type="int" Nullable="false" />
+          <Property Name="LieferscheinNummer" Type="nvarchar(max)" />
+          <Property Name="AuftagID" Type="int" />
+          <Property Name="AuftragNummer" Type="nvarchar(max)" />
+          <Property Name="LieferscheinPfadPDF" Type="nvarchar(max)" />
+          <Property Name="Lieferdatum" Type="datetime" />
+          <Property Name="Lieferscheintext1" Type="nvarchar(max)" />
+          <Property Name="Lieferscheintext2" Type="nvarchar(max)" />
+          <Property Name="Lieferscheintext3" Type="nvarchar(max)" />
+          <Property Name="Lieferscheintext4" Type="nvarchar(max)" />
+          <Property Name="LieferscheinErstelltAm" Type="datetime" />
+          <Property Name="LieferscheinErstelltVon" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LieferungPositionen">
+          <Key>
+            <PropertyRef Name="PositionenID" />
+          </Key>
+          <Property Name="PositionenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionNr" Type="int" />
+          <Property Name="ArtikeID" Type="int" />
+          <Property Name="Artikelnummer" Type="nvarchar(max)" />
+          <Property Name="Beschreibung" Type="nvarchar(max)" />
+          <Property Name="BeschreibungEnglish" Type="nvarchar(max)" />
+          <Property Name="Preis" Type="money" />
+          <Property Name="Anzahl" Type="float" />
+          <Property Name="Mengeneinheit" Type="nvarchar(max)" />
+          <Property Name="EinheitID" Type="int" />
+          <Property Name="Einheit" Type="nvarchar(max)" />
+          <Property Name="AuftragID" Type="int" />
+          <Property Name="AuftragNummer" Type="nvarchar(max)" />
+          <Property Name="HinzugefuegtAm" Type="datetime" />
+          <Property Name="HinzugefuegtVon" Type="nvarchar(max)" />
+          <Property Name="HinzugefuegtGrund" Type="nvarchar(max)" />
+          <Property Name="GeaenderAm" Type="datetime" />
+          <Property Name="GeaendertVon" Type="nvarchar(max)" />
+          <Property Name="GeaendertGrund" Type="nvarchar(max)" />
+          <Property Name="GeloeschtAm" Type="datetime" />
+          <Property Name="GeloeschtVon" Type="nvarchar(max)" />
+          <Property Name="GeloeschtGrund" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LieferungRechnungen">
+          <Key>
+            <PropertyRef Name="RechnungID" />
+          </Key>
+          <Property Name="RechnungID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RechnungNummer" Type="nvarchar(max)" />
+          <Property Name="AuftragID" Type="int" />
+          <Property Name="AuftragNummer" Type="nvarchar(max)" />
+          <Property Name="RechnungBetrag" Type="money" />
+          <Property Name="RechnungErstelltAm" Type="datetime" />
+          <Property Name="RechnungErstelltVon" Type="nvarchar(max)" />
+          <Property Name="RechnungPfadPDF" Type="nchar" MaxLength="10" />
+          <Property Name="RechnungBezahltAm" Type="datetime" />
+          <Property Name="RechnungBetragBezahlt" Type="money" />
+          <Property Name="RechnungMahnung1Am" Type="datetime" />
+          <Property Name="RechnungMahnung1PfadPDF" Type="nvarchar(max)" />
+          <Property Name="RechnungMahnung2Am" Type="datetime" />
+          <Property Name="RechnungMahnung2PfadPDF" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mails">
+          <Key>
+            <PropertyRef Name="Mail_ID" />
+          </Key>
+          <Property Name="Mail_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="von" Type="nvarchar(max)" />
+          <Property Name="an" Type="nvarchar(max)" />
+          <Property Name="Betreff" Type="nvarchar(max)" />
+          <Property Name="Body" Type="nvarchar(max)" />
+          <Property Name="AnhangJSON" Type="nvarchar(max)" />
+          <Property Name="Speicherort" Type="nvarchar(max)" />
+          <Property Name="Datum" Type="datetime" />
+          <Property Name="Schlagworte" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Ordner">
+          <Key>
+            <PropertyRef Name="Ordner_ID" />
+          </Key>
+          <Property Name="Ordner_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Pfad" Type="nvarchar(max)" />
+          <Property Name="Unterordner" Type="nvarchar(max)" />
+          <Property Name="Root" Type="nvarchar(max)" />
+          <Property Name="hatDateien" Type="bit" />
+        </EntityType>
+        <EntityType Name="Personen">
+          <Key>
+            <PropertyRef Name="Person_ID" />
+          </Key>
+          <Property Name="Person_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vorname" Type="nvarchar(max)" />
+          <Property Name="Nachname" Type="nvarchar(max)" />
+          <Property Name="Anmeldename" Type="nvarchar(max)" />
+          <Property Name="Rechte" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PriProLieferscheinRechnung">
+          <Key>
+            <PropertyRef Name="PriProLieferscheinRechnungID" />
+          </Key>
+          <Property Name="PriProLieferscheinRechnungID" Type="int" Nullable="false" />
+          <Property Name="LieferscheinNr" Type="varchar(max)" />
+          <Property Name="LieferscheinBeschreibung" Type="varchar(max)" />
+          <Property Name="LieferscheinDatum" Type="datetime" />
+          <Property Name="LieferscheinErsteller" Type="varchar(max)" />
+          <Property Name="LS_Firmenname" Type="nvarchar(max)" />
+          <Property Name="LS_Name" Type="nvarchar(max)" />
+          <Property Name="LS_Strasse" Type="nvarchar(max)" />
+          <Property Name="LS_PLZ" Type="nvarchar(max)" />
+          <Property Name="LS_Stadt" Type="nvarchar(max)" />
+          <Property Name="LS_Land" Type="nvarchar(max)" />
+          <Property Name="LieferscheinPfad" Type="nvarchar(max)" />
+          <Property Name="RechnungsNr" Type="nvarchar(max)" />
+          <Property Name="RechnungBetrag" Type="float" />
+          <Property Name="RechnungBerechnungsgrund" Type="nvarchar(max)" />
+          <Property Name="RechnungDatum" Type="datetime" />
+          <Property Name="RechnungErsteller" Type="nvarchar(max)" />
+          <Property Name="RE_Firmenname" Type="nvarchar(max)" />
+          <Property Name="RE_Name" Type="nvarchar(max)" />
+          <Property Name="RE_Strasse" Type="nvarchar(max)" />
+          <Property Name="RE_PLZ" Type="nvarchar(max)" />
+          <Property Name="RE_Stadt" Type="nvarchar(max)" />
+          <Property Name="RE_Land" Type="nvarchar(max)" />
+          <Property Name="RechnungPfad" Type="nvarchar(max)" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="Projektname" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PriProRechnung">
+          <Key>
+            <PropertyRef Name="PriProRechnungID" />
+          </Key>
+          <Property Name="PriProRechnungID" Type="int" Nullable="false" />
+          <Property Name="RechnungNr" Type="nvarchar(max)" />
+          <Property Name="RechnungBeschreibung" Type="nvarchar(max)" />
+          <Property Name="RechnungTyp" Type="nvarchar(max)" />
+          <Property Name="RechnungDatum" Type="datetime" />
+          <Property Name="RechnungErsteller" Type="nvarchar(max)" />
+          <Property Name="RE_Firmenname" Type="nvarchar(max)" />
+          <Property Name="RE_Name" Type="nvarchar(max)" />
+          <Property Name="RE_Strasse" Type="nvarchar(max)" />
+          <Property Name="RE_PLZ" Type="nvarchar(max)" />
+          <Property Name="RE_Stadt" Type="nvarchar(max)" />
+          <Property Name="RE_Land" Type="nvarchar(max)" />
+          <Property Name="RechnungPfad" Type="nvarchar(max)" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="Projektname" Type="nvarchar(max)" />
+          <Property Name="LieferscheinNr" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Projekte">
+          <Key>
+            <PropertyRef Name="Projektnummer" />
+          </Key>
+          <Property Name="Projektnummer" Type="int" Nullable="false" />
+          <Property Name="Projektname" Type="nvarchar(max)" />
+          <Property Name="OrdnersturkturJSON" Type="nvarchar(max)" />
+          <Property Name="BestellungenJSON" Type="nvarchar(max)" />
+          <Property Name="MailsJSON" Type="nvarchar(max)" />
+          <Property Name="Projektbeginn" Type="datetime" />
+          <Property Name="Produktionsbeginn" Type="datetime" />
+          <Property Name="Inbetriebname" Type="datetime" />
+          <Property Name="aktiv" Type="bit" Nullable="false" />
+          <Property Name="RootOrdner" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Während der Generierung sind Fehler aufgetreten:
+Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungPositionen_View' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
+        <EntityType Name="BestellungPositionen_View">
+          <Key>
+            <PropertyRef Name="BestellnungIDTest" />
+          </Key>
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="Projektname" Type="nvarchar(max)" />
+          <Property Name="BestellnungIDTest" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Pos" Type="int" />
+          <Property Name="Artikelbezeichnung" Type="nvarchar(max)" />
+          <Property Name="Stueck" Type="int" />
+          <Property Name="Besteller" Type="nvarchar(max)" />
+          <Property Name="Bestelldatum" Type="datetime" />
+          <Property Name="Liefertermin" Type="datetime" />
+          <Property Name="AB_datum" Type="datetime" />
+          <Property Name="ABestaetiger" Type="nvarchar(max)" />
+          <Property Name="WE_datum" Type="datetime" />
+          <Property Name="WEingaenger" Type="nvarchar(max)" />
+          <Property Name="Einzelpreis" Type="float" />
+          <Property Name="Gesammtpreis" Type="float" />
+          <Property Name="Lagerort" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Während der Generierung sind Fehler aufgetreten:
+Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungProProjekt' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
+        <EntityType Name="BestellungProProjekt">
+          <Key>
+            <PropertyRef Name="BestellPos_ID" />
+            <PropertyRef Name="BestellnungIDTest" />
+          </Key>
+          <Property Name="BestellPos_ID" Type="int" Nullable="false" />
+          <Property Name="BestellnungIDTest" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Adresse" Type="nvarchar(max)" />
+          <Property Name="Pos" Type="int" />
+          <Property Name="Stueck" Type="int" />
+          <Property Name="Artikelbezeichnung" Type="nvarchar(max)" />
+          <Property Name="Liefertermin" Type="datetime" />
+          <Property Name="Einzelpreis" Type="float" />
+          <Property Name="Gesammtpreis" Type="float" />
+          <Property Name="Besteller" Type="nvarchar(max)" />
+          <Property Name="Bestelldatum" Type="datetime" />
+          <Property Name="Projektnummer" Type="int" />
+          <Property Name="AB_datum" Type="datetime" />
+          <Property Name="ABestaetiger" Type="nvarchar(max)" />
+          <Property Name="WE_datum" Type="datetime" />
+          <Property Name="WEingaenger" Type="nvarchar(max)" />
+          <Property Name="Lagerort" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="PrintumProjekteModelStoreContainer">
+          <EntitySet Name="Adressen" EntityType="Self.Adressen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artikel" EntityType="Self.Artikel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bestellungen" EntityType="Self.Bestellungen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BestellungPositionen" EntityType="Self.BestellungPositionen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dateien" EntityType="Self.Dateien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Einheit" EntityType="Self.Einheit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lieferung" EntityType="Self.Lieferung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LieferungLieferschein" EntityType="Self.LieferungLieferschein" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LieferungPositionen" EntityType="Self.LieferungPositionen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LieferungRechnungen" EntityType="Self.LieferungRechnungen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mails" EntityType="Self.Mails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ordner" EntityType="Self.Ordner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personen" EntityType="Self.Personen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PriProLieferscheinRechnung" EntityType="Self.PriProLieferscheinRechnung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PriProRechnung" EntityType="Self.PriProRechnung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projekte" EntityType="Self.Projekte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BestellungPositionen_View" EntityType="Self.BestellungPositionen_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BestellungPositionen_View].[Projektnummer] AS [Projektnummer], 
+    [BestellungPositionen_View].[Projektname] AS [Projektname], 
+    [BestellungPositionen_View].[BestellnungIDTest] AS [BestellnungIDTest], 
+    [BestellungPositionen_View].[Pos] AS [Pos], 
+    [BestellungPositionen_View].[Artikelbezeichnung] AS [Artikelbezeichnung], 
+    [BestellungPositionen_View].[Stueck] AS [Stueck], 
+    [BestellungPositionen_View].[Besteller] AS [Besteller], 
+    [BestellungPositionen_View].[Bestelldatum] AS [Bestelldatum], 
+    [BestellungPositionen_View].[Liefertermin] AS [Liefertermin], 
+    [BestellungPositionen_View].[AB_datum] AS [AB_datum], 
+    [BestellungPositionen_View].[ABestaetiger] AS [ABestaetiger], 
+    [BestellungPositionen_View].[WE_datum] AS [WE_datum], 
+    [BestellungPositionen_View].[WEingaenger] AS [WEingaenger], 
+    [BestellungPositionen_View].[Einzelpreis] AS [Einzelpreis], 
+    [BestellungPositionen_View].[Gesammtpreis] AS [Gesammtpreis], 
+    [BestellungPositionen_View].[Lagerort] AS [Lagerort]
+    FROM [dbo].[BestellungPositionen_View] AS [BestellungPositionen_View]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BestellungProProjekt" EntityType="Self.BestellungProProjekt" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BestellungProProjekt].[BestellPos_ID] AS [BestellPos_ID], 
+    [BestellungProProjekt].[BestellnungIDTest] AS [BestellnungIDTest], 
+    [BestellungProProjekt].[Adresse] AS [Adresse], 
+    [BestellungProProjekt].[Pos] AS [Pos], 
+    [BestellungProProjekt].[Stueck] AS [Stueck], 
+    [BestellungProProjekt].[Artikelbezeichnung] AS [Artikelbezeichnung], 
+    [BestellungProProjekt].[Liefertermin] AS [Liefertermin], 
+    [BestellungProProjekt].[Einzelpreis] AS [Einzelpreis], 
+    [BestellungProProjekt].[Gesammtpreis] AS [Gesammtpreis], 
+    [BestellungProProjekt].[Besteller] AS [Besteller], 
+    [BestellungProProjekt].[Bestelldatum] AS [Bestelldatum], 
+    [BestellungProProjekt].[Projektnummer] AS [Projektnummer], 
+    [BestellungProProjekt].[AB_datum] AS [AB_datum], 
+    [BestellungProProjekt].[ABestaetiger] AS [ABestaetiger], 
+    [BestellungProProjekt].[WE_datum] AS [WE_datum], 
+    [BestellungProProjekt].[WEingaenger] AS [WEingaenger], 
+    [BestellungProProjekt].[Lagerort] AS [Lagerort]
+    FROM [dbo].[BestellungProProjekt] AS [BestellungProProjekt]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PrintumProjekteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PrintumProjekteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dateien" EntityType="PrintumProjekteModel.Dateien" />
+          <EntitySet Name="Mails" EntityType="PrintumProjekteModel.Mails" />
+          <EntitySet Name="Ordner" EntityType="PrintumProjekteModel.Ordner" />
+          <EntitySet Name="Personen" EntityType="PrintumProjekteModel.Personen" />
+          <EntitySet Name="Projekte" EntityType="PrintumProjekteModel.Projekte" />
+          <EntitySet Name="Bestellungen" EntityType="PrintumProjekteModel.Bestellungen" />
+          <EntitySet Name="BestellungPositionen" EntityType="PrintumProjekteModel.BestellungPositionen" />
+          <EntitySet Name="Adressen" EntityType="PrintumProjekteModel.Adressen" />
+          <EntitySet Name="Artikel" EntityType="PrintumProjekteModel.Artikel" />
+          <EntitySet Name="Einheit" EntityType="PrintumProjekteModel.Einheit" />
+          <EntitySet Name="Lieferung" EntityType="PrintumProjekteModel.Lieferung" />
+          <EntitySet Name="BestellungPositionen_View" EntityType="PrintumProjekteModel.BestellungPositionen_View" />
+          <EntitySet Name="BestellungProProjekt" EntityType="PrintumProjekteModel.BestellungProProjekt" />
+          <EntitySet Name="LieferungLieferschein" EntityType="PrintumProjekteModel.LieferungLieferschein" />
+          <EntitySet Name="LieferungRechnungen" EntityType="PrintumProjekteModel.LieferungRechnungen" />
+          <EntitySet Name="LieferungPositionen" EntityType="PrintumProjekteModel.LieferungPositionen" />
+          <EntitySet Name="PriProLieferscheinRechnung" EntityType="PrintumProjekteModel.PriProLieferscheinRechnung" />
+          <EntitySet Name="PriProRechnung" EntityType="PrintumProjekteModel.PriProRechnung" />
+        </EntityContainer>
+        <EntityType Name="Dateien">
+          <Key>
+            <PropertyRef Name="Datei_ID" />
+          </Key>
+          <Property Name="Datei_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Typ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Schlagworte" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="erstellt" Type="DateTime" Precision="3" />
+          <Property Name="geaendert" Type="DateTime" Precision="3" />
+          <Property Name="erstelltVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="geaendertVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Projektnummer" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mails">
+          <Key>
+            <PropertyRef Name="Mail_ID" />
+          </Key>
+          <Property Name="Mail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="von" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="an" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Betreff" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnhangJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Speicherort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Datum" Type="DateTime" Precision="3" />
+          <Property Name="Schlagworte" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ordner">
+          <Key>
+            <PropertyRef Name="Ordner_ID" />
+          </Key>
+          <Property Name="Ordner_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unterordner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Root" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hatDateien" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Personen">
+          <Key>
+            <PropertyRef Name="Person_ID" />
+          </Key>
+          <Property Name="Person_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vorname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nachname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Anmeldename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rechte" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Projekte">
+          <Key>
+            <PropertyRef Name="Projektnummer" />
+          </Key>
+          <Property Name="Projektnummer" Type="Int32" Nullable="false" />
+          <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrdnersturkturJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BestellungenJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MailsJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Projektbeginn" Type="DateTime" Precision="3" />
+          <Property Name="Produktionsbeginn" Type="DateTime" Precision="3" />
+          <Property Name="Inbetriebname" Type="DateTime" Precision="3" />
+          <Property Name="aktiv" Type="Boolean" Nullable="false" />
+          <Property Name="RootOrdner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Bestellungen">
+          <Key>
+            <PropertyRef Name="Bestellung_ID" />
+          </Key>
+          <Property Name="Bestellung_ID" Type="Int32" Nullable="false" />
+          <Property Name="BestellungIDText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Speicherort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Vorlage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Datum" Type="DateTime" Precision="3" />
+          <Property Name="ErstelltVon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GeaendertVon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="geaendert" Type="DateTime" Precision="3" />
+          <Property Name="PDFpfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="istAbgeschickt" Type="Boolean" />
+          <Property Name="AdressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAdresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AB" Type="Boolean" />
+          <Property Name="WA" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="BestellungPositionen">
+          <Key>
+            <PropertyRef Name="BestellPos_ID" />
+          </Key>
+          <Property Name="BestellPos_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="BestellnungIDTest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pos" Type="Int32" />
+          <Property Name="Stueck" Type="Int32" />
+          <Property Name="Artikelbezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Liefertermin" Type="DateTime" Precision="3" />
+          <Property Name="Einzelpreis" Type="Double" />
+          <Property Name="Gesammtpreis" Type="Double" />
+          <Property Name="Besteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+          <Property Name="AB_datum" Type="DateTime" Precision="3" />
+          <Property Name="ABestaetiger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WE_datum" Type="DateTime" Precision="3" />
+          <Property Name="WEingaenger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lagerort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Adressen">
+          <Key>
+            <PropertyRef Name="AdressID" />
+          </Key>
+          <Property Name="AdressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZuHaendenVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email1Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email2Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PLZundORT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Matchcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileAs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="businessHomePage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Categories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TelefonMobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Vorname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nachname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungStrasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungPLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungOrt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungLand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Artikel">
+          <Key>
+            <PropertyRef Name="ArtikelID" />
+          </Key>
+          <Property Name="ArtikelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Artikelnummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BeschreibungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Preis" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Einheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IstBaugruppe" Type="Boolean" />
+          <Property Name="Mengeneinheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Einheit">
+          <Key>
+            <PropertyRef Name="EinheitID" />
+          </Key>
+          <Property Name="EinheitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EinheitNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BeschreibungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Preis" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Rabatt" Type="Int32" />
+          <Property Name="Zahlungsstaffel1" Type="Int32" />
+          <Property Name="Zahlungsstaffel2" Type="Int32" />
+          <Property Name="Zahlungsstaffel3" Type="Int32" />
+          <Property Name="Zahlungsbedingung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZahlungsbedingungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Garantie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GarantieEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TechnischAbnahme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TechnischAbnahmeEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Eigentumsvorbehalt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EigentumsvorbehaltEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gerichtsstand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GerichtsstandEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AGB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AGBEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Wichtig" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WichtigEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lieferzeit" Type="Int32" />
+          <Property Name="Lieferbedingunen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LieferbedingungenEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Montagebedingungen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MontagebedingungenEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Preisbindung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PreisbindungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BezeichnungEnglich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Lieferung">
+          <Key>
+            <PropertyRef Name="AuftagID" />
+          </Key>
+          <Property Name="AuftagID" Type="Int32" Nullable="false" />
+          <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressLieferName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressLieferStrasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressLieferPLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressLieferOrt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressLieferLand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressRechnungName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressRechnungStrasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressRechnungPLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressRechnungOrt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdressRechnungLand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungID1" Type="Int32" />
+          <Property Name="RechnungNummer1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungID2" Type="Int32" />
+          <Property Name="RechnungNummer2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungID3" Type="Int32" />
+          <Property Name="RechnungNummer3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungID4" Type="Int32" />
+          <Property Name="RechnungNummer4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LieferscheinID" Type="Int32" />
+          <Property Name="LieferscheinNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EinheitID" Type="Int32" />
+          <Property Name="EinheitNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="aktiv" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BestellungPositionen_View">
+          <Key>
+            <PropertyRef Name="BestellnungIDTest" />
+          </Key>
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BestellnungIDTest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pos" Type="Int32" />
+          <Property Name="Artikelbezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Stueck" Type="Int32" />
+          <Property Name="Besteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+          <Property Name="Liefertermin" Type="DateTime" Precision="3" />
+          <Property Name="AB_datum" Type="DateTime" Precision="3" />
+          <Property Name="ABestaetiger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WE_datum" Type="DateTime" Precision="3" />
+          <Property Name="WEingaenger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Einzelpreis" Type="Double" />
+          <Property Name="Gesammtpreis" Type="Double" />
+          <Property Name="Lagerort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BestellungProProjekt">
+          <Key>
+            <PropertyRef Name="BestellPos_ID" />
+            <PropertyRef Name="BestellnungIDTest" />
+          </Key>
+          <Property Name="BestellPos_ID" Type="Int32" Nullable="false" />
+          <Property Name="BestellnungIDTest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pos" Type="Int32" />
+          <Property Name="Stueck" Type="Int32" />
+          <Property Name="Artikelbezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Liefertermin" Type="DateTime" Precision="3" />
+          <Property Name="Einzelpreis" Type="Double" />
+          <Property Name="Gesammtpreis" Type="Double" />
+          <Property Name="Besteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="AB_datum" Type="DateTime" Precision="3" />
+          <Property Name="ABestaetiger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WE_datum" Type="DateTime" Precision="3" />
+          <Property Name="WEingaenger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lagerort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LieferungLieferschein">
+          <Key>
+            <PropertyRef Name="LieferscheinID" />
+          </Key>
+          <Property Name="LieferscheinID" Type="Int32" Nullable="false" />
+          <Property Name="LieferscheinNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AuftagID" Type="Int32" />
+          <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LieferscheinPfadPDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lieferdatum" Type="DateTime" Precision="3" />
+          <Property Name="Lieferscheintext1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lieferscheintext2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lieferscheintext3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LieferscheinErstelltAm" Type="DateTime" Precision="3" />
+          <Property Name="LieferscheinErstelltVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lieferscheintext4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LieferungRechnungen">
+          <Key>
+            <PropertyRef Name="RechnungID" />
+          </Key>
+          <Property Name="RechnungID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RechnungNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AuftragID" Type="Int32" />
+          <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungBetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RechnungErstelltAm" Type="DateTime" Precision="3" />
+          <Property Name="RechnungErstelltVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungPfadPDF" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="RechnungBezahltAm" Type="DateTime" Precision="3" />
+          <Property Name="RechnungBetragBezahlt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RechnungMahnung1Am" Type="DateTime" Precision="3" />
+          <Property Name="RechnungMahnung1PfadPDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungMahnung2Am" Type="DateTime" Precision="3" />
+          <Property Name="RechnungMahnung2PfadPDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LieferungPositionen">
+          <Key>
+            <PropertyRef Name="PositionenID" />
+          </Key>
+          <Property Name="PositionenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionNr" Type="Int32" />
+          <Property Name="ArtikeID" Type="Int32" />
+          <Property Name="Artikelnummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BeschreibungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Preis" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Anzahl" Type="Double" />
+          <Property Name="Mengeneinheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EinheitID" Type="Int32" />
+          <Property Name="Einheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AuftragID" Type="Int32" />
+          <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HinzugefuegtAm" Type="DateTime" Precision="3" />
+          <Property Name="HinzugefuegtVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HinzugefuegtGrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GeaenderAm" Type="DateTime" Precision="3" />
+          <Property Name="GeaendertVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GeaendertGrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GeloeschtAm" Type="DateTime" Precision="3" />
+          <Property Name="GeloeschtVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GeloeschtGrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PriProLieferscheinRechnung">
+          <Key>
+            <PropertyRef Name="PriProLieferscheinRechnungID" />
+          </Key>
+          <Property Name="PriProLieferscheinRechnungID" Type="Int32" Nullable="false" />
+          <Property Name="LieferscheinNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LieferscheinBeschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LieferscheinDatum" Type="DateTime" Precision="3" />
+          <Property Name="LieferscheinErsteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LS_Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LS_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LS_Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LS_PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LS_Stadt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LS_Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LieferscheinPfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungsNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungBetrag" Type="Double" />
+          <Property Name="RechnungBerechnungsgrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungDatum" Type="DateTime" Precision="3" />
+          <Property Name="RechnungErsteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Stadt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungPfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PriProRechnung">
+          <Key>
+            <PropertyRef Name="PriProRechnungID" />
+          </Key>
+          <Property Name="PriProRechnungID" Type="Int32" Nullable="false" />
+          <Property Name="RechnungNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungBeschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungTyp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungDatum" Type="DateTime" Precision="3" />
+          <Property Name="RechnungErsteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Stadt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RE_Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RechnungPfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Projektnummer" Type="Int32" />
+          <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LieferscheinNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PrintumProjekteModelStoreContainer" CdmEntityContainer="PrintumProjekteEntities">
+          <EntitySetMapping Name="Dateien">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Dateien">
+              <MappingFragment StoreEntitySet="Dateien">
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="geaendertVon" ColumnName="geaendertVon" />
+                <ScalarProperty Name="erstelltVon" ColumnName="erstelltVon" />
+                <ScalarProperty Name="geaendert" ColumnName="geaendert" />
+                <ScalarProperty Name="erstellt" ColumnName="erstellt" />
+                <ScalarProperty Name="Schlagworte" ColumnName="Schlagworte" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Pfad" ColumnName="Pfad" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Datei_ID" ColumnName="Datei_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mails">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Mails">
+              <MappingFragment StoreEntitySet="Mails">
+                <ScalarProperty Name="Schlagworte" ColumnName="Schlagworte" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Speicherort" ColumnName="Speicherort" />
+                <ScalarProperty Name="AnhangJSON" ColumnName="AnhangJSON" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Betreff" ColumnName="Betreff" />
+                <ScalarProperty Name="an" ColumnName="an" />
+                <ScalarProperty Name="von" ColumnName="von" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="Mail_ID" ColumnName="Mail_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ordner">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Ordner">
+              <MappingFragment StoreEntitySet="Ordner">
+                <ScalarProperty Name="hatDateien" ColumnName="hatDateien" />
+                <ScalarProperty Name="Root" ColumnName="Root" />
+                <ScalarProperty Name="Unterordner" ColumnName="Unterordner" />
+                <ScalarProperty Name="Pfad" ColumnName="Pfad" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="Ordner_ID" ColumnName="Ordner_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personen">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Personen">
+              <MappingFragment StoreEntitySet="Personen">
+                <ScalarProperty Name="Rechte" ColumnName="Rechte" />
+                <ScalarProperty Name="Anmeldename" ColumnName="Anmeldename" />
+                <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+                <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="Person_ID" ColumnName="Person_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projekte">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Projekte">
+              <MappingFragment StoreEntitySet="Projekte">
+                <ScalarProperty Name="RootOrdner" ColumnName="RootOrdner" />
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="Inbetriebname" ColumnName="Inbetriebname" />
+                <ScalarProperty Name="Produktionsbeginn" ColumnName="Produktionsbeginn" />
+                <ScalarProperty Name="Projektbeginn" ColumnName="Projektbeginn" />
+                <ScalarProperty Name="MailsJSON" ColumnName="MailsJSON" />
+                <ScalarProperty Name="BestellungenJSON" ColumnName="BestellungenJSON" />
+                <ScalarProperty Name="OrdnersturkturJSON" ColumnName="OrdnersturkturJSON" />
+                <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bestellungen">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Bestellungen">
+              <MappingFragment StoreEntitySet="Bestellungen">
+                <ScalarProperty Name="WA" ColumnName="WA" />
+                <ScalarProperty Name="AB" ColumnName="AB" />
+                <ScalarProperty Name="EmailAdresse" ColumnName="EmailAdresse" />
+                <ScalarProperty Name="AdressID" ColumnName="AdressID" />
+                <ScalarProperty Name="istAbgeschickt" ColumnName="istAbgeschickt" />
+                <ScalarProperty Name="PDFpfad" ColumnName="PDFpfad" />
+                <ScalarProperty Name="geaendert" ColumnName="geaendert" />
+                <ScalarProperty Name="GeaendertVon" ColumnName="GeaendertVon" />
+                <ScalarProperty Name="ErstelltVon" ColumnName="ErstelltVon" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vorlage" ColumnName="Vorlage" />
+                <ScalarProperty Name="Speicherort" ColumnName="Speicherort" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="BestellungIDText" ColumnName="BestellungIDText" />
+                <ScalarProperty Name="Bestellung_ID" ColumnName="Bestellung_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BestellungPositionen">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.BestellungPositionen">
+              <MappingFragment StoreEntitySet="BestellungPositionen">
+                <ScalarProperty Name="Lagerort" ColumnName="Lagerort" />
+                <ScalarProperty Name="WEingaenger" ColumnName="WEingaenger" />
+                <ScalarProperty Name="WE_datum" ColumnName="WE_datum" />
+                <ScalarProperty Name="ABestaetiger" ColumnName="ABestaetiger" />
+                <ScalarProperty Name="AB_datum" ColumnName="AB_datum" />
+                <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+                <ScalarProperty Name="Besteller" ColumnName="Besteller" />
+                <ScalarProperty Name="Gesammtpreis" ColumnName="Gesammtpreis" />
+                <ScalarProperty Name="Einzelpreis" ColumnName="Einzelpreis" />
+                <ScalarProperty Name="Liefertermin" ColumnName="Liefertermin" />
+                <ScalarProperty Name="Artikelbezeichnung" ColumnName="Artikelbezeichnung" />
+                <ScalarProperty Name="Stueck" ColumnName="Stueck" />
+                <ScalarProperty Name="Pos" ColumnName="Pos" />
+                <ScalarProperty Name="BestellnungIDTest" ColumnName="BestellnungIDTest" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="BestellPos_ID" ColumnName="BestellPos_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Adressen">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Adressen">
+              <MappingFragment StoreEntitySet="Adressen">
+                <ScalarProperty Name="RechnungLand" ColumnName="RechnungLand" />
+                <ScalarProperty Name="RechnungOrt" ColumnName="RechnungOrt" />
+                <ScalarProperty Name="RechnungPLZ" ColumnName="RechnungPLZ" />
+                <ScalarProperty Name="RechnungStrasse" ColumnName="RechnungStrasse" />
+                <ScalarProperty Name="RechnungName" ColumnName="RechnungName" />
+                <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+                <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="TelefonMobile" ColumnName="TelefonMobile" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Categories" ColumnName="Categories" />
+                <ScalarProperty Name="businessHomePage" ColumnName="businessHomePage" />
+                <ScalarProperty Name="FileAs" ColumnName="FileAs" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="Matchcode" ColumnName="Matchcode" />
+                <ScalarProperty Name="PLZundORT" ColumnName="PLZundORT" />
+                <ScalarProperty Name="Telefon1" ColumnName="Telefon1" />
+                <ScalarProperty Name="Email2Adresse" ColumnName="Email2Adresse" />
+                <ScalarProperty Name="Email1Adresse" ColumnName="Email1Adresse" />
+                <ScalarProperty Name="Firmenname" ColumnName="Firmenname" />
+                <ScalarProperty Name="ZuHaendenVon" ColumnName="ZuHaendenVon" />
+                <ScalarProperty Name="Land" ColumnName="Land" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+                <ScalarProperty Name="Strasse" ColumnName="Strasse" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AdressID" ColumnName="AdressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artikel">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Artikel">
+              <MappingFragment StoreEntitySet="Artikel">
+                <ScalarProperty Name="Mengeneinheit" ColumnName="Mengeneinheit" />
+                <ScalarProperty Name="IstBaugruppe" ColumnName="IstBaugruppe" />
+                <ScalarProperty Name="Einheit" ColumnName="Einheit" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+                <ScalarProperty Name="BeschreibungEnglish" ColumnName="BeschreibungEnglish" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+                <ScalarProperty Name="ArtikelID" ColumnName="ArtikelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Einheit">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Einheit">
+              <MappingFragment StoreEntitySet="Einheit">
+                <ScalarProperty Name="BezeichnungEnglich" ColumnName="BezeichnungEnglich" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="PreisbindungEnglish" ColumnName="PreisbindungEnglish" />
+                <ScalarProperty Name="Preisbindung" ColumnName="Preisbindung" />
+                <ScalarProperty Name="MontagebedingungenEnglish" ColumnName="MontagebedingungenEnglish" />
+                <ScalarProperty Name="Montagebedingungen" ColumnName="Montagebedingungen" />
+                <ScalarProperty Name="LieferbedingungenEnglish" ColumnName="LieferbedingungenEnglish" />
+                <ScalarProperty Name="Lieferbedingunen" ColumnName="Lieferbedingunen" />
+                <ScalarProperty Name="Lieferzeit" ColumnName="Lieferzeit" />
+                <ScalarProperty Name="WichtigEnglish" ColumnName="WichtigEnglish" />
+                <ScalarProperty Name="Wichtig" ColumnName="Wichtig" />
+                <ScalarProperty Name="AGBEnglish" ColumnName="AGBEnglish" />
+                <ScalarProperty Name="AGB" ColumnName="AGB" />
+                <ScalarProperty Name="GerichtsstandEnglish" ColumnName="GerichtsstandEnglish" />
+                <ScalarProperty Name="Gerichtsstand" ColumnName="Gerichtsstand" />
+                <ScalarProperty Name="EigentumsvorbehaltEnglish" ColumnName="EigentumsvorbehaltEnglish" />
+                <ScalarProperty Name="Eigentumsvorbehalt" ColumnName="Eigentumsvorbehalt" />
+                <ScalarProperty Name="TechnischAbnahmeEnglish" ColumnName="TechnischAbnahmeEnglish" />
+                <ScalarProperty Name="TechnischAbnahme" ColumnName="TechnischAbnahme" />
+                <ScalarProperty Name="GarantieEnglish" ColumnName="GarantieEnglish" />
+                <ScalarProperty Name="Garantie" ColumnName="Garantie" />
+                <ScalarProperty Name="ZahlungsbedingungEnglish" ColumnName="ZahlungsbedingungEnglish" />
+                <ScalarProperty Name="Zahlungsbedingung" ColumnName="Zahlungsbedingung" />
+                <ScalarProperty Name="Zahlungsstaffel3" ColumnName="Zahlungsstaffel3" />
+                <ScalarProperty Name="Zahlungsstaffel2" ColumnName="Zahlungsstaffel2" />
+                <ScalarProperty Name="Zahlungsstaffel1" ColumnName="Zahlungsstaffel1" />
+                <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+                <ScalarProperty Name="BeschreibungEnglish" ColumnName="BeschreibungEnglish" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="EinheitNummer" ColumnName="EinheitNummer" />
+                <ScalarProperty Name="EinheitID" ColumnName="EinheitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lieferung">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.Lieferung">
+              <MappingFragment StoreEntitySet="Lieferung">
+                <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+                <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="EinheitNummer" ColumnName="EinheitNummer" />
+                <ScalarProperty Name="EinheitID" ColumnName="EinheitID" />
+                <ScalarProperty Name="LieferscheinNummer" ColumnName="LieferscheinNummer" />
+                <ScalarProperty Name="LieferscheinID" ColumnName="LieferscheinID" />
+                <ScalarProperty Name="RechnungNummer4" ColumnName="RechnungNummer4" />
+                <ScalarProperty Name="RechnungID4" ColumnName="RechnungID4" />
+                <ScalarProperty Name="RechnungNummer3" ColumnName="RechnungNummer3" />
+                <ScalarProperty Name="RechnungID3" ColumnName="RechnungID3" />
+                <ScalarProperty Name="RechnungNummer2" ColumnName="RechnungNummer2" />
+                <ScalarProperty Name="RechnungID2" ColumnName="RechnungID2" />
+                <ScalarProperty Name="RechnungNummer1" ColumnName="RechnungNummer1" />
+                <ScalarProperty Name="RechnungID1" ColumnName="RechnungID1" />
+                <ScalarProperty Name="AdressRechnungLand" ColumnName="AdressRechnungLand" />
+                <ScalarProperty Name="AdressRechnungOrt" ColumnName="AdressRechnungOrt" />
+                <ScalarProperty Name="AdressRechnungPLZ" ColumnName="AdressRechnungPLZ" />
+                <ScalarProperty Name="AdressRechnungStrasse" ColumnName="AdressRechnungStrasse" />
+                <ScalarProperty Name="AdressRechnungName" ColumnName="AdressRechnungName" />
+                <ScalarProperty Name="AdressLieferLand" ColumnName="AdressLieferLand" />
+                <ScalarProperty Name="AdressLieferOrt" ColumnName="AdressLieferOrt" />
+                <ScalarProperty Name="AdressLieferPLZ" ColumnName="AdressLieferPLZ" />
+                <ScalarProperty Name="AdressLieferStrasse" ColumnName="AdressLieferStrasse" />
+                <ScalarProperty Name="AdressLieferName" ColumnName="AdressLieferName" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+                <ScalarProperty Name="AuftagID" ColumnName="AuftagID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BestellungPositionen_View">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.BestellungPositionen_View">
+              <MappingFragment StoreEntitySet="BestellungPositionen_View">
+                <ScalarProperty Name="Lagerort" ColumnName="Lagerort" />
+                <ScalarProperty Name="Gesammtpreis" ColumnName="Gesammtpreis" />
+                <ScalarProperty Name="Einzelpreis" ColumnName="Einzelpreis" />
+                <ScalarProperty Name="WEingaenger" ColumnName="WEingaenger" />
+                <ScalarProperty Name="WE_datum" ColumnName="WE_datum" />
+                <ScalarProperty Name="ABestaetiger" ColumnName="ABestaetiger" />
+                <ScalarProperty Name="AB_datum" ColumnName="AB_datum" />
+                <ScalarProperty Name="Liefertermin" ColumnName="Liefertermin" />
+                <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+                <ScalarProperty Name="Besteller" ColumnName="Besteller" />
+                <ScalarProperty Name="Stueck" ColumnName="Stueck" />
+                <ScalarProperty Name="Artikelbezeichnung" ColumnName="Artikelbezeichnung" />
+                <ScalarProperty Name="Pos" ColumnName="Pos" />
+                <ScalarProperty Name="BestellnungIDTest" ColumnName="BestellnungIDTest" />
+                <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BestellungProProjekt">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.BestellungProProjekt">
+              <MappingFragment StoreEntitySet="BestellungProProjekt">
+                <ScalarProperty Name="Lagerort" ColumnName="Lagerort" />
+                <ScalarProperty Name="WEingaenger" ColumnName="WEingaenger" />
+                <ScalarProperty Name="WE_datum" ColumnName="WE_datum" />
+                <ScalarProperty Name="ABestaetiger" ColumnName="ABestaetiger" />
+                <ScalarProperty Name="AB_datum" ColumnName="AB_datum" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+                <ScalarProperty Name="Besteller" ColumnName="Besteller" />
+                <ScalarProperty Name="Gesammtpreis" ColumnName="Gesammtpreis" />
+                <ScalarProperty Name="Einzelpreis" ColumnName="Einzelpreis" />
+                <ScalarProperty Name="Liefertermin" ColumnName="Liefertermin" />
+                <ScalarProperty Name="Artikelbezeichnung" ColumnName="Artikelbezeichnung" />
+                <ScalarProperty Name="Stueck" ColumnName="Stueck" />
+                <ScalarProperty Name="Pos" ColumnName="Pos" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="BestellnungIDTest" ColumnName="BestellnungIDTest" />
+                <ScalarProperty Name="BestellPos_ID" ColumnName="BestellPos_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LieferungLieferschein">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.LieferungLieferschein">
+              <MappingFragment StoreEntitySet="LieferungLieferschein">
+                <ScalarProperty Name="Lieferscheintext4" ColumnName="Lieferscheintext4" />
+                <ScalarProperty Name="LieferscheinErstelltVon" ColumnName="LieferscheinErstelltVon" />
+                <ScalarProperty Name="LieferscheinErstelltAm" ColumnName="LieferscheinErstelltAm" />
+                <ScalarProperty Name="Lieferscheintext3" ColumnName="Lieferscheintext3" />
+                <ScalarProperty Name="Lieferscheintext2" ColumnName="Lieferscheintext2" />
+                <ScalarProperty Name="Lieferscheintext1" ColumnName="Lieferscheintext1" />
+                <ScalarProperty Name="Lieferdatum" ColumnName="Lieferdatum" />
+                <ScalarProperty Name="LieferscheinPfadPDF" ColumnName="LieferscheinPfadPDF" />
+                <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+                <ScalarProperty Name="AuftagID" ColumnName="AuftagID" />
+                <ScalarProperty Name="LieferscheinNummer" ColumnName="LieferscheinNummer" />
+                <ScalarProperty Name="LieferscheinID" ColumnName="LieferscheinID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LieferungRechnungen">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.LieferungRechnungen">
+              <MappingFragment StoreEntitySet="LieferungRechnungen">
+                <ScalarProperty Name="RechnungMahnung2PfadPDF" ColumnName="RechnungMahnung2PfadPDF" />
+                <ScalarProperty Name="RechnungMahnung2Am" ColumnName="RechnungMahnung2Am" />
+                <ScalarProperty Name="RechnungMahnung1PfadPDF" ColumnName="RechnungMahnung1PfadPDF" />
+                <ScalarProperty Name="RechnungMahnung1Am" ColumnName="RechnungMahnung1Am" />
+                <ScalarProperty Name="RechnungBetragBezahlt" ColumnName="RechnungBetragBezahlt" />
+                <ScalarProperty Name="RechnungBezahltAm" ColumnName="RechnungBezahltAm" />
+                <ScalarProperty Name="RechnungPfadPDF" ColumnName="RechnungPfadPDF" />
+                <ScalarProperty Name="RechnungErstelltVon" ColumnName="RechnungErstelltVon" />
+                <ScalarProperty Name="RechnungErstelltAm" ColumnName="RechnungErstelltAm" />
+                <ScalarProperty Name="RechnungBetrag" ColumnName="RechnungBetrag" />
+                <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+                <ScalarProperty Name="AuftragID" ColumnName="AuftragID" />
+                <ScalarProperty Name="RechnungNummer" ColumnName="RechnungNummer" />
+                <ScalarProperty Name="RechnungID" ColumnName="RechnungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LieferungPositionen">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.LieferungPositionen">
+              <MappingFragment StoreEntitySet="LieferungPositionen">
+                <ScalarProperty Name="GeloeschtGrund" ColumnName="GeloeschtGrund" />
+                <ScalarProperty Name="GeloeschtVon" ColumnName="GeloeschtVon" />
+                <ScalarProperty Name="GeloeschtAm" ColumnName="GeloeschtAm" />
+                <ScalarProperty Name="GeaendertGrund" ColumnName="GeaendertGrund" />
+                <ScalarProperty Name="GeaendertVon" ColumnName="GeaendertVon" />
+                <ScalarProperty Name="GeaenderAm" ColumnName="GeaenderAm" />
+                <ScalarProperty Name="HinzugefuegtGrund" ColumnName="HinzugefuegtGrund" />
+                <ScalarProperty Name="HinzugefuegtVon" ColumnName="HinzugefuegtVon" />
+                <ScalarProperty Name="HinzugefuegtAm" ColumnName="HinzugefuegtAm" />
+                <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+                <ScalarProperty Name="AuftragID" ColumnName="AuftragID" />
+                <ScalarProperty Name="Einheit" ColumnName="Einheit" />
+                <ScalarProperty Name="EinheitID" ColumnName="EinheitID" />
+                <ScalarProperty Name="Mengeneinheit" ColumnName="Mengeneinheit" />
+                <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+                <ScalarProperty Name="BeschreibungEnglish" ColumnName="BeschreibungEnglish" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+                <ScalarProperty Name="ArtikeID" ColumnName="ArtikeID" />
+                <ScalarProperty Name="PositionNr" ColumnName="PositionNr" />
+                <ScalarProperty Name="PositionenID" ColumnName="PositionenID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriProLieferscheinRechnung">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.PriProLieferscheinRechnung">
+              <MappingFragment StoreEntitySet="PriProLieferscheinRechnung">
+                <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="RechnungPfad" ColumnName="RechnungPfad" />
+                <ScalarProperty Name="RE_Land" ColumnName="RE_Land" />
+                <ScalarProperty Name="RE_Stadt" ColumnName="RE_Stadt" />
+                <ScalarProperty Name="RE_PLZ" ColumnName="RE_PLZ" />
+                <ScalarProperty Name="RE_Strasse" ColumnName="RE_Strasse" />
+                <ScalarProperty Name="RE_Name" ColumnName="RE_Name" />
+                <ScalarProperty Name="RE_Firmenname" ColumnName="RE_Firmenname" />
+                <ScalarProperty Name="RechnungErsteller" ColumnName="RechnungErsteller" />
+                <ScalarProperty Name="RechnungDatum" ColumnName="RechnungDatum" />
+                <ScalarProperty Name="RechnungBerechnungsgrund" ColumnName="RechnungBerechnungsgrund" />
+                <ScalarProperty Name="RechnungBetrag" ColumnName="RechnungBetrag" />
+                <ScalarProperty Name="RechnungsNr" ColumnName="RechnungsNr" />
+                <ScalarProperty Name="LieferscheinPfad" ColumnName="LieferscheinPfad" />
+                <ScalarProperty Name="LS_Land" ColumnName="LS_Land" />
+                <ScalarProperty Name="LS_Stadt" ColumnName="LS_Stadt" />
+                <ScalarProperty Name="LS_PLZ" ColumnName="LS_PLZ" />
+                <ScalarProperty Name="LS_Strasse" ColumnName="LS_Strasse" />
+                <ScalarProperty Name="LS_Name" ColumnName="LS_Name" />
+                <ScalarProperty Name="LS_Firmenname" ColumnName="LS_Firmenname" />
+                <ScalarProperty Name="LieferscheinErsteller" ColumnName="LieferscheinErsteller" />
+                <ScalarProperty Name="LieferscheinDatum" ColumnName="LieferscheinDatum" />
+                <ScalarProperty Name="LieferscheinBeschreibung" ColumnName="LieferscheinBeschreibung" />
+                <ScalarProperty Name="LieferscheinNr" ColumnName="LieferscheinNr" />
+                <ScalarProperty Name="PriProLieferscheinRechnungID" ColumnName="PriProLieferscheinRechnungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriProRechnung">
+            <EntityTypeMapping TypeName="PrintumProjekteModel.PriProRechnung">
+              <MappingFragment StoreEntitySet="PriProRechnung">
+                <ScalarProperty Name="LieferscheinNr" ColumnName="LieferscheinNr" />
+                <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+                <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+                <ScalarProperty Name="RechnungPfad" ColumnName="RechnungPfad" />
+                <ScalarProperty Name="RE_Land" ColumnName="RE_Land" />
+                <ScalarProperty Name="RE_Stadt" ColumnName="RE_Stadt" />
+                <ScalarProperty Name="RE_PLZ" ColumnName="RE_PLZ" />
+                <ScalarProperty Name="RE_Strasse" ColumnName="RE_Strasse" />
+                <ScalarProperty Name="RE_Name" ColumnName="RE_Name" />
+                <ScalarProperty Name="RE_Firmenname" ColumnName="RE_Firmenname" />
+                <ScalarProperty Name="RechnungErsteller" ColumnName="RechnungErsteller" />
+                <ScalarProperty Name="RechnungDatum" ColumnName="RechnungDatum" />
+                <ScalarProperty Name="RechnungTyp" ColumnName="RechnungTyp" />
+                <ScalarProperty Name="RechnungBeschreibung" ColumnName="RechnungBeschreibung" />
+                <ScalarProperty Name="RechnungNr" ColumnName="RechnungNr" />
+                <ScalarProperty Name="PriProRechnungID" ColumnName="PriProRechnungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

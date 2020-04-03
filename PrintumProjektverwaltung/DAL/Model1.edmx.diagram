@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="087137ae098b48c7961273f684a38596" Name="Diagram1">
+        <EntityTypeShape EntityType="PrintumProjekteModel.Dateien" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Mails" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Ordner" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Personen" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Projekte" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Bestellungen" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.BestellungPositionen" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Adressen" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Artikel" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Einheit" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.Lieferung" Width="1.5" PointX="5.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.BestellungPositionen_View" Width="1.5" PointX="11.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.BestellungProProjekt" Width="1.5" PointX="11.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.LieferungLieferschein" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.LieferungRechnungen" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.LieferungPositionen" Width="1.5" PointX="8.375" PointY="9.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.PriProLieferscheinRechnung" Width="1.5" PointX="14.375" PointY="5.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.PriProRechnung" Width="1.5" PointX="14.375" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

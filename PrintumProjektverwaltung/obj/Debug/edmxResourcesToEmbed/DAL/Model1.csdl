@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrintumProjekteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PrintumProjekteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Dateien" EntityType="PrintumProjekteModel.Dateien" />
+    <EntitySet Name="Mails" EntityType="PrintumProjekteModel.Mails" />
+    <EntitySet Name="Ordner" EntityType="PrintumProjekteModel.Ordner" />
+    <EntitySet Name="Personen" EntityType="PrintumProjekteModel.Personen" />
+    <EntitySet Name="Projekte" EntityType="PrintumProjekteModel.Projekte" />
+    <EntitySet Name="Bestellungen" EntityType="PrintumProjekteModel.Bestellungen" />
+    <EntitySet Name="BestellungPositionen" EntityType="PrintumProjekteModel.BestellungPositionen" />
+    <EntitySet Name="Adressen" EntityType="PrintumProjekteModel.Adressen" />
+    <EntitySet Name="Artikel" EntityType="PrintumProjekteModel.Artikel" />
+    <EntitySet Name="Einheit" EntityType="PrintumProjekteModel.Einheit" />
+    <EntitySet Name="Lieferung" EntityType="PrintumProjekteModel.Lieferung" />
+    <EntitySet Name="BestellungPositionen_View" EntityType="PrintumProjekteModel.BestellungPositionen_View" />
+    <EntitySet Name="BestellungProProjekt" EntityType="PrintumProjekteModel.BestellungProProjekt" />
+    <EntitySet Name="LieferungLieferschein" EntityType="PrintumProjekteModel.LieferungLieferschein" />
+    <EntitySet Name="LieferungRechnungen" EntityType="PrintumProjekteModel.LieferungRechnungen" />
+    <EntitySet Name="LieferungPositionen" EntityType="PrintumProjekteModel.LieferungPositionen" />
+    <EntitySet Name="PriProLieferscheinRechnung" EntityType="PrintumProjekteModel.PriProLieferscheinRechnung" />
+    <EntitySet Name="PriProRechnung" EntityType="PrintumProjekteModel.PriProRechnung" />
+  </EntityContainer>
+  <EntityType Name="Dateien">
+    <Key>
+      <PropertyRef Name="Datei_ID" />
+    </Key>
+    <Property Name="Datei_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Typ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Schlagworte" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="erstellt" Type="DateTime" Precision="3" />
+    <Property Name="geaendert" Type="DateTime" Precision="3" />
+    <Property Name="erstelltVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="geaendertVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektnummer" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mails">
+    <Key>
+      <PropertyRef Name="Mail_ID" />
+    </Key>
+    <Property Name="Mail_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="von" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="an" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Betreff" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AnhangJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Speicherort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Datum" Type="DateTime" Precision="3" />
+    <Property Name="Schlagworte" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ordner">
+    <Key>
+      <PropertyRef Name="Ordner_ID" />
+    </Key>
+    <Property Name="Ordner_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Unterordner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Root" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hatDateien" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Personen">
+    <Key>
+      <PropertyRef Name="Person_ID" />
+    </Key>
+    <Property Name="Person_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vorname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nachname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Anmeldename" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rechte" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Projekte">
+    <Key>
+      <PropertyRef Name="Projektnummer" />
+    </Key>
+    <Property Name="Projektnummer" Type="Int32" Nullable="false" />
+    <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrdnersturkturJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BestellungenJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MailsJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektbeginn" Type="DateTime" Precision="3" />
+    <Property Name="Produktionsbeginn" Type="DateTime" Precision="3" />
+    <Property Name="Inbetriebname" Type="DateTime" Precision="3" />
+    <Property Name="aktiv" Type="Boolean" Nullable="false" />
+    <Property Name="RootOrdner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bestellungen">
+    <Key>
+      <PropertyRef Name="Bestellung_ID" />
+    </Key>
+    <Property Name="Bestellung_ID" Type="Int32" Nullable="false" />
+    <Property Name="BestellungIDText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Speicherort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Vorlage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Datum" Type="DateTime" Precision="3" />
+    <Property Name="ErstelltVon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GeaendertVon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="geaendert" Type="DateTime" Precision="3" />
+    <Property Name="PDFpfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="istAbgeschickt" Type="Boolean" />
+    <Property Name="AdressID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAdresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AB" Type="Boolean" />
+    <Property Name="WA" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BestellungPositionen">
+    <Key>
+      <PropertyRef Name="BestellPos_ID" />
+    </Key>
+    <Property Name="BestellPos_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="BestellnungIDTest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="Int32" />
+    <Property Name="Stueck" Type="Int32" />
+    <Property Name="Artikelbezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Liefertermin" Type="DateTime" Precision="3" />
+    <Property Name="Einzelpreis" Type="Double" />
+    <Property Name="Gesammtpreis" Type="Double" />
+    <Property Name="Besteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+    <Property Name="AB_datum" Type="DateTime" Precision="3" />
+    <Property Name="ABestaetiger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WE_datum" Type="DateTime" Precision="3" />
+    <Property Name="WEingaenger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lagerort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Adressen">
+    <Key>
+      <PropertyRef Name="AdressID" />
+    </Key>
+    <Property Name="AdressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ZuHaendenVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email1Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email2Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PLZundORT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Matchcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileAs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="businessHomePage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Categories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TelefonMobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Vorname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nachname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungStrasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungPLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungOrt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungLand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Artikel">
+    <Key>
+      <PropertyRef Name="ArtikelID" />
+    </Key>
+    <Property Name="ArtikelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Artikelnummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeschreibungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Preis" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Einheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IstBaugruppe" Type="Boolean" />
+    <Property Name="Mengeneinheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Einheit">
+    <Key>
+      <PropertyRef Name="EinheitID" />
+    </Key>
+    <Property Name="EinheitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EinheitNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeschreibungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Preis" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Rabatt" Type="Int32" />
+    <Property Name="Zahlungsstaffel1" Type="Int32" />
+    <Property Name="Zahlungsstaffel2" Type="Int32" />
+    <Property Name="Zahlungsstaffel3" Type="Int32" />
+    <Property Name="Zahlungsbedingung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ZahlungsbedingungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Garantie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GarantieEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TechnischAbnahme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TechnischAbnahmeEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Eigentumsvorbehalt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EigentumsvorbehaltEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gerichtsstand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GerichtsstandEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AGB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AGBEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Wichtig" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WichtigEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lieferzeit" Type="Int32" />
+    <Property Name="Lieferbedingunen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LieferbedingungenEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Montagebedingungen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MontagebedingungenEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Preisbindung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PreisbindungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BezeichnungEnglich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Lieferung">
+    <Key>
+      <PropertyRef Name="AuftagID" />
+    </Key>
+    <Property Name="AuftagID" Type="Int32" Nullable="false" />
+    <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressLieferName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressLieferStrasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressLieferPLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressLieferOrt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressLieferLand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressRechnungName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressRechnungStrasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressRechnungPLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressRechnungOrt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdressRechnungLand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungID1" Type="Int32" />
+    <Property Name="RechnungNummer1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungID2" Type="Int32" />
+    <Property Name="RechnungNummer2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungID3" Type="Int32" />
+    <Property Name="RechnungNummer3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungID4" Type="Int32" />
+    <Property Name="RechnungNummer4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LieferscheinID" Type="Int32" />
+    <Property Name="LieferscheinNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EinheitID" Type="Int32" />
+    <Property Name="EinheitNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aktiv" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BestellungPositionen_View">
+    <Key>
+      <PropertyRef Name="BestellnungIDTest" />
+    </Key>
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BestellnungIDTest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="Int32" />
+    <Property Name="Artikelbezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Stueck" Type="Int32" />
+    <Property Name="Besteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+    <Property Name="Liefertermin" Type="DateTime" Precision="3" />
+    <Property Name="AB_datum" Type="DateTime" Precision="3" />
+    <Property Name="ABestaetiger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WE_datum" Type="DateTime" Precision="3" />
+    <Property Name="WEingaenger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Einzelpreis" Type="Double" />
+    <Property Name="Gesammtpreis" Type="Double" />
+    <Property Name="Lagerort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BestellungProProjekt">
+    <Key>
+      <PropertyRef Name="BestellPos_ID" />
+      <PropertyRef Name="BestellnungIDTest" />
+    </Key>
+    <Property Name="BestellPos_ID" Type="Int32" Nullable="false" />
+    <Property Name="BestellnungIDTest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pos" Type="Int32" />
+    <Property Name="Stueck" Type="Int32" />
+    <Property Name="Artikelbezeichnung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Liefertermin" Type="DateTime" Precision="3" />
+    <Property Name="Einzelpreis" Type="Double" />
+    <Property Name="Gesammtpreis" Type="Double" />
+    <Property Name="Besteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="AB_datum" Type="DateTime" Precision="3" />
+    <Property Name="ABestaetiger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WE_datum" Type="DateTime" Precision="3" />
+    <Property Name="WEingaenger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lagerort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LieferungLieferschein">
+    <Key>
+      <PropertyRef Name="LieferscheinID" />
+    </Key>
+    <Property Name="LieferscheinID" Type="Int32" Nullable="false" />
+    <Property Name="LieferscheinNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuftagID" Type="Int32" />
+    <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LieferscheinPfadPDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lieferdatum" Type="DateTime" Precision="3" />
+    <Property Name="Lieferscheintext1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lieferscheintext2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lieferscheintext3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LieferscheinErstelltAm" Type="DateTime" Precision="3" />
+    <Property Name="LieferscheinErstelltVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lieferscheintext4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LieferungRechnungen">
+    <Key>
+      <PropertyRef Name="RechnungID" />
+    </Key>
+    <Property Name="RechnungID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RechnungNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuftragID" Type="Int32" />
+    <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungBetrag" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RechnungErstelltAm" Type="DateTime" Precision="3" />
+    <Property Name="RechnungErstelltVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungPfadPDF" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="RechnungBezahltAm" Type="DateTime" Precision="3" />
+    <Property Name="RechnungBetragBezahlt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RechnungMahnung1Am" Type="DateTime" Precision="3" />
+    <Property Name="RechnungMahnung1PfadPDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungMahnung2Am" Type="DateTime" Precision="3" />
+    <Property Name="RechnungMahnung2PfadPDF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LieferungPositionen">
+    <Key>
+      <PropertyRef Name="PositionenID" />
+    </Key>
+    <Property Name="PositionenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PositionNr" Type="Int32" />
+    <Property Name="ArtikeID" Type="Int32" />
+    <Property Name="Artikelnummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeschreibungEnglish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Preis" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Anzahl" Type="Double" />
+    <Property Name="Mengeneinheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EinheitID" Type="Int32" />
+    <Property Name="Einheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuftragID" Type="Int32" />
+    <Property Name="AuftragNummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HinzugefuegtAm" Type="DateTime" Precision="3" />
+    <Property Name="HinzugefuegtVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HinzugefuegtGrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeaenderAm" Type="DateTime" Precision="3" />
+    <Property Name="GeaendertVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeaendertGrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeloeschtAm" Type="DateTime" Precision="3" />
+    <Property Name="GeloeschtVon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeloeschtGrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PriProLieferscheinRechnung">
+    <Key>
+      <PropertyRef Name="PriProLieferscheinRechnungID" />
+    </Key>
+    <Property Name="PriProLieferscheinRechnungID" Type="Int32" Nullable="false" />
+    <Property Name="LieferscheinNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LieferscheinBeschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LieferscheinDatum" Type="DateTime" Precision="3" />
+    <Property Name="LieferscheinErsteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LS_Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LS_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LS_Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LS_PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LS_Stadt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LS_Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LieferscheinPfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungsNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungBetrag" Type="Double" />
+    <Property Name="RechnungBerechnungsgrund" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungDatum" Type="DateTime" Precision="3" />
+    <Property Name="RechnungErsteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Stadt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungPfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PriProRechnung">
+    <Key>
+      <PropertyRef Name="PriProRechnungID" />
+    </Key>
+    <Property Name="PriProRechnungID" Type="Int32" Nullable="false" />
+    <Property Name="RechnungNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungBeschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungTyp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungDatum" Type="DateTime" Precision="3" />
+    <Property Name="RechnungErsteller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Firmenname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Strasse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Stadt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RE_Land" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RechnungPfad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektnummer" Type="Int32" />
+    <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LieferscheinNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

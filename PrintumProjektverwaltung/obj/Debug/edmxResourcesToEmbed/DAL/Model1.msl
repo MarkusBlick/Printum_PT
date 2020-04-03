@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PrintumProjekteModelStoreContainer" CdmEntityContainer="PrintumProjekteEntities">
+    <EntitySetMapping Name="Dateien">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Dateien">
+        <MappingFragment StoreEntitySet="Dateien">
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="geaendertVon" ColumnName="geaendertVon" />
+          <ScalarProperty Name="erstelltVon" ColumnName="erstelltVon" />
+          <ScalarProperty Name="geaendert" ColumnName="geaendert" />
+          <ScalarProperty Name="erstellt" ColumnName="erstellt" />
+          <ScalarProperty Name="Schlagworte" ColumnName="Schlagworte" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Pfad" ColumnName="Pfad" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Datei_ID" ColumnName="Datei_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mails">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Mails">
+        <MappingFragment StoreEntitySet="Mails">
+          <ScalarProperty Name="Schlagworte" ColumnName="Schlagworte" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Speicherort" ColumnName="Speicherort" />
+          <ScalarProperty Name="AnhangJSON" ColumnName="AnhangJSON" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Betreff" ColumnName="Betreff" />
+          <ScalarProperty Name="an" ColumnName="an" />
+          <ScalarProperty Name="von" ColumnName="von" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="Mail_ID" ColumnName="Mail_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordner">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Ordner">
+        <MappingFragment StoreEntitySet="Ordner">
+          <ScalarProperty Name="hatDateien" ColumnName="hatDateien" />
+          <ScalarProperty Name="Root" ColumnName="Root" />
+          <ScalarProperty Name="Unterordner" ColumnName="Unterordner" />
+          <ScalarProperty Name="Pfad" ColumnName="Pfad" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="Ordner_ID" ColumnName="Ordner_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personen">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Personen">
+        <MappingFragment StoreEntitySet="Personen">
+          <ScalarProperty Name="Rechte" ColumnName="Rechte" />
+          <ScalarProperty Name="Anmeldename" ColumnName="Anmeldename" />
+          <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Person_ID" ColumnName="Person_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projekte">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Projekte">
+        <MappingFragment StoreEntitySet="Projekte">
+          <ScalarProperty Name="RootOrdner" ColumnName="RootOrdner" />
+          <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+          <ScalarProperty Name="Inbetriebname" ColumnName="Inbetriebname" />
+          <ScalarProperty Name="Produktionsbeginn" ColumnName="Produktionsbeginn" />
+          <ScalarProperty Name="Projektbeginn" ColumnName="Projektbeginn" />
+          <ScalarProperty Name="MailsJSON" ColumnName="MailsJSON" />
+          <ScalarProperty Name="BestellungenJSON" ColumnName="BestellungenJSON" />
+          <ScalarProperty Name="OrdnersturkturJSON" ColumnName="OrdnersturkturJSON" />
+          <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bestellungen">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Bestellungen">
+        <MappingFragment StoreEntitySet="Bestellungen">
+          <ScalarProperty Name="WA" ColumnName="WA" />
+          <ScalarProperty Name="AB" ColumnName="AB" />
+          <ScalarProperty Name="EmailAdresse" ColumnName="EmailAdresse" />
+          <ScalarProperty Name="AdressID" ColumnName="AdressID" />
+          <ScalarProperty Name="istAbgeschickt" ColumnName="istAbgeschickt" />
+          <ScalarProperty Name="PDFpfad" ColumnName="PDFpfad" />
+          <ScalarProperty Name="geaendert" ColumnName="geaendert" />
+          <ScalarProperty Name="GeaendertVon" ColumnName="GeaendertVon" />
+          <ScalarProperty Name="ErstelltVon" ColumnName="ErstelltVon" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Vorlage" ColumnName="Vorlage" />
+          <ScalarProperty Name="Speicherort" ColumnName="Speicherort" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="BestellungIDText" ColumnName="BestellungIDText" />
+          <ScalarProperty Name="Bestellung_ID" ColumnName="Bestellung_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestellungPositionen">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.BestellungPositionen">
+        <MappingFragment StoreEntitySet="BestellungPositionen">
+          <ScalarProperty Name="Lagerort" ColumnName="Lagerort" />
+          <ScalarProperty Name="WEingaenger" ColumnName="WEingaenger" />
+          <ScalarProperty Name="WE_datum" ColumnName="WE_datum" />
+          <ScalarProperty Name="ABestaetiger" ColumnName="ABestaetiger" />
+          <ScalarProperty Name="AB_datum" ColumnName="AB_datum" />
+          <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+          <ScalarProperty Name="Besteller" ColumnName="Besteller" />
+          <ScalarProperty Name="Gesammtpreis" ColumnName="Gesammtpreis" />
+          <ScalarProperty Name="Einzelpreis" ColumnName="Einzelpreis" />
+          <ScalarProperty Name="Liefertermin" ColumnName="Liefertermin" />
+          <ScalarProperty Name="Artikelbezeichnung" ColumnName="Artikelbezeichnung" />
+          <ScalarProperty Name="Stueck" ColumnName="Stueck" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="BestellnungIDTest" ColumnName="BestellnungIDTest" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="BestellPos_ID" ColumnName="BestellPos_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adressen">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Adressen">
+        <MappingFragment StoreEntitySet="Adressen">
+          <ScalarProperty Name="RechnungLand" ColumnName="RechnungLand" />
+          <ScalarProperty Name="RechnungOrt" ColumnName="RechnungOrt" />
+          <ScalarProperty Name="RechnungPLZ" ColumnName="RechnungPLZ" />
+          <ScalarProperty Name="RechnungStrasse" ColumnName="RechnungStrasse" />
+          <ScalarProperty Name="RechnungName" ColumnName="RechnungName" />
+          <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="TelefonMobile" ColumnName="TelefonMobile" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Categories" ColumnName="Categories" />
+          <ScalarProperty Name="businessHomePage" ColumnName="businessHomePage" />
+          <ScalarProperty Name="FileAs" ColumnName="FileAs" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Matchcode" ColumnName="Matchcode" />
+          <ScalarProperty Name="PLZundORT" ColumnName="PLZundORT" />
+          <ScalarProperty Name="Telefon1" ColumnName="Telefon1" />
+          <ScalarProperty Name="Email2Adresse" ColumnName="Email2Adresse" />
+          <ScalarProperty Name="Email1Adresse" ColumnName="Email1Adresse" />
+          <ScalarProperty Name="Firmenname" ColumnName="Firmenname" />
+          <ScalarProperty Name="ZuHaendenVon" ColumnName="ZuHaendenVon" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+          <ScalarProperty Name="Ort" ColumnName="Ort" />
+          <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+          <ScalarProperty Name="Strasse" ColumnName="Strasse" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AdressID" ColumnName="AdressID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artikel">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Artikel">
+        <MappingFragment StoreEntitySet="Artikel">
+          <ScalarProperty Name="Mengeneinheit" ColumnName="Mengeneinheit" />
+          <ScalarProperty Name="IstBaugruppe" ColumnName="IstBaugruppe" />
+          <ScalarProperty Name="Einheit" ColumnName="Einheit" />
+          <ScalarProperty Name="Preis" ColumnName="Preis" />
+          <ScalarProperty Name="BeschreibungEnglish" ColumnName="BeschreibungEnglish" />
+          <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+          <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+          <ScalarProperty Name="ArtikelID" ColumnName="ArtikelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Einheit">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Einheit">
+        <MappingFragment StoreEntitySet="Einheit">
+          <ScalarProperty Name="BezeichnungEnglich" ColumnName="BezeichnungEnglich" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+          <ScalarProperty Name="PreisbindungEnglish" ColumnName="PreisbindungEnglish" />
+          <ScalarProperty Name="Preisbindung" ColumnName="Preisbindung" />
+          <ScalarProperty Name="MontagebedingungenEnglish" ColumnName="MontagebedingungenEnglish" />
+          <ScalarProperty Name="Montagebedingungen" ColumnName="Montagebedingungen" />
+          <ScalarProperty Name="LieferbedingungenEnglish" ColumnName="LieferbedingungenEnglish" />
+          <ScalarProperty Name="Lieferbedingunen" ColumnName="Lieferbedingunen" />
+          <ScalarProperty Name="Lieferzeit" ColumnName="Lieferzeit" />
+          <ScalarProperty Name="WichtigEnglish" ColumnName="WichtigEnglish" />
+          <ScalarProperty Name="Wichtig" ColumnName="Wichtig" />
+          <ScalarProperty Name="AGBEnglish" ColumnName="AGBEnglish" />
+          <ScalarProperty Name="AGB" ColumnName="AGB" />
+          <ScalarProperty Name="GerichtsstandEnglish" ColumnName="GerichtsstandEnglish" />
+          <ScalarProperty Name="Gerichtsstand" ColumnName="Gerichtsstand" />
+          <ScalarProperty Name="EigentumsvorbehaltEnglish" ColumnName="EigentumsvorbehaltEnglish" />
+          <ScalarProperty Name="Eigentumsvorbehalt" ColumnName="Eigentumsvorbehalt" />
+          <ScalarProperty Name="TechnischAbnahmeEnglish" ColumnName="TechnischAbnahmeEnglish" />
+          <ScalarProperty Name="TechnischAbnahme" ColumnName="TechnischAbnahme" />
+          <ScalarProperty Name="GarantieEnglish" ColumnName="GarantieEnglish" />
+          <ScalarProperty Name="Garantie" ColumnName="Garantie" />
+          <ScalarProperty Name="ZahlungsbedingungEnglish" ColumnName="ZahlungsbedingungEnglish" />
+          <ScalarProperty Name="Zahlungsbedingung" ColumnName="Zahlungsbedingung" />
+          <ScalarProperty Name="Zahlungsstaffel3" ColumnName="Zahlungsstaffel3" />
+          <ScalarProperty Name="Zahlungsstaffel2" ColumnName="Zahlungsstaffel2" />
+          <ScalarProperty Name="Zahlungsstaffel1" ColumnName="Zahlungsstaffel1" />
+          <ScalarProperty Name="Rabatt" ColumnName="Rabatt" />
+          <ScalarProperty Name="Preis" ColumnName="Preis" />
+          <ScalarProperty Name="BeschreibungEnglish" ColumnName="BeschreibungEnglish" />
+          <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+          <ScalarProperty Name="EinheitNummer" ColumnName="EinheitNummer" />
+          <ScalarProperty Name="EinheitID" ColumnName="EinheitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lieferung">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.Lieferung">
+        <MappingFragment StoreEntitySet="Lieferung">
+          <ScalarProperty Name="aktiv" ColumnName="aktiv" />
+          <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="EinheitNummer" ColumnName="EinheitNummer" />
+          <ScalarProperty Name="EinheitID" ColumnName="EinheitID" />
+          <ScalarProperty Name="LieferscheinNummer" ColumnName="LieferscheinNummer" />
+          <ScalarProperty Name="LieferscheinID" ColumnName="LieferscheinID" />
+          <ScalarProperty Name="RechnungNummer4" ColumnName="RechnungNummer4" />
+          <ScalarProperty Name="RechnungID4" ColumnName="RechnungID4" />
+          <ScalarProperty Name="RechnungNummer3" ColumnName="RechnungNummer3" />
+          <ScalarProperty Name="RechnungID3" ColumnName="RechnungID3" />
+          <ScalarProperty Name="RechnungNummer2" ColumnName="RechnungNummer2" />
+          <ScalarProperty Name="RechnungID2" ColumnName="RechnungID2" />
+          <ScalarProperty Name="RechnungNummer1" ColumnName="RechnungNummer1" />
+          <ScalarProperty Name="RechnungID1" ColumnName="RechnungID1" />
+          <ScalarProperty Name="AdressRechnungLand" ColumnName="AdressRechnungLand" />
+          <ScalarProperty Name="AdressRechnungOrt" ColumnName="AdressRechnungOrt" />
+          <ScalarProperty Name="AdressRechnungPLZ" ColumnName="AdressRechnungPLZ" />
+          <ScalarProperty Name="AdressRechnungStrasse" ColumnName="AdressRechnungStrasse" />
+          <ScalarProperty Name="AdressRechnungName" ColumnName="AdressRechnungName" />
+          <ScalarProperty Name="AdressLieferLand" ColumnName="AdressLieferLand" />
+          <ScalarProperty Name="AdressLieferOrt" ColumnName="AdressLieferOrt" />
+          <ScalarProperty Name="AdressLieferPLZ" ColumnName="AdressLieferPLZ" />
+          <ScalarProperty Name="AdressLieferStrasse" ColumnName="AdressLieferStrasse" />
+          <ScalarProperty Name="AdressLieferName" ColumnName="AdressLieferName" />
+          <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+          <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+          <ScalarProperty Name="AuftagID" ColumnName="AuftagID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestellungPositionen_View">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.BestellungPositionen_View">
+        <MappingFragment StoreEntitySet="BestellungPositionen_View">
+          <ScalarProperty Name="Lagerort" ColumnName="Lagerort" />
+          <ScalarProperty Name="Gesammtpreis" ColumnName="Gesammtpreis" />
+          <ScalarProperty Name="Einzelpreis" ColumnName="Einzelpreis" />
+          <ScalarProperty Name="WEingaenger" ColumnName="WEingaenger" />
+          <ScalarProperty Name="WE_datum" ColumnName="WE_datum" />
+          <ScalarProperty Name="ABestaetiger" ColumnName="ABestaetiger" />
+          <ScalarProperty Name="AB_datum" ColumnName="AB_datum" />
+          <ScalarProperty Name="Liefertermin" ColumnName="Liefertermin" />
+          <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+          <ScalarProperty Name="Besteller" ColumnName="Besteller" />
+          <ScalarProperty Name="Stueck" ColumnName="Stueck" />
+          <ScalarProperty Name="Artikelbezeichnung" ColumnName="Artikelbezeichnung" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="BestellnungIDTest" ColumnName="BestellnungIDTest" />
+          <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestellungProProjekt">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.BestellungProProjekt">
+        <MappingFragment StoreEntitySet="BestellungProProjekt">
+          <ScalarProperty Name="Lagerort" ColumnName="Lagerort" />
+          <ScalarProperty Name="WEingaenger" ColumnName="WEingaenger" />
+          <ScalarProperty Name="WE_datum" ColumnName="WE_datum" />
+          <ScalarProperty Name="ABestaetiger" ColumnName="ABestaetiger" />
+          <ScalarProperty Name="AB_datum" ColumnName="AB_datum" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+          <ScalarProperty Name="Besteller" ColumnName="Besteller" />
+          <ScalarProperty Name="Gesammtpreis" ColumnName="Gesammtpreis" />
+          <ScalarProperty Name="Einzelpreis" ColumnName="Einzelpreis" />
+          <ScalarProperty Name="Liefertermin" ColumnName="Liefertermin" />
+          <ScalarProperty Name="Artikelbezeichnung" ColumnName="Artikelbezeichnung" />
+          <ScalarProperty Name="Stueck" ColumnName="Stueck" />
+          <ScalarProperty Name="Pos" ColumnName="Pos" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="BestellnungIDTest" ColumnName="BestellnungIDTest" />
+          <ScalarProperty Name="BestellPos_ID" ColumnName="BestellPos_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LieferungLieferschein">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.LieferungLieferschein">
+        <MappingFragment StoreEntitySet="LieferungLieferschein">
+          <ScalarProperty Name="Lieferscheintext4" ColumnName="Lieferscheintext4" />
+          <ScalarProperty Name="LieferscheinErstelltVon" ColumnName="LieferscheinErstelltVon" />
+          <ScalarProperty Name="LieferscheinErstelltAm" ColumnName="LieferscheinErstelltAm" />
+          <ScalarProperty Name="Lieferscheintext3" ColumnName="Lieferscheintext3" />
+          <ScalarProperty Name="Lieferscheintext2" ColumnName="Lieferscheintext2" />
+          <ScalarProperty Name="Lieferscheintext1" ColumnName="Lieferscheintext1" />
+          <ScalarProperty Name="Lieferdatum" ColumnName="Lieferdatum" />
+          <ScalarProperty Name="LieferscheinPfadPDF" ColumnName="LieferscheinPfadPDF" />
+          <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+          <ScalarProperty Name="AuftagID" ColumnName="AuftagID" />
+          <ScalarProperty Name="LieferscheinNummer" ColumnName="LieferscheinNummer" />
+          <ScalarProperty Name="LieferscheinID" ColumnName="LieferscheinID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LieferungRechnungen">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.LieferungRechnungen">
+        <MappingFragment StoreEntitySet="LieferungRechnungen">
+          <ScalarProperty Name="RechnungMahnung2PfadPDF" ColumnName="RechnungMahnung2PfadPDF" />
+          <ScalarProperty Name="RechnungMahnung2Am" ColumnName="RechnungMahnung2Am" />
+          <ScalarProperty Name="RechnungMahnung1PfadPDF" ColumnName="RechnungMahnung1PfadPDF" />
+          <ScalarProperty Name="RechnungMahnung1Am" ColumnName="RechnungMahnung1Am" />
+          <ScalarProperty Name="RechnungBetragBezahlt" ColumnName="RechnungBetragBezahlt" />
+          <ScalarProperty Name="RechnungBezahltAm" ColumnName="RechnungBezahltAm" />
+          <ScalarProperty Name="RechnungPfadPDF" ColumnName="RechnungPfadPDF" />
+          <ScalarProperty Name="RechnungErstelltVon" ColumnName="RechnungErstelltVon" />
+          <ScalarProperty Name="RechnungErstelltAm" ColumnName="RechnungErstelltAm" />
+          <ScalarProperty Name="RechnungBetrag" ColumnName="RechnungBetrag" />
+          <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+          <ScalarProperty Name="AuftragID" ColumnName="AuftragID" />
+          <ScalarProperty Name="RechnungNummer" ColumnName="RechnungNummer" />
+          <ScalarProperty Name="RechnungID" ColumnName="RechnungID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LieferungPositionen">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.LieferungPositionen">
+        <MappingFragment StoreEntitySet="LieferungPositionen">
+          <ScalarProperty Name="GeloeschtGrund" ColumnName="GeloeschtGrund" />
+          <ScalarProperty Name="GeloeschtVon" ColumnName="GeloeschtVon" />
+          <ScalarProperty Name="GeloeschtAm" ColumnName="GeloeschtAm" />
+          <ScalarProperty Name="GeaendertGrund" ColumnName="GeaendertGrund" />
+          <ScalarProperty Name="GeaendertVon" ColumnName="GeaendertVon" />
+          <ScalarProperty Name="GeaenderAm" ColumnName="GeaenderAm" />
+          <ScalarProperty Name="HinzugefuegtGrund" ColumnName="HinzugefuegtGrund" />
+          <ScalarProperty Name="HinzugefuegtVon" ColumnName="HinzugefuegtVon" />
+          <ScalarProperty Name="HinzugefuegtAm" ColumnName="HinzugefuegtAm" />
+          <ScalarProperty Name="AuftragNummer" ColumnName="AuftragNummer" />
+          <ScalarProperty Name="AuftragID" ColumnName="AuftragID" />
+          <ScalarProperty Name="Einheit" ColumnName="Einheit" />
+          <ScalarProperty Name="EinheitID" ColumnName="EinheitID" />
+          <ScalarProperty Name="Mengeneinheit" ColumnName="Mengeneinheit" />
+          <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
+          <ScalarProperty Name="Preis" ColumnName="Preis" />
+          <ScalarProperty Name="BeschreibungEnglish" ColumnName="BeschreibungEnglish" />
+          <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+          <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+          <ScalarProperty Name="ArtikeID" ColumnName="ArtikeID" />
+          <ScalarProperty Name="PositionNr" ColumnName="PositionNr" />
+          <ScalarProperty Name="PositionenID" ColumnName="PositionenID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriProLieferscheinRechnung">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.PriProLieferscheinRechnung">
+        <MappingFragment StoreEntitySet="PriProLieferscheinRechnung">
+          <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="RechnungPfad" ColumnName="RechnungPfad" />
+          <ScalarProperty Name="RE_Land" ColumnName="RE_Land" />
+          <ScalarProperty Name="RE_Stadt" ColumnName="RE_Stadt" />
+          <ScalarProperty Name="RE_PLZ" ColumnName="RE_PLZ" />
+          <ScalarProperty Name="RE_Strasse" ColumnName="RE_Strasse" />
+          <ScalarProperty Name="RE_Name" ColumnName="RE_Name" />
+          <ScalarProperty Name="RE_Firmenname" ColumnName="RE_Firmenname" />
+          <ScalarProperty Name="RechnungErsteller" ColumnName="RechnungErsteller" />
+          <ScalarProperty Name="RechnungDatum" ColumnName="RechnungDatum" />
+          <ScalarProperty Name="RechnungBerechnungsgrund" ColumnName="RechnungBerechnungsgrund" />
+          <ScalarProperty Name="RechnungBetrag" ColumnName="RechnungBetrag" />
+          <ScalarProperty Name="RechnungsNr" ColumnName="RechnungsNr" />
+          <ScalarProperty Name="LieferscheinPfad" ColumnName="LieferscheinPfad" />
+          <ScalarProperty Name="LS_Land" ColumnName="LS_Land" />
+          <ScalarProperty Name="LS_Stadt" ColumnName="LS_Stadt" />
+          <ScalarProperty Name="LS_PLZ" ColumnName="LS_PLZ" />
+          <ScalarProperty Name="LS_Strasse" ColumnName="LS_Strasse" />
+          <ScalarProperty Name="LS_Name" ColumnName="LS_Name" />
+          <ScalarProperty Name="LS_Firmenname" ColumnName="LS_Firmenname" />
+          <ScalarProperty Name="LieferscheinErsteller" ColumnName="LieferscheinErsteller" />
+          <ScalarProperty Name="LieferscheinDatum" ColumnName="LieferscheinDatum" />
+          <ScalarProperty Name="LieferscheinBeschreibung" ColumnName="LieferscheinBeschreibung" />
+          <ScalarProperty Name="LieferscheinNr" ColumnName="LieferscheinNr" />
+          <ScalarProperty Name="PriProLieferscheinRechnungID" ColumnName="PriProLieferscheinRechnungID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriProRechnung">
+      <EntityTypeMapping TypeName="PrintumProjekteModel.PriProRechnung">
+        <MappingFragment StoreEntitySet="PriProRechnung">
+          <ScalarProperty Name="LieferscheinNr" ColumnName="LieferscheinNr" />
+          <ScalarProperty Name="Projektname" ColumnName="Projektname" />
+          <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />
+          <ScalarProperty Name="RechnungPfad" ColumnName="RechnungPfad" />
+          <ScalarProperty Name="RE_Land" ColumnName="RE_Land" />
+          <ScalarProperty Name="RE_Stadt" ColumnName="RE_Stadt" />
+          <ScalarProperty Name="RE_PLZ" ColumnName="RE_PLZ" />
+          <ScalarProperty Name="RE_Strasse" ColumnName="RE_Strasse" />
+          <ScalarProperty Name="RE_Name" ColumnName="RE_Name" />
+          <ScalarProperty Name="RE_Firmenname" ColumnName="RE_Firmenname" />
+          <ScalarProperty Name="RechnungErsteller" ColumnName="RechnungErsteller" />
+          <ScalarProperty Name="RechnungDatum" ColumnName="RechnungDatum" />
+          <ScalarProperty Name="RechnungTyp" ColumnName="RechnungTyp" />
+          <ScalarProperty Name="RechnungBeschreibung" ColumnName="RechnungBeschreibung" />
+          <ScalarProperty Name="RechnungNr" ColumnName="RechnungNr" />
+          <ScalarProperty Name="PriProRechnungID" ColumnName="PriProRechnungID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
