@@ -212,7 +212,6 @@ C:\_git\Printum_PT\PrintumProjektverwaltung\bin\Debug\de\DevExpress.XtraWizard.v
 C:\_git\Printum_PT\PrintumProjektverwaltung\bin\Debug\es\DevExpress.XtraWizard.v18.1.resources.dll
 C:\_git\Printum_PT\PrintumProjektverwaltung\bin\Debug\ja\DevExpress.XtraWizard.v18.1.resources.dll
 C:\_git\Printum_PT\PrintumProjektverwaltung\bin\Debug\ru\DevExpress.XtraWizard.v18.1.resources.dll
-C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.csprojAssemblyReference.cache
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Ausliefer01_main.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Ausliefer05_aendern.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Ausliefer02_neu.resources

@@ -74,6 +74,7 @@
             this.adressenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new PrintumProjektverwaltung.DAL.DataSet1();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_Adresse5Rechnung = new System.Windows.Forms.Button();
             this.button_Adresse4Lieferschein = new System.Windows.Forms.Button();
             this.textBox1_suchen = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -102,7 +103,6 @@
             this.button3_neue = new System.Windows.Forms.Button();
             this.button4_loeschen = new System.Windows.Forms.Button();
             this.button5_excel = new System.Windows.Forms.Button();
-            this.button_Adresse5Rechnung = new System.Windows.Forms.Button();
             nameLabel = new System.Windows.Forms.Label();
             strasseLabel = new System.Windows.Forms.Label();
             pLZLabel = new System.Windows.Forms.Label();
@@ -528,6 +528,23 @@
             this.panel1.Size = new System.Drawing.Size(1370, 54);
             this.panel1.TabIndex = 0;
             // 
+            // button_Adresse5Rechnung
+            // 
+            this.button_Adresse5Rechnung.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button_Adresse5Rechnung.FlatAppearance.BorderSize = 0;
+            this.button_Adresse5Rechnung.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Adresse5Rechnung.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button_Adresse5Rechnung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Adresse5Rechnung.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_Adresse5Rechnung.Location = new System.Drawing.Point(346, 5);
+            this.button_Adresse5Rechnung.Name = "button_Adresse5Rechnung";
+            this.button_Adresse5Rechnung.Size = new System.Drawing.Size(474, 36);
+            this.button_Adresse5Rechnung.TabIndex = 13;
+            this.button_Adresse5Rechnung.Text = "Adresse für Lieferschein auswählen (oder Doppelklick)";
+            this.button_Adresse5Rechnung.UseVisualStyleBackColor = false;
+            this.button_Adresse5Rechnung.Visible = false;
+            this.button_Adresse5Rechnung.Click += new System.EventHandler(this.button_Adresse5Rechnung_Click);
+            // 
             // button_Adresse4Lieferschein
             // 
             this.button_Adresse4Lieferschein.BackColor = System.Drawing.Color.LightSlateGray;
@@ -779,7 +796,7 @@
             // 
             // label_ganzOben
             // 
-            this.label_ganzOben.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label_ganzOben.BackColor = System.Drawing.Color.LightGreen;
             this.label_ganzOben.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_ganzOben.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label_ganzOben.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -863,23 +880,6 @@
             this.button5_excel.Text = "Alle Adressen nach Excel";
             this.button5_excel.UseVisualStyleBackColor = false;
             this.button5_excel.Click += new System.EventHandler(this.button5_excel_Click);
-            // 
-            // button_Adresse5Rechnung
-            // 
-            this.button_Adresse5Rechnung.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button_Adresse5Rechnung.FlatAppearance.BorderSize = 0;
-            this.button_Adresse5Rechnung.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Adresse5Rechnung.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.button_Adresse5Rechnung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Adresse5Rechnung.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_Adresse5Rechnung.Location = new System.Drawing.Point(346, 5);
-            this.button_Adresse5Rechnung.Name = "button_Adresse5Rechnung";
-            this.button_Adresse5Rechnung.Size = new System.Drawing.Size(474, 36);
-            this.button_Adresse5Rechnung.TabIndex = 13;
-            this.button_Adresse5Rechnung.Text = "Adresse für Lieferschein auswählen (oder Doppelklick)";
-            this.button_Adresse5Rechnung.UseVisualStyleBackColor = false;
-            this.button_Adresse5Rechnung.Visible = false;
-            this.button_Adresse5Rechnung.Click += new System.EventHandler(this.button_Adresse5Rechnung_Click);
             // 
             // Form8_Adressen
             // 

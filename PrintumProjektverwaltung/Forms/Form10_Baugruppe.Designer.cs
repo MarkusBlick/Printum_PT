@@ -74,7 +74,7 @@
             this.panel1_header.Location = new System.Drawing.Point(0, 0);
             this.panel1_header.Name = "panel1_header";
             this.panel1_header.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1_header.Size = new System.Drawing.Size(1456, 54);
+            this.panel1_header.Size = new System.Drawing.Size(1370, 54);
             this.panel1_header.TabIndex = 2;
             // 
             // button1_PrintumProjekte
@@ -95,7 +95,7 @@
             // 
             // label_ganzOben
             // 
-            this.label_ganzOben.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label_ganzOben.BackColor = System.Drawing.Color.LightGreen;
             this.label_ganzOben.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_ganzOben.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label_ganzOben.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -103,7 +103,7 @@
             this.label_ganzOben.Location = new System.Drawing.Point(5, 6);
             this.label_ganzOben.Margin = new System.Windows.Forms.Padding(0);
             this.label_ganzOben.Name = "label_ganzOben";
-            this.label_ganzOben.Size = new System.Drawing.Size(1446, 42);
+            this.label_ganzOben.Size = new System.Drawing.Size(1360, 42);
             this.label_ganzOben.TabIndex = 4;
             this.label_ganzOben.Text = "nach Baugruppe suchen";
             // 
@@ -113,7 +113,7 @@
             this.panelOb_balkenoben.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelOb_balkenoben.Location = new System.Drawing.Point(5, 5);
             this.panelOb_balkenoben.Name = "panelOb_balkenoben";
-            this.panelOb_balkenoben.Size = new System.Drawing.Size(1446, 1);
+            this.panelOb_balkenoben.Size = new System.Drawing.Size(1360, 1);
             this.panelOb_balkenoben.TabIndex = 3;
             // 
             // panelOb_balkenUnten
@@ -122,7 +122,7 @@
             this.panelOb_balkenUnten.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelOb_balkenUnten.Location = new System.Drawing.Point(5, 48);
             this.panelOb_balkenUnten.Name = "panelOb_balkenUnten";
-            this.panelOb_balkenUnten.Size = new System.Drawing.Size(1446, 1);
+            this.panelOb_balkenUnten.Size = new System.Drawing.Size(1360, 1);
             this.panelOb_balkenUnten.TabIndex = 2;
             // 
             // panel3
@@ -134,7 +134,7 @@
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(1456, 49);
+            this.panel3.Size = new System.Drawing.Size(1370, 49);
             this.panel3.TabIndex = 0;
             // 
             // textBox1_suchen
@@ -145,7 +145,7 @@
             this.textBox1_suchen.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1_suchen.Location = new System.Drawing.Point(392, 5);
             this.textBox1_suchen.Name = "textBox1_suchen";
-            this.textBox1_suchen.Size = new System.Drawing.Size(556, 34);
+            this.textBox1_suchen.Size = new System.Drawing.Size(556, 29);
             this.textBox1_suchen.TabIndex = 0;
             this.textBox1_suchen.TextChanged += new System.EventHandler(this.textBox1_suchen_TextChanged);
             // 
@@ -174,10 +174,18 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AdressenTableAdapter = null;
+            this.tableAdapterManager.ArtikelTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BestellungenTableAdapter = null;
             this.tableAdapterManager.BestellungPositionenTableAdapter = null;
             this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.EinheitTableAdapter = null;
+            this.tableAdapterManager.LieferungLieferscheinTableAdapter = null;
+            this.tableAdapterManager.LieferungPositionenTableAdapter = null;
+            this.tableAdapterManager.LieferungRechnungenTableAdapter = null;
+            this.tableAdapterManager.LieferungTableAdapter = null;
+            this.tableAdapterManager.PriProLieferscheinRechnungTableAdapter = null;
+            this.tableAdapterManager.PriProRechnungTableAdapter = null;
             this.tableAdapterManager.ProjekteTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -213,7 +221,7 @@
             this.bestellungPositionen_ViewDataGridView.Name = "bestellungPositionen_ViewDataGridView";
             this.bestellungPositionen_ViewDataGridView.RowHeadersVisible = false;
             this.bestellungPositionen_ViewDataGridView.RowTemplate.Height = 24;
-            this.bestellungPositionen_ViewDataGridView.Size = new System.Drawing.Size(1456, 752);
+            this.bestellungPositionen_ViewDataGridView.Size = new System.Drawing.Size(1370, 647);
             this.bestellungPositionen_ViewDataGridView.TabIndex = 12;
             this.bestellungPositionen_ViewDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.bestellungPositionen_ViewDataGridView_CellPainting);
             // 
@@ -299,10 +307,10 @@
             // 
             // Form10_Baugruppe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1456, 855);
+            this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.bestellungPositionen_ViewDataGridView);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1_header);

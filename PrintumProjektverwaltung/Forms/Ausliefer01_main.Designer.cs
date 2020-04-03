@@ -164,8 +164,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.panel2_Adressen);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.splitContainer1.Size = new System.Drawing.Size(1485, 1007);
-            this.splitContainer1.SplitterDistance = 354;
+            this.splitContainer1.Size = new System.Drawing.Size(1346, 726);
+            this.splitContainer1.SplitterDistance = 255;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -193,7 +193,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1475, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(1336, 184);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -286,7 +286,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(8);
-            this.panel1.Size = new System.Drawing.Size(1475, 61);
+            this.panel1.Size = new System.Drawing.Size(1336, 61);
             this.panel1.TabIndex = 0;
             // 
             // button_aendern
@@ -342,8 +342,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lieferungRechnungenDataGridView);
-            this.splitContainer2.Size = new System.Drawing.Size(505, 539);
-            this.splitContainer2.SplitterDistance = 112;
+            this.splitContainer2.Size = new System.Drawing.Size(366, 357);
+            this.splitContainer2.SplitterDistance = 74;
             this.splitContainer2.TabIndex = 3;
             // 
             // lieferungLieferscheinDataGridView
@@ -375,7 +375,7 @@
             this.lieferungLieferscheinDataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.lieferungLieferscheinDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.lieferungLieferscheinDataGridView.Size = new System.Drawing.Size(505, 112);
+            this.lieferungLieferscheinDataGridView.Size = new System.Drawing.Size(366, 74);
             this.lieferungLieferscheinDataGridView.TabIndex = 0;
             // 
             // lieferscheinIDDataGridViewTextBoxColumn
@@ -496,7 +496,7 @@
             this.lieferungRechnungenDataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.lieferungRechnungenDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.lieferungRechnungenDataGridView.Size = new System.Drawing.Size(505, 423);
+            this.lieferungRechnungenDataGridView.Size = new System.Drawing.Size(366, 279);
             this.lieferungRechnungenDataGridView.TabIndex = 0;
             this.lieferungRechnungenDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lieferungRechnungenDataGridView_CellContentClick);
             // 
@@ -607,7 +607,7 @@
             this.panel3_positionen.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3_positionen.Location = new System.Drawing.Point(314, 103);
             this.panel3_positionen.Name = "panel3_positionen";
-            this.panel3_positionen.Size = new System.Drawing.Size(661, 539);
+            this.panel3_positionen.Size = new System.Drawing.Size(661, 357);
             this.panel3_positionen.TabIndex = 2;
             // 
             // lieferungPositionenDataGridView
@@ -630,7 +630,7 @@
             this.lieferungPositionenDataGridView.ReadOnly = true;
             this.lieferungPositionenDataGridView.RowHeadersVisible = false;
             this.lieferungPositionenDataGridView.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.lieferungPositionenDataGridView.Size = new System.Drawing.Size(661, 539);
+            this.lieferungPositionenDataGridView.Size = new System.Drawing.Size(661, 357);
             this.lieferungPositionenDataGridView.TabIndex = 0;
             // 
             // positionNrDataGridViewTextBoxColumn
@@ -699,7 +699,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(314, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1166, 98);
+            this.panel2.Size = new System.Drawing.Size(1027, 98);
             this.panel2.TabIndex = 1;
             // 
             // button9_LieferscheinAendern
@@ -822,7 +822,7 @@
             this.panel2_Adressen.Location = new System.Drawing.Point(5, 5);
             this.panel2_Adressen.Name = "panel2_Adressen";
             this.panel2_Adressen.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2_Adressen.Size = new System.Drawing.Size(309, 637);
+            this.panel2_Adressen.Size = new System.Drawing.Size(309, 455);
             this.panel2_Adressen.TabIndex = 0;
             // 
             // adressLieferLandTextBox
@@ -970,6 +970,8 @@
             this.tableAdapterManager.LieferungPositionenTableAdapter = null;
             this.tableAdapterManager.LieferungRechnungenTableAdapter = null;
             this.tableAdapterManager.LieferungTableAdapter = this.lieferungTableAdapter;
+            this.tableAdapterManager.PriProLieferscheinRechnungTableAdapter = null;
+            this.tableAdapterManager.PriProRechnungTableAdapter = null;
             this.tableAdapterManager.ProjekteTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -990,7 +992,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1509, 1031);
+            this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -81,7 +81,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.LightGreen;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1_suchen);
             this.panel1.Controls.Add(this.button1_neueRechnung);
