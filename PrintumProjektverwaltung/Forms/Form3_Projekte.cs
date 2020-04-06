@@ -16,9 +16,9 @@ namespace PrintumProjektverwaltung.Forms
         DAL.Projekte neuesP = new DAL.Projekte();
         int letzteMaxProjektnummer = 0;
 
-        // C:\ZSD\PrintumProjekte\99 Vorlagen
-        string ordnerStruktur = @"\\192.168.26.250\99-Vorlagen\Ordnerstruktur";
-        string projektRoot = @"\\192.168.26.250\PriPro\";
+        // C:\ZSD\PrintumProjekte\PT-99-Vorl
+        string ordnerStruktur = @"\\192.168.26.250\PT-99-Vorl\Ordnerstruktur";
+        string projektRoot = @"\\192.168.26.250\PT-PriPro\";
 
 
         public Form3_Projekte()

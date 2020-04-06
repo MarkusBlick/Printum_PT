@@ -949,7 +949,7 @@
             this.p1_anrede.Description = "Text für Anrede";
             this.p1_anrede.MultiValue = true;
             this.p1_anrede.Name = "p1_anrede";
-            this.p1_anrede.ValueInfo = "Sehr geehrter Herr";
+            this.p1_anrede.ValueInfo = "Sehr geehrte Damen und Herren, ";
             // 
             // p2_ersterText
             // 

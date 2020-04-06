@@ -15,7 +15,7 @@ namespace PrintumProjektverwaltung.Helper
         private static Excel.Workbook excelWorkbook;
         private static Excel.Worksheet excelSheet;
 
-        private static string root = @"\\192.168.26.250\99-Vorlagen\Dokumente\";
+        private static string root = @"\\192.168.26.250\PT-99-Vorl\Dokumente\";
         private static string excelTemplate = "";
 
 

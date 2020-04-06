@@ -6,13 +6,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PrintumProjektverwaltung")]
+[assembly: AssemblyTitle("PrintumTechnologyProjektverwaltung")]
 [assembly: AssemblyDescription("Bestellsoftware")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Printum Technology GmbH")]
-[assembly: AssemblyProduct("PrintumProjektverwaltung")]
+[assembly: AssemblyProduct("PrintumTechnologyProjektverwaltung")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("Markuss Fiinest")]
+[assembly: AssemblyTrademark("Markuss Finest")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

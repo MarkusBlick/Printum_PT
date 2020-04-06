@@ -23,7 +23,7 @@ namespace PrintumProjektverwaltung.Helper
             {
                 DAL.PrintumProjekteEntities db = new PrintumProjekteEntities();
 
-                string orginal = @"C:\Printum_server\99 Vorlagen\Dokumente\Template_Bestellung.doc";
+                string orginal = @"C:\Printum_server\PT-99-Vorl\Dokumente\Template_Bestellung.doc";
 
                 var projekt = db.Projekte.Find(neueBestellung.Projektnummer);
 
@@ -117,9 +117,9 @@ namespace PrintumProjektverwaltung.Helper
 
         internal static void createWordAusAlterWord(string v)
         {
-            string orginal = @"C:\Printum_server\99 Vorlagen\Dokumente\Bestellung-Template.docx";
+            string orginal = @"C:\Printum_server\PT-99-Vorl\Dokumente\Bestellung-Template.docx";
 
-            string neueDatei = @"C:\Printum_server\99 Vorlagen\Dokumente\Bestellung-Template" + DateTime.Now.Second.ToString() + @".docx";
+            string neueDatei = @"C:\Printum_server\PT-99-Vorl\Dokumente\Bestellung-Template" + DateTime.Now.Second.ToString() + @".docx";
 
 
             File.Copy(orginal, neueDatei, true);

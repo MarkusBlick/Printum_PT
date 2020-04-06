@@ -16,9 +16,9 @@ namespace PrintumProjektverwaltung.Helper
 
 
 
-        private static string vorlageFileBlanko = @"\\192.168.26.250\99-Vorlagen\Dokumente\Lieferschein_Blanko-Template.xlsx";
-        private static string vorlageFileUnterschrift = @"\\192.168.26.250\99-Vorlagen\Dokumente\Lieferschein_Unterschrift-Template.xlsx";
-        private static string vorlageFileLKW = @"\\192.168.26.250\99-Vorlagen\Dokumente\Lieferschein_LKW-Template.xlsx";
+        private static string vorlageFileBlanko = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Lieferschein_Blanko-Template.xlsx";
+        private static string vorlageFileUnterschrift = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Lieferschein_Unterschrift-Template.xlsx";
+        private static string vorlageFileLKW = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Lieferschein_LKW-Template.xlsx";
         private static string vorlageFile;
 
 

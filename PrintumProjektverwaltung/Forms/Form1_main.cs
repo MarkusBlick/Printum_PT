@@ -41,7 +41,7 @@ namespace PrintumProjektverwaltung.Forms
 
             // Switch für die Entwicklungsumgebung, 
             // .. die ist nicht im Firmennetzt deshalb funktionieren nur nackte IPs
-            if (Directory.Exists(@"\\PRINTUMSERVER\99-Vorlagen"))
+            if (Directory.Exists(@"\\PRINTUMSERVER\PT-99-Vorl"))
             {
                 folderroot = @"\\PRINTUMSERVER\";
             }
@@ -67,7 +67,7 @@ namespace PrintumProjektverwaltung.Forms
 
             // TODO: This line of code loads data into the 'dataSet1.Bestellungen' table. You can move, or remove it, as needed.
             this.bestellungenTableAdapter.Fill(this.dataSet11.Bestellungen);
-            this.label_Datum.Text = DateTime.Now.Date.ToString().Substring(0, 10) + "   Bernds Finest (" + System.Windows.Forms.Application.ProductVersion + ")";
+            this.label_Datum.Text = DateTime.Now.Date.ToString().Substring(0, 10) + "   PT-PriPro (" + System.Windows.Forms.Application.ProductVersion + ")";
 
             //derUser = new printumUser();
             //derUser.getUserFromAD(Environment.UserName);
@@ -806,7 +806,7 @@ namespace PrintumProjektverwaltung.Forms
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Process.Start(@"\\192.168.26.250\99-Vorlagen\Dokumente\Kurzanleitung PriPro.pdf");
+            Process.Start(@"\\192.168.26.250\PT-99-Vorl\Dokumente\Kurzanleitung PriPro.pdf");
         }
 
         private void bestellungPositionenDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

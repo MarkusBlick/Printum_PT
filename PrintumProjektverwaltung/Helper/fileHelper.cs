@@ -15,7 +15,7 @@ namespace PrintumProjektverwaltung.Helper
 
             // Switch für die Entwicklungsumgebung, 
             // .. die ist nicht im Firmennetzt deshalb funktionieren nur nackte IPs
-            if (Directory.Exists(@"\\PRINTUMSERVER\99-Vorlagen"))
+            if (Directory.Exists(@"\\PRINTUMSERVER\PT-99-Vorl"))
             {
                 // alles gut;
             }

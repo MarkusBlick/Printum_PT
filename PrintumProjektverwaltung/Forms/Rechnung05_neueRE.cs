@@ -135,7 +135,7 @@ namespace PrintumProjektverwaltung
         private string getLieferscheindateiPfad()
         {
             //"\\192.168.26.250\buchhaltung\R e c h n u n g e n\2018\11 November"
-            var pfad = @"\\192.168.26.250\buchhaltung\R e c h n u n g e n\";
+            var pfad = @"\\192.168.26.250\PT-Rechnungen\";
             var jahr = DateTime.Now.Year.ToString();
             string monat = getCurrenMonthString();
 

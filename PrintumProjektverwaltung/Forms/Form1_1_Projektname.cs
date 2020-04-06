@@ -34,10 +34,10 @@ namespace PrintumProjektverwaltung.Forms
 
         private void button1_speichern_Click(object sender, EventArgs e)
         {
-            bool bistInDomaene = Directory.Exists(@"\\PRINTUMSERVER\PriPro");
+            bool bistInDomaene = Directory.Exists(@"\\PRINTUMSERVER\PT-PriPro");
 
             string sourceDirectory = dasP.RootOrdner;
-            string destinationDirectory = @"\\PRINTUMSERVER\PriPro\"
+            string destinationDirectory = @"\\PRINTUMSERVER\PT-PriPro\"
                                            + dasP.Projektnummer + @" - " + this.textBox1.Text.Trim();
 
 
@@ -49,8 +49,8 @@ namespace PrintumProjektverwaltung.Forms
                 destinationDirectory = destinationDirectory.Replace("PRINTUMSERVER", "192.168.26.250");
             }
 
-            var replaceSource = sourceDirectory.Substring(sourceDirectory.IndexOf("PriPro"));
-            var replacedest = destinationDirectory.Substring(destinationDirectory.IndexOf("PriPro"));
+            var replaceSource = sourceDirectory.Substring(sourceDirectory.IndexOf("PT-PriPro"));
+            var replacedest = destinationDirectory.Substring(destinationDirectory.IndexOf("PT-PriPro"));
 
 
             var ADUser_Id = "PRINT\\erp"; //make sure user name has domain name.
