@@ -78,7 +78,7 @@ namespace PrintumProjektverwaltung.Forms
             }
             catch (Exception ex)
             {
-                var bla = ex.ToString();
+                                    Helper.LogHelper.WriteDebugLog(ex.ToString());
             }
             // Save the contact.
 

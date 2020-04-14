@@ -100,7 +100,7 @@ namespace PrintumProjektverwaltung.Forms
             {
 
 
-                var bla = ex.ToString();
+                                    Helper.LogHelper.WriteDebugLog(ex.ToString());
             }
 
             if (checkProjektnummer())

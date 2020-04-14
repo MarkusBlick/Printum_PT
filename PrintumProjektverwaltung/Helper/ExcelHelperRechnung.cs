@@ -20,7 +20,7 @@ namespace PrintumProjektverwaltung.Helper
 
 
 
-        internal static void createNewExcel(DataSet1.PriProRechnungRow newrow, string v)
+        internal static void CreateNewExcel(DataSet1.PriProRechnungRow newrow, string v)
         {
             if (v == "Standard")
             {
@@ -49,6 +49,37 @@ namespace PrintumProjektverwaltung.Helper
             if (v == "AZ4")
             {
                 excelTemplate = root + @"Rechnung_AZ4.xlsx";
+
+            }
+
+
+            if (v == "StandardEN")
+            {
+                excelTemplate = root + @"Invoice_Standard.xlsx";
+            }
+            if (v == "DienstleistungEN")
+            {
+                excelTemplate = root + @"Invoice_Dienstleistung.xlsx";
+
+            }
+            if (v == "AZ1EN")
+            {
+                excelTemplate = root + @"Invoice_AZ1.xlsx";
+
+            }
+            if (v == "AZ2EN")
+            {
+                excelTemplate = root + @"Invoice_AZ2.xlsx";
+
+            }
+            if (v == "AZ3EN")
+            {
+                excelTemplate = root + @"Invoice_AZ3.xlsx";
+
+            }
+            if (v == "AZ4EN")
+            {
+                excelTemplate = root + @"Invoice_AZ4.xlsx";
 
             }
 

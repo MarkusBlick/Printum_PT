@@ -99,6 +99,12 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.priProLieferscheinRechnungBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.button15_az4 = new System.Windows.Forms.Button();
+            this.button14_az3 = new System.Windows.Forms.Button();
+            this.button13_az2 = new System.Windows.Forms.Button();
+            this.button11_ENdienstleistung = new System.Windows.Forms.Button();
+            this.button10_ENstandard = new System.Windows.Forms.Button();
+            this.button12_az1 = new System.Windows.Forms.Button();
             priProLieferscheinRechnungIDLabel = new System.Windows.Forms.Label();
             lieferscheinNrLabel = new System.Windows.Forms.Label();
             rechnungBeschreibungLabel = new System.Windows.Forms.Label();
@@ -316,10 +322,16 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button15_az4);
+            this.panel2.Controls.Add(this.button14_az3);
             this.panel2.Controls.Add(label1);
+            this.panel2.Controls.Add(this.button12_az1);
             this.panel2.Controls.Add(this.lieferscheinTextBox);
+            this.panel2.Controls.Add(this.button13_az2);
             this.panel2.Controls.Add(this.button1_lieferschein);
+            this.panel2.Controls.Add(this.button10_ENstandard);
             this.panel2.Controls.Add(this.button9_AZ4Erstellen);
+            this.panel2.Controls.Add(this.button11_ENdienstleistung);
             this.panel2.Controls.Add(this.button8_AZ3Erstellen);
             this.panel2.Controls.Add(this.button7_AZ2Erstellen);
             this.panel2.Controls.Add(this.button5_DienstleistungErstellen);
@@ -414,7 +426,7 @@
             this.button9_AZ4Erstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button9_AZ4Erstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9_AZ4Erstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button9_AZ4Erstellen.Location = new System.Drawing.Point(943, 546);
+            this.button9_AZ4Erstellen.Location = new System.Drawing.Point(943, 477);
             this.button9_AZ4Erstellen.Name = "button9_AZ4Erstellen";
             this.button9_AZ4Erstellen.Size = new System.Drawing.Size(115, 50);
             this.button9_AZ4Erstellen.TabIndex = 45;
@@ -430,7 +442,7 @@
             this.button8_AZ3Erstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button8_AZ3Erstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8_AZ3Erstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button8_AZ3Erstellen.Location = new System.Drawing.Point(795, 546);
+            this.button8_AZ3Erstellen.Location = new System.Drawing.Point(795, 477);
             this.button8_AZ3Erstellen.Name = "button8_AZ3Erstellen";
             this.button8_AZ3Erstellen.Size = new System.Drawing.Size(115, 50);
             this.button8_AZ3Erstellen.TabIndex = 44;
@@ -446,7 +458,7 @@
             this.button7_AZ2Erstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button7_AZ2Erstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7_AZ2Erstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7_AZ2Erstellen.Location = new System.Drawing.Point(647, 546);
+            this.button7_AZ2Erstellen.Location = new System.Drawing.Point(647, 477);
             this.button7_AZ2Erstellen.Name = "button7_AZ2Erstellen";
             this.button7_AZ2Erstellen.Size = new System.Drawing.Size(115, 50);
             this.button7_AZ2Erstellen.TabIndex = 43;
@@ -462,7 +474,7 @@
             this.button5_DienstleistungErstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button5_DienstleistungErstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5_DienstleistungErstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5_DienstleistungErstellen.Location = new System.Drawing.Point(279, 546);
+            this.button5_DienstleistungErstellen.Location = new System.Drawing.Point(279, 477);
             this.button5_DienstleistungErstellen.Name = "button5_DienstleistungErstellen";
             this.button5_DienstleistungErstellen.Size = new System.Drawing.Size(159, 50);
             this.button5_DienstleistungErstellen.TabIndex = 42;
@@ -478,7 +490,7 @@
             this.button4_REstandardErstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button4_REstandardErstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4_REstandardErstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4_REstandardErstellen.Location = new System.Drawing.Point(50, 546);
+            this.button4_REstandardErstellen.Location = new System.Drawing.Point(50, 477);
             this.button4_REstandardErstellen.Name = "button4_REstandardErstellen";
             this.button4_REstandardErstellen.Size = new System.Drawing.Size(163, 50);
             this.button4_REstandardErstellen.TabIndex = 41;
@@ -522,7 +534,7 @@
             this.button6_AZ1Erstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button6_AZ1Erstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6_AZ1Erstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6_AZ1Erstellen.Location = new System.Drawing.Point(495, 546);
+            this.button6_AZ1Erstellen.Location = new System.Drawing.Point(495, 477);
             this.button6_AZ1Erstellen.Name = "button6_AZ1Erstellen";
             this.button6_AZ1Erstellen.Size = new System.Drawing.Size(115, 50);
             this.button6_AZ1Erstellen.TabIndex = 34;
@@ -869,6 +881,114 @@
             this.priProLieferscheinRechnungBindingNavigatorSaveItem.Text = "Daten speichern";
             this.priProLieferscheinRechnungBindingNavigatorSaveItem.Click += new System.EventHandler(this.priProLieferscheinRechnungBindingNavigatorSaveItem_Click);
             // 
+            // button15_az4
+            // 
+            this.button15_az4.BackColor = System.Drawing.Color.IndianRed;
+            this.button15_az4.FlatAppearance.BorderSize = 0;
+            this.button15_az4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button15_az4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button15_az4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15_az4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button15_az4.Image = ((System.Drawing.Image)(resources.GetObject("button15_az4.Image")));
+            this.button15_az4.Location = new System.Drawing.Point(943, 546);
+            this.button15_az4.Name = "button15_az4";
+            this.button15_az4.Size = new System.Drawing.Size(115, 50);
+            this.button15_az4.TabIndex = 54;
+            this.button15_az4.Text = "4. AZ ";
+            this.button15_az4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button15_az4.UseVisualStyleBackColor = false;
+            this.button15_az4.Click += new System.EventHandler(this.button15_az4_Click);
+            // 
+            // button14_az3
+            // 
+            this.button14_az3.BackColor = System.Drawing.Color.IndianRed;
+            this.button14_az3.FlatAppearance.BorderSize = 0;
+            this.button14_az3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button14_az3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button14_az3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14_az3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button14_az3.Image = ((System.Drawing.Image)(resources.GetObject("button14_az3.Image")));
+            this.button14_az3.Location = new System.Drawing.Point(795, 546);
+            this.button14_az3.Name = "button14_az3";
+            this.button14_az3.Size = new System.Drawing.Size(115, 50);
+            this.button14_az3.TabIndex = 53;
+            this.button14_az3.Text = "3. AZ ";
+            this.button14_az3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button14_az3.UseVisualStyleBackColor = false;
+            this.button14_az3.Click += new System.EventHandler(this.button14_az3_Click);
+            // 
+            // button13_az2
+            // 
+            this.button13_az2.BackColor = System.Drawing.Color.IndianRed;
+            this.button13_az2.FlatAppearance.BorderSize = 0;
+            this.button13_az2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button13_az2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button13_az2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13_az2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button13_az2.Image = ((System.Drawing.Image)(resources.GetObject("button13_az2.Image")));
+            this.button13_az2.Location = new System.Drawing.Point(647, 546);
+            this.button13_az2.Name = "button13_az2";
+            this.button13_az2.Size = new System.Drawing.Size(115, 50);
+            this.button13_az2.TabIndex = 52;
+            this.button13_az2.Text = "2. AZ ";
+            this.button13_az2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button13_az2.UseVisualStyleBackColor = false;
+            this.button13_az2.Click += new System.EventHandler(this.button13_az2_Click);
+            // 
+            // button11_ENdienstleistung
+            // 
+            this.button11_ENdienstleistung.BackColor = System.Drawing.Color.IndianRed;
+            this.button11_ENdienstleistung.FlatAppearance.BorderSize = 0;
+            this.button11_ENdienstleistung.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button11_ENdienstleistung.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button11_ENdienstleistung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11_ENdienstleistung.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button11_ENdienstleistung.Image = ((System.Drawing.Image)(resources.GetObject("button11_ENdienstleistung.Image")));
+            this.button11_ENdienstleistung.Location = new System.Drawing.Point(279, 546);
+            this.button11_ENdienstleistung.Name = "button11_ENdienstleistung";
+            this.button11_ENdienstleistung.Size = new System.Drawing.Size(159, 50);
+            this.button11_ENdienstleistung.TabIndex = 51;
+            this.button11_ENdienstleistung.Text = "Dienstleistungs RE";
+            this.button11_ENdienstleistung.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button11_ENdienstleistung.UseVisualStyleBackColor = false;
+            this.button11_ENdienstleistung.Click += new System.EventHandler(this.button11_ENdienstleistung_Click);
+            // 
+            // button10_ENstandard
+            // 
+            this.button10_ENstandard.BackColor = System.Drawing.Color.IndianRed;
+            this.button10_ENstandard.FlatAppearance.BorderSize = 0;
+            this.button10_ENstandard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button10_ENstandard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button10_ENstandard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10_ENstandard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button10_ENstandard.Image = ((System.Drawing.Image)(resources.GetObject("button10_ENstandard.Image")));
+            this.button10_ENstandard.Location = new System.Drawing.Point(50, 546);
+            this.button10_ENstandard.Name = "button10_ENstandard";
+            this.button10_ENstandard.Size = new System.Drawing.Size(163, 50);
+            this.button10_ENstandard.TabIndex = 50;
+            this.button10_ENstandard.Text = "Standard RE";
+            this.button10_ENstandard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10_ENstandard.UseVisualStyleBackColor = false;
+            this.button10_ENstandard.Click += new System.EventHandler(this.button10_ENstandard_Click);
+            // 
+            // button12_az1
+            // 
+            this.button12_az1.BackColor = System.Drawing.Color.IndianRed;
+            this.button12_az1.FlatAppearance.BorderSize = 0;
+            this.button12_az1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button12_az1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button12_az1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12_az1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button12_az1.Image = ((System.Drawing.Image)(resources.GetObject("button12_az1.Image")));
+            this.button12_az1.Location = new System.Drawing.Point(495, 546);
+            this.button12_az1.Name = "button12_az1";
+            this.button12_az1.Size = new System.Drawing.Size(115, 50);
+            this.button12_az1.TabIndex = 49;
+            this.button12_az1.Text = "1. AZ";
+            this.button12_az1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button12_az1.UseVisualStyleBackColor = false;
+            this.button12_az1.Click += new System.EventHandler(this.button12_az1_Click);
+            // 
             // Rechnung05_neueRE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -952,5 +1072,11 @@
         private System.Windows.Forms.Button button7_AZ2Erstellen;
         private System.Windows.Forms.TextBox lieferscheinTextBox;
         private System.Windows.Forms.Button button1_lieferschein;
+        private System.Windows.Forms.Button button15_az4;
+        private System.Windows.Forms.Button button14_az3;
+        private System.Windows.Forms.Button button12_az1;
+        private System.Windows.Forms.Button button13_az2;
+        private System.Windows.Forms.Button button10_ENstandard;
+        private System.Windows.Forms.Button button11_ENdienstleistung;
     }
 }

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2_Bestellung));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_unten = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label_Datum = new System.Windows.Forms.Label();
@@ -89,6 +89,7 @@
             this.tableAdapterManager = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager();
             this.bestellungenTableAdapter1 = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.BestellungenTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button3_newOder = new System.Windows.Forms.Button();
             this.panel_unten.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -247,9 +248,9 @@
             this.button1_ausAlterBestellung.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button1_ausAlterBestellung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1_ausAlterBestellung.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1_ausAlterBestellung.Location = new System.Drawing.Point(582, 8);
+            this.button1_ausAlterBestellung.Location = new System.Drawing.Point(553, 9);
             this.button1_ausAlterBestellung.Name = "button1_ausAlterBestellung";
-            this.button1_ausAlterBestellung.Size = new System.Drawing.Size(232, 32);
+            this.button1_ausAlterBestellung.Size = new System.Drawing.Size(138, 54);
             this.button1_ausAlterBestellung.TabIndex = 5;
             this.button1_ausAlterBestellung.Text = "alte Bestellung als Vorlage";
             this.button1_ausAlterBestellung.UseVisualStyleBackColor = false;
@@ -263,9 +264,9 @@
             this.button2_neueBestellung.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button2_neueBestellung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2_neueBestellung.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2_neueBestellung.Location = new System.Drawing.Point(603, 8);
+            this.button2_neueBestellung.Location = new System.Drawing.Point(386, 9);
             this.button2_neueBestellung.Name = "button2_neueBestellung";
-            this.button2_neueBestellung.Size = new System.Drawing.Size(151, 32);
+            this.button2_neueBestellung.Size = new System.Drawing.Size(120, 54);
             this.button2_neueBestellung.TabIndex = 0;
             this.button2_neueBestellung.Text = "neue Bestellung";
             this.button2_neueBestellung.UseVisualStyleBackColor = false;
@@ -303,10 +304,10 @@
             // 
             this.panel2.Controls.Add(this.adressenDataGridView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 47);
+            this.panel2.Location = new System.Drawing.Point(0, 78);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(649, 579);
+            this.panel2.Size = new System.Drawing.Size(649, 548);
             this.panel2.TabIndex = 1;
             // 
             // adressenDataGridView
@@ -336,14 +337,14 @@
             this.iDDataGridViewTextBoxColumn,
             this.adressIDDataGridViewTextBoxColumn});
             this.adressenDataGridView.DataSource = this.adressenBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.adressenDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.adressenDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.adressenDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adressenDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.adressenDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
@@ -354,7 +355,7 @@
             this.adressenDataGridView.RowHeadersVisible = false;
             this.adressenDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adressenDataGridView.ShowCellErrors = false;
-            this.adressenDataGridView.Size = new System.Drawing.Size(629, 559);
+            this.adressenDataGridView.Size = new System.Drawing.Size(629, 528);
             this.adressenDataGridView.TabIndex = 2;
             this.adressenDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adressenDataGridView_CellDoubleClick);
             // 
@@ -488,6 +489,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button3_newOder);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.button2_neueBestellung);
             this.panel1.Controls.Add(this.label1);
@@ -495,23 +497,21 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 14, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(649, 47);
+            this.panel1.Size = new System.Drawing.Size(649, 78);
             this.panel1.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(247, 14);
+            this.textBox1.Location = new System.Drawing.Point(14, 37);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 26);
+            this.textBox1.Size = new System.Drawing.Size(233, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(10, 14);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
@@ -525,10 +525,10 @@
             // 
             this.panel4.Controls.Add(this.bestellungenDataGridView);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 47);
+            this.panel4.Location = new System.Drawing.Point(0, 78);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(701, 579);
+            this.panel4.Size = new System.Drawing.Size(701, 548);
             this.panel4.TabIndex = 1;
             // 
             // bestellungenDataGridView
@@ -552,14 +552,14 @@
             this.vorlageDataGridViewTextBoxColumn});
             this.bestellungenDataGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.bestellungenDataGridView.DataSource = this.bestellungenBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bestellungenDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bestellungenDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.bestellungenDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bestellungenDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.bestellungenDataGridView.Location = new System.Drawing.Point(10, 10);
@@ -568,7 +568,7 @@
             this.bestellungenDataGridView.ReadOnly = true;
             this.bestellungenDataGridView.RowHeadersVisible = false;
             this.bestellungenDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bestellungenDataGridView.Size = new System.Drawing.Size(681, 559);
+            this.bestellungenDataGridView.Size = new System.Drawing.Size(681, 528);
             this.bestellungenDataGridView.TabIndex = 3;
             // 
             // projektnummerDataGridViewTextBoxColumn
@@ -654,14 +654,13 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 14, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(701, 47);
+            this.panel3.Size = new System.Drawing.Size(701, 78);
             this.panel3.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(152, 14);
+            this.textBox2.Location = new System.Drawing.Point(14, 37);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(248, 26);
             this.textBox2.TabIndex = 1;
@@ -670,7 +669,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Location = new System.Drawing.Point(10, 14);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
@@ -706,6 +704,25 @@
             // toolTip1
             // 
             this.toolTip1.ToolTipTitle = "Adressen neu laden (klick)";
+            // 
+            // button3_newOder
+            // 
+            this.button3_newOder.BackColor = System.Drawing.Color.IndianRed;
+            this.button3_newOder.BackgroundImage = global::PrintumProjektverwaltung.Properties.Resources.unionJack3;
+            this.button3_newOder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3_newOder.FlatAppearance.BorderSize = 0;
+            this.button3_newOder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3_newOder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button3_newOder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3_newOder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3_newOder.Location = new System.Drawing.Point(527, 8);
+            this.button3_newOder.Name = "button3_newOder";
+            this.button3_newOder.Size = new System.Drawing.Size(112, 55);
+            this.button3_newOder.TabIndex = 1;
+            this.button3_newOder.Text = "new order";
+            this.button3_newOder.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3_newOder.UseVisualStyleBackColor = false;
+            this.button3_newOder.Click += new System.EventHandler(this.button3_newOder_Click);
             // 
             // Form2_Bestellung
             // 
@@ -807,5 +824,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button3_newOder;
     }
 }

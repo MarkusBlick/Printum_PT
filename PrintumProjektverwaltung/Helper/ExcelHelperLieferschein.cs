@@ -15,10 +15,14 @@ namespace PrintumProjektverwaltung.Helper
         private static Excel.Worksheet excelSheet;
 
 
-
         private static string vorlageFileBlanko = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Lieferschein_Blanko-Template.xlsx";
         private static string vorlageFileUnterschrift = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Lieferschein_Unterschrift-Template.xlsx";
         private static string vorlageFileLKW = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Lieferschein_LKW-Template.xlsx";
+        // Englische Templates
+        private static string vorlageFileBlankoEN = @"\\192.168.26.250\PT-99-Vorl\Dokumente\DeliveryNote_Blanko-Template.xlsx";
+        private static string vorlageFileUnterschriftEN = @"\\192.168.26.250\PT-99-Vorl\Dokumente\DeliveryNote_Unterschrift-Template.xlsx";
+        private static string vorlageFileLKWEN = @"\\192.168.26.250\PT-99-Vorl\Dokumente\DeliveryNote_LKW-Template.xlsx";
+
         private static string vorlageFile;
 
 
@@ -35,6 +39,18 @@ namespace PrintumProjektverwaltung.Helper
             if (welcher == "LKW")
             {
                 vorlageFile = vorlageFileLKW;
+            }
+            if (welcher == "blankoEN")
+            {
+                vorlageFile = vorlageFileBlankoEN;
+            }
+            if (welcher == "UnterschriftEN")
+            {
+                vorlageFile = vorlageFileUnterschriftEN;
+            }
+            if (welcher == "LKWEN")
+            {
+                vorlageFile = vorlageFileLKWEN;
             }
             if (vorlageFile != null)
             {

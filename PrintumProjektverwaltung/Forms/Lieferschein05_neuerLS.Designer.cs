@@ -50,6 +50,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lieferschein05_neuerLS));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4_LKWerstellen = new System.Windows.Forms.Button();
             this.button4_LsblankoErstellen = new System.Windows.Forms.Button();
             this.lieferscheinErstellerTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.priProLieferscheinRechnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -92,7 +93,9 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.priProLieferscheinRechnungBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.button4_LKWerstellen = new System.Windows.Forms.Button();
+            this.button6_DeliveryNoteLKW = new System.Windows.Forms.Button();
+            this.button4_DeliveryNoteBlanko = new System.Windows.Forms.Button();
+            this.button5_DeliveryNoteEmpfang = new System.Windows.Forms.Button();
             priProLieferscheinRechnungIDLabel = new System.Windows.Forms.Label();
             lieferscheinNrLabel = new System.Windows.Forms.Label();
             lieferscheinBeschreibungLabel = new System.Windows.Forms.Label();
@@ -295,6 +298,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button6_DeliveryNoteLKW);
+            this.panel2.Controls.Add(this.button4_DeliveryNoteBlanko);
+            this.panel2.Controls.Add(this.button5_DeliveryNoteEmpfang);
             this.panel2.Controls.Add(this.button4_LKWerstellen);
             this.panel2.Controls.Add(this.button4_LsblankoErstellen);
             this.panel2.Controls.Add(lieferscheinErstellerLabel);
@@ -344,6 +350,22 @@
             this.panel2.Size = new System.Drawing.Size(1248, 658);
             this.panel2.TabIndex = 1;
             // 
+            // button4_LKWerstellen
+            // 
+            this.button4_LKWerstellen.BackColor = System.Drawing.Color.IndianRed;
+            this.button4_LKWerstellen.FlatAppearance.BorderSize = 0;
+            this.button4_LKWerstellen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button4_LKWerstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button4_LKWerstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4_LKWerstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4_LKWerstellen.Location = new System.Drawing.Point(825, 491);
+            this.button4_LKWerstellen.Name = "button4_LKWerstellen";
+            this.button4_LKWerstellen.Size = new System.Drawing.Size(221, 36);
+            this.button4_LKWerstellen.TabIndex = 42;
+            this.button4_LKWerstellen.Text = "LKW-Lieferschein erstellen";
+            this.button4_LKWerstellen.UseVisualStyleBackColor = false;
+            this.button4_LKWerstellen.Click += new System.EventHandler(this.button4_LKWerstellen_Click);
+            // 
             // button4_LsblankoErstellen
             // 
             this.button4_LsblankoErstellen.BackColor = System.Drawing.Color.IndianRed;
@@ -352,7 +374,7 @@
             this.button4_LsblankoErstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button4_LsblankoErstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4_LsblankoErstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4_LsblankoErstellen.Location = new System.Drawing.Point(16, 546);
+            this.button4_LsblankoErstellen.Location = new System.Drawing.Point(16, 491);
             this.button4_LsblankoErstellen.Name = "button4_LsblankoErstellen";
             this.button4_LsblankoErstellen.Size = new System.Drawing.Size(221, 36);
             this.button4_LsblankoErstellen.TabIndex = 41;
@@ -406,7 +428,7 @@
             this.button3_LsErstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button3_LsErstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3_LsErstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3_LsErstellen.Location = new System.Drawing.Point(349, 546);
+            this.button3_LsErstellen.Location = new System.Drawing.Point(349, 491);
             this.button3_LsErstellen.Name = "button3_LsErstellen";
             this.button3_LsErstellen.Size = new System.Drawing.Size(362, 36);
             this.button3_LsErstellen.TabIndex = 34;
@@ -617,6 +639,7 @@
             this.tableAdapterManager.LieferungRechnungenTableAdapter = null;
             this.tableAdapterManager.LieferungTableAdapter = null;
             this.tableAdapterManager.PriProLieferscheinRechnungTableAdapter = this.priProLieferscheinRechnungTableAdapter;
+            this.tableAdapterManager.PriProRechnungTableAdapter = null;
             this.tableAdapterManager.ProjekteTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -745,21 +768,62 @@
             this.priProLieferscheinRechnungBindingNavigatorSaveItem.Text = "Daten speichern";
             this.priProLieferscheinRechnungBindingNavigatorSaveItem.Click += new System.EventHandler(this.priProLieferscheinRechnungBindingNavigatorSaveItem_Click);
             // 
-            // button4_LKWerstellen
+            // button6_DeliveryNoteLKW
             // 
-            this.button4_LKWerstellen.BackColor = System.Drawing.Color.IndianRed;
-            this.button4_LKWerstellen.FlatAppearance.BorderSize = 0;
-            this.button4_LKWerstellen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4_LKWerstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.button4_LKWerstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4_LKWerstellen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4_LKWerstellen.Location = new System.Drawing.Point(825, 546);
-            this.button4_LKWerstellen.Name = "button4_LKWerstellen";
-            this.button4_LKWerstellen.Size = new System.Drawing.Size(221, 36);
-            this.button4_LKWerstellen.TabIndex = 42;
-            this.button4_LKWerstellen.Text = "LKW-Lieferschein erstellen";
-            this.button4_LKWerstellen.UseVisualStyleBackColor = false;
-            this.button4_LKWerstellen.Click += new System.EventHandler(this.button4_LKWerstellen_Click);
+            this.button6_DeliveryNoteLKW.BackColor = System.Drawing.Color.IndianRed;
+            this.button6_DeliveryNoteLKW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6_DeliveryNoteLKW.BackgroundImage")));
+            this.button6_DeliveryNoteLKW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button6_DeliveryNoteLKW.FlatAppearance.BorderSize = 0;
+            this.button6_DeliveryNoteLKW.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button6_DeliveryNoteLKW.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button6_DeliveryNoteLKW.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6_DeliveryNoteLKW.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6_DeliveryNoteLKW.Location = new System.Drawing.Point(825, 549);
+            this.button6_DeliveryNoteLKW.Name = "button6_DeliveryNoteLKW";
+            this.button6_DeliveryNoteLKW.Size = new System.Drawing.Size(112, 65);
+            this.button6_DeliveryNoteLKW.TabIndex = 45;
+            this.button6_DeliveryNoteLKW.Text = "LKW - delivery note";
+            this.button6_DeliveryNoteLKW.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6_DeliveryNoteLKW.UseVisualStyleBackColor = false;
+            this.button6_DeliveryNoteLKW.Click += new System.EventHandler(this.button6_DeliveryNoteLKW_Click);
+            // 
+            // button4_DeliveryNoteBlanko
+            // 
+            this.button4_DeliveryNoteBlanko.BackColor = System.Drawing.Color.IndianRed;
+            this.button4_DeliveryNoteBlanko.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4_DeliveryNoteBlanko.BackgroundImage")));
+            this.button4_DeliveryNoteBlanko.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4_DeliveryNoteBlanko.FlatAppearance.BorderSize = 0;
+            this.button4_DeliveryNoteBlanko.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button4_DeliveryNoteBlanko.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button4_DeliveryNoteBlanko.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4_DeliveryNoteBlanko.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4_DeliveryNoteBlanko.Location = new System.Drawing.Point(16, 549);
+            this.button4_DeliveryNoteBlanko.Name = "button4_DeliveryNoteBlanko";
+            this.button4_DeliveryNoteBlanko.Size = new System.Drawing.Size(115, 68);
+            this.button4_DeliveryNoteBlanko.TabIndex = 44;
+            this.button4_DeliveryNoteBlanko.Text = "blanko - delivery note";
+            this.button4_DeliveryNoteBlanko.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4_DeliveryNoteBlanko.UseVisualStyleBackColor = false;
+            this.button4_DeliveryNoteBlanko.Click += new System.EventHandler(this.button4_DeliveryNoteBlanko_Click);
+            // 
+            // button5_DeliveryNoteEmpfang
+            // 
+            this.button5_DeliveryNoteEmpfang.BackColor = System.Drawing.Color.IndianRed;
+            this.button5_DeliveryNoteEmpfang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5_DeliveryNoteEmpfang.BackgroundImage")));
+            this.button5_DeliveryNoteEmpfang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button5_DeliveryNoteEmpfang.FlatAppearance.BorderSize = 0;
+            this.button5_DeliveryNoteEmpfang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button5_DeliveryNoteEmpfang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.button5_DeliveryNoteEmpfang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5_DeliveryNoteEmpfang.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button5_DeliveryNoteEmpfang.Location = new System.Drawing.Point(349, 549);
+            this.button5_DeliveryNoteEmpfang.Name = "button5_DeliveryNoteEmpfang";
+            this.button5_DeliveryNoteEmpfang.Size = new System.Drawing.Size(188, 68);
+            this.button5_DeliveryNoteEmpfang.TabIndex = 43;
+            this.button5_DeliveryNoteEmpfang.Text = "Empfangsbestätigung - delivery note";
+            this.button5_DeliveryNoteEmpfang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5_DeliveryNoteEmpfang.UseVisualStyleBackColor = false;
+            this.button5_DeliveryNoteEmpfang.Click += new System.EventHandler(this.button5_DeliveryNoteEmpfang_Click);
             // 
             // Lieferschein05_neuerLS
             // 
@@ -839,5 +903,8 @@
         private System.Windows.Forms.TextBox lieferscheinDatumTextBox;
         private System.Windows.Forms.Button button4_LsblankoErstellen;
         private System.Windows.Forms.Button button4_LKWerstellen;
+        private System.Windows.Forms.Button button6_DeliveryNoteLKW;
+        private System.Windows.Forms.Button button4_DeliveryNoteBlanko;
+        private System.Windows.Forms.Button button5_DeliveryNoteEmpfang;
     }
 }

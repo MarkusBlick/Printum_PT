@@ -777,7 +777,7 @@ namespace PrintumProjektverwaltung.Forms
                 }
                 catch (Exception ex)
                 {
-                    var bla = ex.ToString();
+                                        Helper.LogHelper.WriteDebugLog(ex.ToString());
                 }
             }
             return dieID;
@@ -875,6 +875,12 @@ namespace PrintumProjektverwaltung.Forms
         private void label4_Click(object sender, EventArgs e)
         {
             Process.Start(@"\\192.168.26.250\PT-99-Vorl\Dokumente\Kurzanleitung PriPro.pdf");
+        }
+
+
+        private void icon_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"C:\Users\Public\PrintumProjekte\Logs\");
         }
 
         private void bestellungPositionenDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

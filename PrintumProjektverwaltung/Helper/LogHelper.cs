@@ -9,6 +9,9 @@ namespace PrintumProjektverwaltung.Helper
 {
     public class LogHelper
     {
+        // die logs liegen hier:
+        //    C:\Users\Public\PrintumProjekte\Logs\
+
         private static readonly ILog _debugLogger;
         private static readonly ILog _emailLogger;
 

@@ -114,7 +114,7 @@ namespace PrintumProjektverwaltung.Models
                 catch (Exception ex)
                 {
 
-                    var bla = ex.ToString();
+                                        Helper.LogHelper.WriteDebugLog(ex.ToString());
                 }
 
             }

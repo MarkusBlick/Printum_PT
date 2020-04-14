@@ -140,10 +140,10 @@ namespace PrintumProjektverwaltung
             string monat = getCurrenMonthString();
 
             rechnungordner = pfad + jahr;
-            checkIfExists(rechnungordner);
+            CheckIfExists(rechnungordner);
 
             rechnungordner = pfad + jahr + monat;
-            checkIfExists(rechnungordner);
+            CheckIfExists(rechnungordner);
 
             exceldateiname = rechnungordner
                                 //+ this.rechnungNrTextBox.Text.Trim().Substring(0,4) + " "
@@ -160,7 +160,7 @@ namespace PrintumProjektverwaltung
             return exceldateiname;
         }
 
-        private void checkIfExists(string rechnungordner)
+        private void CheckIfExists(string rechnungordner)
         {
             if (!Directory.Exists(rechnungordner))
             {
@@ -236,43 +236,43 @@ namespace PrintumProjektverwaltung
 
         private void button4_REstandardErstellen_Click(object sender, EventArgs e)
         {
-            saveExcelClose(sender, e, "Standard");
+            SaveExcelClose(sender, e, "Standard");
         }
 
         private void button5_DienstleistungErstellen_Click(object sender, EventArgs e)
         {
-            saveExcelClose(sender, e, "Dienstleistung");
+            SaveExcelClose(sender, e, "Dienstleistung");
         }
 
         private void button6_AZ1Erstellen_Click(object sender, EventArgs e)
         {
-            saveExcelClose(sender, e, "AZ1");
+            SaveExcelClose(sender, e, "AZ1");
         }
 
         private void button7_AZ2Erstellen_Click(object sender, EventArgs e)
         {
-            saveExcelClose(sender, e, "AZ2");
+            SaveExcelClose(sender, e, "AZ2");
         }
 
         private void button8_AZ3Erstellen_Click(object sender, EventArgs e)
         {
-            saveExcelClose(sender, e, "AZ3");
+            SaveExcelClose(sender, e, "AZ3");
         }
 
         private void button9_AZ4Erstellen_Click(object sender, EventArgs e)
         {
-            saveExcelClose(sender, e, "AZ4");
+            SaveExcelClose(sender, e, "AZ4");
         }
 
 
-        private void saveExcelClose(object sender, EventArgs e, string typ)
+        private void SaveExcelClose(object sender, EventArgs e, string typ)
         {
             this.Cursor = Cursors.WaitCursor;
             this.newrow.RechnungTyp = typ;
             aufVollstaendigkeitChecken(sender, e);
             priProLieferscheinRechnungBindingNavigatorSaveItem_Click(sender, e);
 
-            ExcelHelperRechnung.createNewExcel(this.newrow, typ);
+            ExcelHelperRechnung.CreateNewExcel(this.newrow, typ);
 
             this.Close();
         }
@@ -344,6 +344,36 @@ namespace PrintumProjektverwaltung
             {
                 this.rechnungPfadTextBox.Text = getLieferscheindateiPfad();
             }
+        }
+
+        private void button10_ENstandard_Click(object sender, EventArgs e)
+        {
+            SaveExcelClose(sender, e, "StandardEN");
+        }
+
+        private void button11_ENdienstleistung_Click(object sender, EventArgs e)
+        {
+            SaveExcelClose(sender, e, "DienstleistungEN");
+        }
+
+        private void button12_az1_Click(object sender, EventArgs e)
+        {
+            SaveExcelClose(sender, e, "AZ1EN");
+        }
+
+        private void button13_az2_Click(object sender, EventArgs e)
+        {
+            SaveExcelClose(sender, e, "AZ2EN");
+        }
+
+        private void button14_az3_Click(object sender, EventArgs e)
+        {
+            SaveExcelClose(sender, e, "AZ3EN");
+        }
+
+        private void button15_az4_Click(object sender, EventArgs e)
+        {
+            SaveExcelClose(sender, e, "AZ4EN");
         }
     }
 }

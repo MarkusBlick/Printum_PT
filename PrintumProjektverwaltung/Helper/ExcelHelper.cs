@@ -1,13 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Runtime.InteropServices;
+using Newtonsoft.Json;
 using PrintumProjektverwaltung.DAL;
 using PrintumProjektverwaltung.Models;
 using Excel = Microsoft.Office.Interop.Excel;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using System.Globalization;
 
 namespace PrintumProjektverwaltung.Helper
 {
@@ -22,8 +21,9 @@ namespace PrintumProjektverwaltung.Helper
         private static Excel.Worksheet vorlageSheet;
 
         private static string vorlageFile = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Bestellung-Template.xlsx";
+        private static string vorlageFileEnglish = @"\\192.168.26.250\PT-99-Vorl\Dokumente\Order-Template.xlsx";
 
-        public static void createNewExcel(printumBestellung neueBestellung)
+        public static void createNewExcel(printumBestellung neueBestellung, bool IsEnglish)
         {
 
             string destination = getBestellungFilename(neueBestellung);
@@ -32,7 +32,15 @@ namespace PrintumProjektverwaltung.Helper
             {
                 File.Copy(vorlageFile, destination, true);
 
-                neueBestellung.Vorlage = vorlageFile;
+                if (IsEnglish)
+                {
+                    neueBestellung.Vorlage = vorlageFileEnglish;
+                }
+                else
+                {
+                    neueBestellung.Vorlage = vorlageFile;
+                }
+
                 neueBestellung.Speicherort = destination;
 
             }
@@ -145,7 +153,7 @@ namespace PrintumProjektverwaltung.Helper
                         }
                         catch (Exception ex)
                         {
-                            var bla = ex.ToString();
+                            Helper.LogHelper.WriteDebugLog(ex.ToString());
                         }
 
                         try
@@ -154,7 +162,7 @@ namespace PrintumProjektverwaltung.Helper
                         }
                         catch (Exception ex)
                         {
-                            var bla = ex.ToString();
+                            Helper.LogHelper.WriteDebugLog(ex.ToString());
                         }
 
                         try
@@ -163,7 +171,7 @@ namespace PrintumProjektverwaltung.Helper
                         }
                         catch (Exception ex)
                         {
-                            var bla = ex.ToString();
+                            Helper.LogHelper.WriteDebugLog(ex.ToString());
                         }
 
                         try
@@ -195,7 +203,7 @@ namespace PrintumProjektverwaltung.Helper
                         }
                         catch (Exception ex)
                         {
-                            var bla = ex.ToString();
+                            Helper.LogHelper.WriteDebugLog(ex.ToString());
                         }
 
                         try
@@ -204,7 +212,7 @@ namespace PrintumProjektverwaltung.Helper
                         }
                         catch (Exception ex)
                         {
-                            var bla = ex.ToString();
+                            Helper.LogHelper.WriteDebugLog(ex.ToString());
                         }
 
                         try
@@ -213,7 +221,7 @@ namespace PrintumProjektverwaltung.Helper
                         }
                         catch (Exception ex)
                         {
-                            var bla = ex.ToString();
+                            Helper.LogHelper.WriteDebugLog(ex.ToString());
                         }
 
                     }
@@ -627,7 +635,7 @@ namespace PrintumProjektverwaltung.Helper
 
                 if (destination.Contains("PRINTUMSERVER"))
                 {
-                    destination = destination.Replace("PRINTUMSERVER","192.168.26.250");
+                    destination = destination.Replace("PRINTUMSERVER", "192.168.26.250");
                 }
 
             }

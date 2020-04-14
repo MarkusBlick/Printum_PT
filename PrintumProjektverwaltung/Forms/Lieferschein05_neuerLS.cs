@@ -230,6 +230,28 @@ namespace PrintumProjektverwaltung
 
         }
 
+        private void button4_DeliveryNoteBlanko_Click(object sender, EventArgs e)
+        {
+            aufVollstaendigkeitChecken(sender, e);
 
+            ExcelHelperLieferschein.createNewExcel(this.newrow, "blankoEN");
+
+        }
+
+        private void button5_DeliveryNoteEmpfang_Click(object sender, EventArgs e)
+        {
+            aufVollstaendigkeitChecken(sender, e);
+
+
+            ExcelHelperLieferschein.createNewExcel(this.newrow, "UnterschriftEN");
+        }
+
+        private void button6_DeliveryNoteLKW_Click(object sender, EventArgs e)
+        {
+            aufVollstaendigkeitChecken(sender, e);
+
+            ExcelHelperLieferschein.createNewExcel(this.newrow, "LKWEN");
+
+        }
     }
 }

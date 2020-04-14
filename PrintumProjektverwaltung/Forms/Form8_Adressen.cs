@@ -146,7 +146,7 @@ namespace PrintumProjektverwaltung.Forms
                 }
                 catch (Exception ex)
                 {
-                    var bla = ex.ToString();
+                                        Helper.LogHelper.WriteDebugLog(ex.ToString());
                 }
 
 
@@ -323,7 +323,7 @@ namespace PrintumProjektverwaltung.Forms
             }
             catch (Exception ex)
             {
-                var bla = ex.ToString();
+                                    Helper.LogHelper.WriteDebugLog(ex.ToString());
             }
         }
 
@@ -394,7 +394,7 @@ namespace PrintumProjektverwaltung.Forms
             }
             catch (Exception ex)
             {
-                var bla = ex.ToString();
+                                    Helper.LogHelper.WriteDebugLog(ex.ToString());
             }
         }
 

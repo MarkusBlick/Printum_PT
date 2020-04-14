@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="PrintumProjekteModel.Personen" Width="1.5" PointX="4.75" PointY="4.75" />
         <EntityTypeShape EntityType="PrintumProjekteModel.Projekte" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="PrintumProjekteModel.Bestellungen" Width="1.5" PointX="7.375" PointY="4.75" />
-        <EntityTypeShape EntityType="PrintumProjekteModel.BestellungPositionen" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PrintumProjekteModel.BestellungPositionen" Width="2" PointX="3.375" PointY="7.875" />
         <EntityTypeShape EntityType="PrintumProjekteModel.Adressen" Width="1.5" PointX="0.75" PointY="8.75" />
         <EntityTypeShape EntityType="PrintumProjekteModel.Artikel" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="PrintumProjekteModel.Einheit" Width="1.5" PointX="9.75" PointY="0.75" />

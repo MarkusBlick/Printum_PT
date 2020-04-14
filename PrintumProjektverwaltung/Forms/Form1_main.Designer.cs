@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("...");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("...");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1_main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1_header = new System.Windows.Forms.Panel();
             this.button12_rechnungen = new System.Windows.Forms.Button();
             this.button11_Lieferscheine = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1_projektname = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2_projektart = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,19 +71,27 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.bestellungenDataGridView = new System.Windows.Forms.DataGridView();
+            this.projektnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungIDTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.erstelltVonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.istAbgeschickt = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.AB = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.EmailAdresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speicherortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GeaendertVon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.geaendert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PDFpfad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdressID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bestellung_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new PrintumProjektverwaltung.DAL.DataSet1();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.button5_alleBestellungenanzeigen = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.button_loeschen = new System.Windows.Forms.Button();
@@ -99,11 +108,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.bestellungPositionenDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Liefertermin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AB_datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ABestaetiger = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WE_datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WEingaenger = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lagerort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Einzelpreis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gesammtpreis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungPositionenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel16_Speichern = new System.Windows.Forms.Panel();
             this.label_speichern = new System.Windows.Forms.Label();
@@ -112,6 +128,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label_Datum = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label_user = new System.Windows.Forms.Label();
             this.panel_balkenoben = new System.Windows.Forms.Panel();
             this.panel_balkenUnten = new System.Windows.Forms.Panel();
@@ -119,28 +136,9 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1_tableLoad = new System.Windows.Forms.Timer(this.components);
             this.timer2_displayAdressen = new System.Windows.Forms.Timer(this.components);
-            this.projektnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellungIDTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.erstelltVonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speicherortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet11 = new PrintumProjektverwaltung.DAL.DataSet1();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Liefertermin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Einzelpreis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gesammtpreis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellungPositionenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bestellungenTableAdapter = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.BestellungenTableAdapter();
             this.bestellungPositionenTableAdapter = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.BestellungPositionenTableAdapter();
             this.tableAdapterManager = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager();
-            this.toolStripMenuItem2_projektart = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.button2_newOder = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1_header.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -155,17 +153,17 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.contextMenuStrip2_nextNr.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungPositionenDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungPositionenBindingSource)).BeginInit();
             this.panel16_Speichern.SuspendLayout();
             this.panel_unten.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungPositionenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -415,7 +413,7 @@
             this.button4_mail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button4_mail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4_mail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4_mail.Location = new System.Drawing.Point(200, 0);
+            this.button4_mail.Location = new System.Drawing.Point(327, 0);
             this.button4_mail.Name = "button4_mail";
             this.button4_mail.Size = new System.Drawing.Size(110, 48);
             this.button4_mail.TabIndex = 7;
@@ -432,7 +430,7 @@
             this.button2_neueBestellung.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button2_neueBestellung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2_neueBestellung.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2_neueBestellung.Location = new System.Drawing.Point(327, 0);
+            this.button2_neueBestellung.Location = new System.Drawing.Point(454, 0);
             this.button2_neueBestellung.Name = "button2_neueBestellung";
             this.button2_neueBestellung.Size = new System.Drawing.Size(110, 48);
             this.button2_neueBestellung.TabIndex = 5;
@@ -481,12 +479,12 @@
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Location = new System.Drawing.Point(20, 112);
             this.treeView1.Name = "treeView1";
-            treeNode2.Checked = true;
-            treeNode2.ImageKey = "Folder.gif";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "...";
+            treeNode1.Checked = true;
+            treeNode1.ImageKey = "Folder.gif";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "...";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(326, 487);
             this.treeView1.TabIndex = 0;
@@ -510,6 +508,13 @@
             this.toolStripMenuItem1_projektname.Size = new System.Drawing.Size(181, 22);
             this.toolStripMenuItem1_projektname.Text = "Projektname ändern";
             this.toolStripMenuItem1_projektname.Click += new System.EventHandler(this.toolStripMenuItem1_projektname_Click);
+            // 
+            // toolStripMenuItem2_projektart
+            // 
+            this.toolStripMenuItem2_projektart.Name = "toolStripMenuItem2_projektart";
+            this.toolStripMenuItem2_projektart.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItem2_projektart.Text = "Projektart ändern";
+            this.toolStripMenuItem2_projektart.Click += new System.EventHandler(this.toolStripMenuItem2_projektart_Click);
             // 
             // imageList1
             // 
@@ -613,14 +618,14 @@
             this.bestellungenDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.bestellungenDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.bestellungenDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bestellungenDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bestellungenDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.bestellungenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bestellungenDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.projektnummerDataGridViewTextBoxColumn,
@@ -638,14 +643,14 @@
             this.AdressID,
             this.Bestellung_ID});
             this.bestellungenDataGridView.DataSource = this.bestellungenBindingSource;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bestellungenDataGridView.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bestellungenDataGridView.DefaultCellStyle = dataGridViewCellStyle18;
             this.bestellungenDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bestellungenDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.bestellungenDataGridView.Location = new System.Drawing.Point(0, 101);
@@ -659,6 +664,44 @@
             this.bestellungenDataGridView.TabIndex = 4;
             this.bestellungenDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungenDataGridView_CellDoubleClick);
             this.bestellungenDataGridView.SelectionChanged += new System.EventHandler(this.bestellungenDataGridView_SelectionChanged);
+            // 
+            // projektnummerDataGridViewTextBoxColumn
+            // 
+            this.projektnummerDataGridViewTextBoxColumn.DataPropertyName = "Projektnummer";
+            this.projektnummerDataGridViewTextBoxColumn.HeaderText = "Projektnr";
+            this.projektnummerDataGridViewTextBoxColumn.Name = "projektnummerDataGridViewTextBoxColumn";
+            this.projektnummerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.projektnummerDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // bestellungIDTextDataGridViewTextBoxColumn
+            // 
+            this.bestellungIDTextDataGridViewTextBoxColumn.DataPropertyName = "BestellungIDText";
+            this.bestellungIDTextDataGridViewTextBoxColumn.HeaderText = "BestellungIDText";
+            this.bestellungIDTextDataGridViewTextBoxColumn.Name = "bestellungIDTextDataGridViewTextBoxColumn";
+            this.bestellungIDTextDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adresseDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // erstelltVonDataGridViewTextBoxColumn
+            // 
+            this.erstelltVonDataGridViewTextBoxColumn.DataPropertyName = "ErstelltVon";
+            this.erstelltVonDataGridViewTextBoxColumn.HeaderText = "ErstelltVon";
+            this.erstelltVonDataGridViewTextBoxColumn.Name = "erstelltVonDataGridViewTextBoxColumn";
+            this.erstelltVonDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // istAbgeschickt
             // 
@@ -682,6 +725,14 @@
             this.EmailAdresse.HeaderText = "EmailAdresse";
             this.EmailAdresse.Name = "EmailAdresse";
             this.EmailAdresse.ReadOnly = true;
+            // 
+            // speicherortDataGridViewTextBoxColumn
+            // 
+            this.speicherortDataGridViewTextBoxColumn.DataPropertyName = "Speicherort";
+            this.speicherortDataGridViewTextBoxColumn.HeaderText = "Speicherort";
+            this.speicherortDataGridViewTextBoxColumn.Name = "speicherortDataGridViewTextBoxColumn";
+            this.speicherortDataGridViewTextBoxColumn.ReadOnly = true;
+            this.speicherortDataGridViewTextBoxColumn.Width = 10;
             // 
             // GeaendertVon
             // 
@@ -720,6 +771,16 @@
             this.Bestellung_ID.ReadOnly = true;
             this.Bestellung_ID.Visible = false;
             // 
+            // bestellungenBindingSource
+            // 
+            this.bestellungenBindingSource.DataMember = "Bestellungen";
+            this.bestellungenBindingSource.DataSource = this.dataSet11;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -735,8 +796,6 @@
             this.panel3.Controls.Add(this.panel13);
             this.panel3.Controls.Add(this.button2_neueBestellung);
             this.panel3.Controls.Add(this.panel18);
-            this.panel3.Controls.Add(this.button2_newOder);
-            this.panel3.Controls.Add(this.panel12);
             this.panel3.Controls.Add(this.button5_alleBestellungenanzeigen);
             this.panel3.Controls.Add(this.panel14);
             this.panel3.Controls.Add(this.button_loeschen);
@@ -755,7 +814,7 @@
             // panel11
             // 
             this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel11.Location = new System.Drawing.Point(183, 0);
+            this.panel11.Location = new System.Drawing.Point(310, 0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(17, 48);
             this.panel11.TabIndex = 9;
@@ -763,18 +822,18 @@
             // panel13
             // 
             this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(310, 0);
+            this.panel13.Location = new System.Drawing.Point(437, 0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(17, 48);
             this.panel13.TabIndex = 11;
             // 
-            // panel12
+            // panel18
             // 
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel12.Location = new System.Drawing.Point(564, 0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(17, 48);
-            this.panel12.TabIndex = 10;
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel18.Location = new System.Drawing.Point(564, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(17, 48);
+            this.panel18.TabIndex = 11;
             // 
             // button5_alleBestellungenanzeigen
             // 
@@ -956,14 +1015,14 @@
             this.bestellungPositionenDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.bestellungPositionenDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bestellungPositionenDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bestellungPositionenDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bestellungPositionenDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.bestellungPositionenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bestellungPositionenDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -978,14 +1037,14 @@
             this.Einzelpreis,
             this.Gesammtpreis});
             this.bestellungPositionenDataGridView.DataSource = this.bestellungPositionenBindingSource;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bestellungPositionenDataGridView.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bestellungPositionenDataGridView.DefaultCellStyle = dataGridViewCellStyle24;
             this.bestellungPositionenDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bestellungPositionenDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.bestellungPositionenDataGridView.Location = new System.Drawing.Point(0, 24);
@@ -998,6 +1057,45 @@
             this.bestellungPositionenDataGridView.TabIndex = 0;
             this.bestellungPositionenDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungPositionenDataGridView_CellDoubleClick);
             this.bestellungPositionenDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungPositionenDataGridView_CellValueChanged);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Pos";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridViewTextBoxColumn4.FillWeight = 71.06599F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Pos";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Stueck";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridViewTextBoxColumn5.FillWeight = 103.2149F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Stk";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Artikelbezeichnung";
+            this.dataGridViewTextBoxColumn6.FillWeight = 103.2149F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Artikelbezeichnung";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 290;
+            // 
+            // Liefertermin
+            // 
+            this.Liefertermin.DataPropertyName = "Liefertermin";
+            this.Liefertermin.FillWeight = 103.2149F;
+            this.Liefertermin.HeaderText = "Liefertermin";
+            this.Liefertermin.Name = "Liefertermin";
+            this.Liefertermin.ReadOnly = true;
             // 
             // AB_datum
             // 
@@ -1037,6 +1135,35 @@
             this.Lagerort.HeaderText = "Lagerort";
             this.Lagerort.Name = "Lagerort";
             this.Lagerort.ReadOnly = true;
+            // 
+            // Einzelpreis
+            // 
+            this.Einzelpreis.DataPropertyName = "Einzelpreis";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Format = "C2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.Einzelpreis.DefaultCellStyle = dataGridViewCellStyle22;
+            this.Einzelpreis.FillWeight = 103.2149F;
+            this.Einzelpreis.HeaderText = "Einzelpreis";
+            this.Einzelpreis.Name = "Einzelpreis";
+            this.Einzelpreis.ReadOnly = true;
+            // 
+            // Gesammtpreis
+            // 
+            this.Gesammtpreis.DataPropertyName = "Gesammtpreis";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.Format = "C2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.Gesammtpreis.DefaultCellStyle = dataGridViewCellStyle23;
+            this.Gesammtpreis.FillWeight = 103.2149F;
+            this.Gesammtpreis.HeaderText = "Gesammt- preis";
+            this.Gesammtpreis.Name = "Gesammtpreis";
+            this.Gesammtpreis.ReadOnly = true;
+            // 
+            // bestellungPositionenBindingSource
+            // 
+            this.bestellungPositionenBindingSource.DataMember = "BestellungPositionen";
+            this.bestellungPositionenBindingSource.DataSource = this.dataSet11;
             // 
             // label3
             // 
@@ -1145,6 +1272,20 @@
             this.label_Datum.Text = "Datum";
             this.label_Datum.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(685, 1);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(112, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.icon_Click);
+            // 
             // label_user
             // 
             this.label_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1196,130 +1337,6 @@
             // 
             this.timer2_displayAdressen.Tick += new System.EventHandler(this.timer2_displayAdressen_Tick);
             // 
-            // projektnummerDataGridViewTextBoxColumn
-            // 
-            this.projektnummerDataGridViewTextBoxColumn.DataPropertyName = "Projektnummer";
-            this.projektnummerDataGridViewTextBoxColumn.HeaderText = "Projektnr";
-            this.projektnummerDataGridViewTextBoxColumn.Name = "projektnummerDataGridViewTextBoxColumn";
-            this.projektnummerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.projektnummerDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // bestellungIDTextDataGridViewTextBoxColumn
-            // 
-            this.bestellungIDTextDataGridViewTextBoxColumn.DataPropertyName = "BestellungIDText";
-            this.bestellungIDTextDataGridViewTextBoxColumn.HeaderText = "BestellungIDText";
-            this.bestellungIDTextDataGridViewTextBoxColumn.Name = "bestellungIDTextDataGridViewTextBoxColumn";
-            this.bestellungIDTextDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adresseDataGridViewTextBoxColumn
-            // 
-            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
-            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
-            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
-            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adresseDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // datumDataGridViewTextBoxColumn
-            // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // erstelltVonDataGridViewTextBoxColumn
-            // 
-            this.erstelltVonDataGridViewTextBoxColumn.DataPropertyName = "ErstelltVon";
-            this.erstelltVonDataGridViewTextBoxColumn.HeaderText = "ErstelltVon";
-            this.erstelltVonDataGridViewTextBoxColumn.Name = "erstelltVonDataGridViewTextBoxColumn";
-            this.erstelltVonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // speicherortDataGridViewTextBoxColumn
-            // 
-            this.speicherortDataGridViewTextBoxColumn.DataPropertyName = "Speicherort";
-            this.speicherortDataGridViewTextBoxColumn.HeaderText = "Speicherort";
-            this.speicherortDataGridViewTextBoxColumn.Name = "speicherortDataGridViewTextBoxColumn";
-            this.speicherortDataGridViewTextBoxColumn.ReadOnly = true;
-            this.speicherortDataGridViewTextBoxColumn.Width = 10;
-            // 
-            // bestellungenBindingSource
-            // 
-            this.bestellungenBindingSource.DataMember = "Bestellungen";
-            this.bestellungenBindingSource.DataSource = this.dataSet11;
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Pos";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn4.FillWeight = 71.06599F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Pos";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Stueck";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewTextBoxColumn5.FillWeight = 103.2149F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Stk";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Artikelbezeichnung";
-            this.dataGridViewTextBoxColumn6.FillWeight = 103.2149F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Artikelbezeichnung";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 290;
-            // 
-            // Liefertermin
-            // 
-            this.Liefertermin.DataPropertyName = "Liefertermin";
-            this.Liefertermin.FillWeight = 103.2149F;
-            this.Liefertermin.HeaderText = "Liefertermin";
-            this.Liefertermin.Name = "Liefertermin";
-            this.Liefertermin.ReadOnly = true;
-            // 
-            // Einzelpreis
-            // 
-            this.Einzelpreis.DataPropertyName = "Einzelpreis";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Einzelpreis.DefaultCellStyle = dataGridViewCellStyle14;
-            this.Einzelpreis.FillWeight = 103.2149F;
-            this.Einzelpreis.HeaderText = "Einzelpreis";
-            this.Einzelpreis.Name = "Einzelpreis";
-            this.Einzelpreis.ReadOnly = true;
-            // 
-            // Gesammtpreis
-            // 
-            this.Gesammtpreis.DataPropertyName = "Gesammtpreis";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = null;
-            this.Gesammtpreis.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Gesammtpreis.FillWeight = 103.2149F;
-            this.Gesammtpreis.HeaderText = "Gesammt- preis";
-            this.Gesammtpreis.Name = "Gesammtpreis";
-            this.Gesammtpreis.ReadOnly = true;
-            // 
-            // bestellungPositionenBindingSource
-            // 
-            this.bestellungPositionenBindingSource.DataMember = "BestellungPositionen";
-            this.bestellungPositionenBindingSource.DataSource = this.dataSet11;
-            // 
             // bestellungenTableAdapter
             // 
             this.bestellungenTableAdapter.ClearBeforeFill = true;
@@ -1344,50 +1361,6 @@
             this.tableAdapterManager.PriProRechnungTableAdapter = null;
             this.tableAdapterManager.ProjekteTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // toolStripMenuItem2_projektart
-            // 
-            this.toolStripMenuItem2_projektart.Name = "toolStripMenuItem2_projektart";
-            this.toolStripMenuItem2_projektart.Size = new System.Drawing.Size(181, 22);
-            this.toolStripMenuItem2_projektart.Text = "Projektart ändern";
-            this.toolStripMenuItem2_projektart.Click += new System.EventHandler(this.toolStripMenuItem2_projektart_Click);
-            // 
-            // panel18
-            // 
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel18.Location = new System.Drawing.Point(437, 0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(17, 48);
-            this.panel18.TabIndex = 11;
-            // 
-            // button2_newOder
-            // 
-            this.button2_newOder.BackgroundImage = global::PrintumProjektverwaltung.Properties.Resources.unionJack3;
-            this.button2_newOder.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2_newOder.FlatAppearance.BorderSize = 0;
-            this.button2_newOder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2_newOder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.button2_newOder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2_newOder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2_newOder.Location = new System.Drawing.Point(454, 0);
-            this.button2_newOder.Name = "button2_newOder";
-            this.button2_newOder.Size = new System.Drawing.Size(110, 48);
-            this.button2_newOder.TabIndex = 16;
-            this.button2_newOder.Text = "                       new Order";
-            this.button2_newOder.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(685, 1);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(112, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
             // 
             // Form1_main
             // 
@@ -1421,6 +1394,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -1429,14 +1404,12 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungPositionenDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungPositionenBindingSource)).EndInit();
             this.panel16_Speichern.ResumeLayout(false);
             this.panel16_Speichern.PerformLayout();
             this.panel_unten.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungPositionenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -1492,7 +1465,6 @@
         private System.Windows.Forms.Button button8_Adressen;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button button_loeschen;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -1547,6 +1519,5 @@
         private System.Windows.Forms.Button button12_rechnungen;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2_projektart;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Button button2_newOder;
     }
 }

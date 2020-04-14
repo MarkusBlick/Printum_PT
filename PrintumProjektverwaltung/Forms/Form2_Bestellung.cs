@@ -51,7 +51,7 @@ namespace PrintumProjektverwaltung.Forms
 
             this.bestellungenTableAdapter1.Fill(this.dataSet1.Bestellungen);
 
-            //  die Outlookadressen werden auseglesen  
+            //  die Outlookadressen werden ausgelesen  
             dieInfoAdressenAuslesen();
 
             this.adressenDataGridView.ClearSelection();
@@ -131,7 +131,7 @@ namespace PrintumProjektverwaltung.Forms
                 }
                 catch (Exception ex)
                 {
-                    var bla = ex.ToString();
+                                        Helper.LogHelper.WriteDebugLog(ex.ToString());
                 }
 
 
@@ -230,7 +230,18 @@ namespace PrintumProjektverwaltung.Forms
             this.Cursor = Cursors.Default;
         }
 
-        private void button2_neueBestellung_Click(object sender, EventArgs e)
+
+        private void button2_neueBestellung_Click(object sender, EventArgs e) {
+            NeueBestellung(sender, e, false);
+        }
+
+
+        private void button3_newOder_Click(object sender, EventArgs e)
+        {
+            NeueBestellung(sender, e, true);
+        }
+
+        private void NeueBestellung(object sender, EventArgs e, bool IsEnglich)
         {
             this.Cursor = Cursors.WaitCursor;
 
@@ -251,7 +262,7 @@ namespace PrintumProjektverwaltung.Forms
                 //  neueBestellung.Email2Adresse = row.Email2Adresse == null ? "" : row.Email2Adresse;
                 neueBestellung.AdressID = row.ID;
 
-                Helper.ExcelHelper.createNewExcel(neueBestellung);
+                Helper.ExcelHelper.createNewExcel(neueBestellung,IsEnglich);
 
                 // Excel öffnen
                 try
@@ -263,6 +274,10 @@ namespace PrintumProjektverwaltung.Forms
                     if (ex.Message.Contains("Netzwerk"))
                     {
                         System.Diagnostics.Process.Start(neueBestellung.Speicherort.Replace("PRINTUMSERVER", "192.168.26.250"));
+                    }
+                    else
+                    {
+                        Helper.LogHelper.WriteDebugLog(ex.ToString());
                     }
                 }
 

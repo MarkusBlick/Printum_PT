@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.IO;
-using System.Windows.Forms;
-using PrintumProjektverwaltung.Models;
-
-using Outlook = Microsoft.Office.Interop.Outlook;
-using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.Reflection;
+using System.Windows.Forms;
 using PrintumProjektverwaltung.Forms;
+using PrintumProjektverwaltung.Models;
+using Excel = Microsoft.Office.Interop.Excel;
+using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace PrintumProjektverwaltung.Helper
 {
@@ -140,12 +135,18 @@ namespace PrintumProjektverwaltung.Helper
                     }
                     catch (Exception ex)
                     {
-                        var bla = ex.ToString();
+                        Helper.LogHelper.WriteDebugLog(ex.ToString());
                     }
                     finally
                     {
-                        (Application.OpenForms["Form1_main"] as Form1_main)
-                            .Controls["button4_mail"].Enabled = true;
+                        if ((Application.OpenForms["Form1_main"] as Form1_main)
+                            .Controls["button4_mail"] != null)
+                        {
+                            (Application.OpenForms["Form1_main"] as Form1_main)
+                                                       .Controls["button4_mail"].Enabled = true;
+                        }
+
+
                     }
                 }
             }
