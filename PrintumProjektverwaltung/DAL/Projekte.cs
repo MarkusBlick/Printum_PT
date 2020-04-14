@@ -24,5 +24,6 @@ namespace PrintumProjektverwaltung.DAL
         public Nullable<System.DateTime> Inbetriebname { get; set; }
         public bool aktiv { get; set; }
         public string RootOrdner { get; set; }
+        public string Projektart { get; set; }
     }
 }

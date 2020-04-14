@@ -17,7 +17,7 @@ namespace PrintumProjektverwaltung.Forms
     {
         private printumBestellung neueBestellung;
         private List<Contact> alleAdressen;
-
+        private bool isEnglish;
 
         public Form2_Bestellung()
         {
@@ -39,6 +39,11 @@ namespace PrintumProjektverwaltung.Forms
             this.label1.Text = alleAdressen.Count().ToString() + " Adressen aus 'Info PRINTUM'";
 
             this.label_ganzOben.Text += " " + neueBestellung.BestellungIDText + "                    an: " + neueBestellung.ProjektnummerText;
+        }
+
+        public Form2_Bestellung(printumBestellung neueBestellung, List<Contact> alleAdressen, bool isEnglish) : this(neueBestellung, alleAdressen)
+        {
+            this.isEnglish = isEnglish;
         }
 
         private void Form2_Bestellung_Load(object sender, EventArgs e)

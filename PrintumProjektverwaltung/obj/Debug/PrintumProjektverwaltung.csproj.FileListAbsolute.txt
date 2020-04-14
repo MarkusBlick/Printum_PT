@@ -256,4 +256,5 @@ C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektve
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektverwaltung.application
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektverwaltung.exe
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektverwaltung.pdb
+C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Form1_2_Projektart.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.csprojAssemblyReference.cache

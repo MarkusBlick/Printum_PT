@@ -86,6 +86,7 @@
     <Property Name="Inbetriebname" Type="DateTime" Precision="3" />
     <Property Name="aktiv" Type="Boolean" Nullable="false" />
     <Property Name="RootOrdner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektart" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Bestellungen">
     <Key>

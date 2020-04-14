@@ -1829,6 +1829,8 @@ namespace PrintumProjektverwaltung.DAL {
             
             private global::System.Data.DataColumn columnRootOrdner;
             
+            private global::System.Data.DataColumn columnProjektart;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ProjekteDataTable() {
@@ -1944,6 +1946,14 @@ namespace PrintumProjektverwaltung.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ProjektartColumn {
+                get {
+                    return this.columnProjektart;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1979,7 +1989,7 @@ namespace PrintumProjektverwaltung.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProjekteRow AddProjekteRow(int Projektnummer, string Projektname, string OrdnersturkturJSON, string BestellungenJSON, string MailsJSON, System.DateTime Projektbeginn, System.DateTime Produktionsbeginn, System.DateTime Inbetriebname, bool aktiv, string RootOrdner) {
+            public ProjekteRow AddProjekteRow(int Projektnummer, string Projektname, string OrdnersturkturJSON, string BestellungenJSON, string MailsJSON, System.DateTime Projektbeginn, System.DateTime Produktionsbeginn, System.DateTime Inbetriebname, bool aktiv, string RootOrdner, string Projektart) {
                 ProjekteRow rowProjekteRow = ((ProjekteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Projektnummer,
@@ -1991,7 +2001,8 @@ namespace PrintumProjektverwaltung.DAL {
                         Produktionsbeginn,
                         Inbetriebname,
                         aktiv,
-                        RootOrdner};
+                        RootOrdner,
+                        Projektart};
                 rowProjekteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProjekteRow);
                 return rowProjekteRow;
@@ -2031,6 +2042,7 @@ namespace PrintumProjektverwaltung.DAL {
                 this.columnInbetriebname = base.Columns["Inbetriebname"];
                 this.columnaktiv = base.Columns["aktiv"];
                 this.columnRootOrdner = base.Columns["RootOrdner"];
+                this.columnProjektart = base.Columns["Projektart"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2056,6 +2068,8 @@ namespace PrintumProjektverwaltung.DAL {
                 base.Columns.Add(this.columnaktiv);
                 this.columnRootOrdner = new global::System.Data.DataColumn("RootOrdner", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRootOrdner);
+                this.columnProjektart = new global::System.Data.DataColumn("Projektart", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjektart);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProjektnummer}, true));
                 this.columnProjektnummer.AllowDBNull = false;
@@ -2066,6 +2080,7 @@ namespace PrintumProjektverwaltung.DAL {
                 this.columnMailsJSON.MaxLength = 2147483647;
                 this.columnaktiv.AllowDBNull = false;
                 this.columnRootOrdner.MaxLength = 2147483647;
+                this.columnProjektart.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9251,6 +9266,22 @@ namespace PrintumProjektverwaltung.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Projektart {
+                get {
+                    try {
+                        return ((string)(this[this.tableProjekte.ProjektartColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Der Wert für Spalte Projektart in Tabelle Projekte ist DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProjekte.ProjektartColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsProjektnameNull() {
                 return this.IsNull(this.tableProjekte.ProjektnameColumn);
             }
@@ -9343,6 +9374,18 @@ namespace PrintumProjektverwaltung.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetRootOrdnerNull() {
                 this[this.tableProjekte.RootOrdnerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsProjektartNull() {
+                return this.IsNull(this.tableProjekte.ProjektartColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetProjektartNull() {
+                this[this.tableProjekte.ProjektartColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -17181,6 +17224,7 @@ ORDER BY Projektnummer DESC, Bestellung_ID DESC";
             tableMapping.ColumnMappings.Add("Inbetriebname", "Inbetriebname");
             tableMapping.ColumnMappings.Add("aktiv", "aktiv");
             tableMapping.ColumnMappings.Add("RootOrdner", "RootOrdner");
+            tableMapping.ColumnMappings.Add("Projektart", "Projektart");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -17196,8 +17240,8 @@ ORDER BY Projektnummer DESC, Bestellung_ID DESC";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_aktiv", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aktiv", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Projekte] ([Projektnummer], [Projektname], [OrdnersturkturJSON], [BestellungenJSON], [MailsJSON], [Projektbeginn], [Produktionsbeginn], [Inbetriebname], [aktiv], [RootOrdner]) VALUES (@Projektnummer, @Projektname, @OrdnersturkturJSON, @BestellungenJSON, @MailsJSON, @Projektbeginn, @Produktionsbeginn, @Inbetriebname, @aktiv, @RootOrdner);
-SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner FROM Projekte WHERE (Projektnummer = @Projektnummer)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Projekte] ([Projektnummer], [Projektname], [OrdnersturkturJSON], [BestellungenJSON], [MailsJSON], [Projektbeginn], [Produktionsbeginn], [Inbetriebname], [aktiv], [RootOrdner], [Projektart]) VALUES (@Projektnummer, @Projektname, @OrdnersturkturJSON, @BestellungenJSON, @MailsJSON, @Projektbeginn, @Produktionsbeginn, @Inbetriebname, @aktiv, @RootOrdner, @Projektart);
+SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner, Projektart FROM Projekte WHERE (Projektnummer = @Projektnummer)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17209,10 +17253,11 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inbetriebname", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inbetriebname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aktiv", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aktiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RootOrdner", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RootOrdner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektart", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Projekte] SET [Projektnummer] = @Projektnummer, [Projektname] = @Projektname, [OrdnersturkturJSON] = @OrdnersturkturJSON, [BestellungenJSON] = @BestellungenJSON, [MailsJSON] = @MailsJSON, [Projektbeginn] = @Projektbeginn, [Produktionsbeginn] = @Produktionsbeginn, [Inbetriebname] = @Inbetriebname, [aktiv] = @aktiv, [RootOrdner] = @RootOrdner WHERE (([Projektnummer] = @Original_Projektnummer) AND ((@IsNull_Projektbeginn = 1 AND [Projektbeginn] IS NULL) OR ([Projektbeginn] = @Original_Projektbeginn)) AND ((@IsNull_Produktionsbeginn = 1 AND [Produktionsbeginn] IS NULL) OR ([Produktionsbeginn] = @Original_Produktionsbeginn)) AND ((@IsNull_Inbetriebname = 1 AND [Inbetriebname] IS NULL) OR ([Inbetriebname] = @Original_Inbetriebname)) AND ([aktiv] = @Original_aktiv));
-SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner FROM Projekte WHERE (Projektnummer = @Projektnummer)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Projekte] SET [Projektnummer] = @Projektnummer, [Projektname] = @Projektname, [OrdnersturkturJSON] = @OrdnersturkturJSON, [BestellungenJSON] = @BestellungenJSON, [MailsJSON] = @MailsJSON, [Projektbeginn] = @Projektbeginn, [Produktionsbeginn] = @Produktionsbeginn, [Inbetriebname] = @Inbetriebname, [aktiv] = @aktiv, [RootOrdner] = @RootOrdner, [Projektart] = @Projektart WHERE (([Projektnummer] = @Original_Projektnummer) AND ((@IsNull_Projektbeginn = 1 AND [Projektbeginn] IS NULL) OR ([Projektbeginn] = @Original_Projektbeginn)) AND ((@IsNull_Produktionsbeginn = 1 AND [Produktionsbeginn] IS NULL) OR ([Produktionsbeginn] = @Original_Produktionsbeginn)) AND ((@IsNull_Inbetriebname = 1 AND [Inbetriebname] IS NULL) OR ([Inbetriebname] = @Original_Inbetriebname)) AND ([aktiv] = @Original_aktiv));
+SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner, Projektart FROM Projekte WHERE (Projektnummer = @Projektnummer)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17224,6 +17269,7 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inbetriebname", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inbetriebname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aktiv", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aktiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RootOrdner", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RootOrdner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektart", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Projektbeginn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektbeginn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Projektbeginn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektbeginn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -17247,9 +17293,9 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT     Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, Mail" +
-                "sJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner\r\nFROM " +
-                "        Projekte";
+            this._commandCollection[0].CommandText = "SELECT        Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, M" +
+                "ailsJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner, \r\n" +
+                "                         Projektart\r\nFROM            Projekte";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -17357,7 +17403,7 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Projektnummer, string Projektname, string OrdnersturkturJSON, string BestellungenJSON, string MailsJSON, global::System.Nullable<global::System.DateTime> Projektbeginn, global::System.Nullable<global::System.DateTime> Produktionsbeginn, global::System.Nullable<global::System.DateTime> Inbetriebname, bool aktiv, string RootOrdner) {
+        public virtual int Insert(int Projektnummer, string Projektname, string OrdnersturkturJSON, string BestellungenJSON, string MailsJSON, global::System.Nullable<global::System.DateTime> Projektbeginn, global::System.Nullable<global::System.DateTime> Produktionsbeginn, global::System.Nullable<global::System.DateTime> Inbetriebname, bool aktiv, string RootOrdner, string Projektart) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Projektnummer));
             if ((Projektname == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -17408,6 +17454,12 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(RootOrdner));
             }
+            if ((Projektart == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Projektart));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17428,7 +17480,23 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Projektnummer, string Projektname, string OrdnersturkturJSON, string BestellungenJSON, string MailsJSON, global::System.Nullable<global::System.DateTime> Projektbeginn, global::System.Nullable<global::System.DateTime> Produktionsbeginn, global::System.Nullable<global::System.DateTime> Inbetriebname, bool aktiv, string RootOrdner, int Original_Projektnummer, global::System.Nullable<global::System.DateTime> Original_Projektbeginn, global::System.Nullable<global::System.DateTime> Original_Produktionsbeginn, global::System.Nullable<global::System.DateTime> Original_Inbetriebname, bool Original_aktiv) {
+        public virtual int Update(
+                    int Projektnummer, 
+                    string Projektname, 
+                    string OrdnersturkturJSON, 
+                    string BestellungenJSON, 
+                    string MailsJSON, 
+                    global::System.Nullable<global::System.DateTime> Projektbeginn, 
+                    global::System.Nullable<global::System.DateTime> Produktionsbeginn, 
+                    global::System.Nullable<global::System.DateTime> Inbetriebname, 
+                    bool aktiv, 
+                    string RootOrdner, 
+                    string Projektart, 
+                    int Original_Projektnummer, 
+                    global::System.Nullable<global::System.DateTime> Original_Projektbeginn, 
+                    global::System.Nullable<global::System.DateTime> Original_Produktionsbeginn, 
+                    global::System.Nullable<global::System.DateTime> Original_Inbetriebname, 
+                    bool Original_aktiv) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Projektnummer));
             if ((Projektname == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -17479,32 +17547,38 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(RootOrdner));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Projektnummer));
-            if ((Original_Projektbeginn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Projektbeginn.Value));
+            if ((Projektart == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Projektart));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Projektnummer));
+            if ((Original_Projektbeginn.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Projektbeginn.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_Produktionsbeginn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_Produktionsbeginn.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Produktionsbeginn.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_Inbetriebname.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_Inbetriebname.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_Inbetriebname.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Original_aktiv));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(Original_aktiv));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17525,8 +17599,8 @@ SELECT Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Projektname, string OrdnersturkturJSON, string BestellungenJSON, string MailsJSON, global::System.Nullable<global::System.DateTime> Projektbeginn, global::System.Nullable<global::System.DateTime> Produktionsbeginn, global::System.Nullable<global::System.DateTime> Inbetriebname, bool aktiv, string RootOrdner, int Original_Projektnummer, global::System.Nullable<global::System.DateTime> Original_Projektbeginn, global::System.Nullable<global::System.DateTime> Original_Produktionsbeginn, global::System.Nullable<global::System.DateTime> Original_Inbetriebname, bool Original_aktiv) {
-            return this.Update(Original_Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner, Original_Projektnummer, Original_Projektbeginn, Original_Produktionsbeginn, Original_Inbetriebname, Original_aktiv);
+        public virtual int Update(string Projektname, string OrdnersturkturJSON, string BestellungenJSON, string MailsJSON, global::System.Nullable<global::System.DateTime> Projektbeginn, global::System.Nullable<global::System.DateTime> Produktionsbeginn, global::System.Nullable<global::System.DateTime> Inbetriebname, bool aktiv, string RootOrdner, string Projektart, int Original_Projektnummer, global::System.Nullable<global::System.DateTime> Original_Projektbeginn, global::System.Nullable<global::System.DateTime> Original_Produktionsbeginn, global::System.Nullable<global::System.DateTime> Original_Inbetriebname, bool Original_aktiv) {
+            return this.Update(Original_Projektnummer, Projektname, OrdnersturkturJSON, BestellungenJSON, MailsJSON, Projektbeginn, Produktionsbeginn, Inbetriebname, aktiv, RootOrdner, Projektart, Original_Projektnummer, Original_Projektbeginn, Original_Produktionsbeginn, Original_Inbetriebname, Original_aktiv);
         }
     }
     

@@ -342,9 +342,10 @@
           <Property Name="Inbetriebname" Type="datetime" />
           <Property Name="aktiv" Type="bit" Nullable="false" />
           <Property Name="RootOrdner" Type="nvarchar(max)" />
+          <Property Name="Projektart" Type="nvarchar(max)" />
         </EntityType>
         <!--Während der Generierung sind Fehler aufgetreten:
-Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungPositionen_View' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
+Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungPositionen_View' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
         <EntityType Name="BestellungPositionen_View">
           <Key>
             <PropertyRef Name="BestellnungIDTest" />
@@ -367,7 +368,7 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungPositionen_View' ist k
           <Property Name="Lagerort" Type="nvarchar(max)" />
         </EntityType>
         <!--Während der Generierung sind Fehler aufgetreten:
-Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungProProjekt' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
+Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungProProjekt' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
         <EntityType Name="BestellungProProjekt">
           <Key>
             <PropertyRef Name="BestellPos_ID" />
@@ -540,6 +541,7 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungProProjekt' ist kein P
           <Property Name="Inbetriebname" Type="DateTime" Precision="3" />
           <Property Name="aktiv" Type="Boolean" Nullable="false" />
           <Property Name="RootOrdner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Projektart" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Bestellungen">
           <Key>
@@ -921,6 +923,7 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungProProjekt' ist kein P
           <EntitySetMapping Name="Projekte">
             <EntityTypeMapping TypeName="PrintumProjekteModel.Projekte">
               <MappingFragment StoreEntitySet="Projekte">
+                <ScalarProperty Name="Projektart" ColumnName="Projektart" />
                 <ScalarProperty Name="RootOrdner" ColumnName="RootOrdner" />
                 <ScalarProperty Name="aktiv" ColumnName="aktiv" />
                 <ScalarProperty Name="Inbetriebname" ColumnName="Inbetriebname" />

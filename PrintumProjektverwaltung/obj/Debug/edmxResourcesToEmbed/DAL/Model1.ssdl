@@ -337,9 +337,10 @@
     <Property Name="Inbetriebname" Type="datetime" />
     <Property Name="aktiv" Type="bit" Nullable="false" />
     <Property Name="RootOrdner" Type="nvarchar(max)" />
+    <Property Name="Projektart" Type="nvarchar(max)" />
   </EntityType>
   <!--Während der Generierung sind Fehler aufgetreten:
-Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungPositionen_View' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
+Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungPositionen_View' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
   <EntityType Name="BestellungPositionen_View">
     <Key>
       <PropertyRef Name="BestellnungIDTest" />
@@ -362,7 +363,7 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungPositionen_View' ist k
     <Property Name="Lagerort" Type="nvarchar(max)" />
   </EntityType>
   <!--Während der Generierung sind Fehler aufgetreten:
-Warnung 6002: Für Tabelle/Sicht 'PrintumDB.dbo.BestellungProProjekt' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
+Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungProProjekt' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
   <EntityType Name="BestellungProProjekt">
     <Key>
       <PropertyRef Name="BestellPos_ID" />

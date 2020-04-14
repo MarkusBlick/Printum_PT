@@ -114,8 +114,8 @@ namespace PrintumProjektverwaltung.Forms
                                      RootOrdner = p.RootOrdner,
                                      Inbetriebname = p.Inbetriebname,
                                      Produktionsbeginn = p.Produktionsbeginn,
-                                     aktiv = p.aktiv
-
+                                     aktiv = p.aktiv,
+                                     Projektart = p.Projektart
                                  };
 
                 try
@@ -240,6 +240,54 @@ namespace PrintumProjektverwaltung.Forms
                 this.Cursor = Cursors.Default;
             }
         }
+
+
+
+
+
+        private void button_newOder_Click(object sender, EventArgs e)
+        {
+            var tvNode = this.treeView1.SelectedNode;
+
+            if (tvNode == null)
+            {
+                MessageBox.Show("Wie..." + Environment.NewLine +
+                                                   Environment.NewLine +
+                                                   "kein Projekt ausgewählt?");
+            }
+            else
+            {
+                this.Cursor = Cursors.WaitCursor;
+                printumBestellung neueBestellung = new printumBestellung();
+                neueBestellung.Bestellung_ID = neueBestellung.getNextBestellnr();
+
+
+
+                try
+                {
+                    var item = this.treeView1.SelectedNode;
+
+                    printumProjekt currProjekt = (printumProjekt)item.Tag;
+
+                    neueBestellung.Projektnummer = currProjekt.Projektnummer;
+                    neueBestellung.ProjektnummerText = currProjekt.Projektnummer.ToString();
+
+                }
+                catch (Exception es)
+                {
+                    var bal = es.ToString();
+                }
+                bool isEnglish = true;
+                Form2_Bestellung FormBestellung = new Form2_Bestellung(neueBestellung, alleAdressen, isEnglish);
+                var FormErgebniss = FormBestellung.ShowDialog();
+
+                this.bestellungenTableAdapter.Fill(this.dataSet11.Bestellungen);
+
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+
 
 
 
@@ -619,6 +667,20 @@ namespace PrintumProjektverwaltung.Forms
         }
 
 
+        private void toolStripMenuItem2_projektart_Click(object sender, EventArgs e)
+        {
+            var derTag = this.treeView1.SelectedNode.Tag;
+            if (derTag != null)
+            {
+                Form1_2_Projektart f12 = new Form1_2_Projektart(derTag);
+                f12.ShowDialog();
+
+                AlleProjekte = loadDieProjekte();
+                Helper.buildTree.addProjekte(this.treeView1, AlleProjekte);
+            }
+        }
+
+
 
         private void projektLöschenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -638,6 +700,10 @@ namespace PrintumProjektverwaltung.Forms
             }
 
         }
+
+
+
+
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -659,6 +725,8 @@ namespace PrintumProjektverwaltung.Forms
                 Helper.LogHelper.WriteDebugLog(ex.ToString());
             }
         }
+
+
 
         private void button8_Adressen_MouseEnter(object sender, EventArgs e)
         {
@@ -904,6 +972,12 @@ namespace PrintumProjektverwaltung.Forms
             var R01 = new Rechnung01_main();
             R01.ShowDialog();
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
     }
 }
 

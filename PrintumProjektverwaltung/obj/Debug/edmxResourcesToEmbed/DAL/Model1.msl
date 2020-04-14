@@ -60,6 +60,7 @@
     <EntitySetMapping Name="Projekte">
       <EntityTypeMapping TypeName="PrintumProjekteModel.Projekte">
         <MappingFragment StoreEntitySet="Projekte">
+          <ScalarProperty Name="Projektart" ColumnName="Projektart" />
           <ScalarProperty Name="RootOrdner" ColumnName="RootOrdner" />
           <ScalarProperty Name="aktiv" ColumnName="aktiv" />
           <ScalarProperty Name="Inbetriebname" ColumnName="Inbetriebname" />

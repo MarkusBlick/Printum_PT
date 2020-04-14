@@ -16,7 +16,14 @@ namespace PrintumProjektverwaltung.Helper
             {
 
                 TreeNode parent = new TreeNode();
-                parent.ImageKey = "Folder.gif";
+
+                parent.ImageKey = "File.gif";
+                if (item.Projektart =="Anlage")
+                {
+                    parent.ImageKey = "Folder.gif";
+                }
+
+
                 parent.Tag = item;
                 parent.Text = item.Projektnummer.ToString() + " - " + item.Projektname;
                 treeView1.Nodes.Add(parent);

@@ -448,6 +448,12 @@
     <Compile Include="Forms\Form10_Baugruppe.Designer.cs">
       <DependentUpon>Form10_Baugruppe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form1_2_Projektart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1_2_Projektart.Designer.cs">
+      <DependentUpon>Form1_2_Projektart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1_1_Projektname.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -653,6 +659,9 @@
     <EmbeddedResource Include="Forms\Form10_Baugruppe.resx">
       <DependentUpon>Form10_Baugruppe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1_2_Projektart.resx">
+      <DependentUpon>Form1_2_Projektart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1_1_Projektname.resx">
       <DependentUpon>Form1_1_Projektname.cs</DependentUpon>
     </EmbeddedResource>
@@ -805,6 +814,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\unionJack3.png" />
+    <None Include="Resources\unionJack2.png" />
+    <None Include="Resources\unionJack1.png" />
+    <None Include="Resources\unionJack.png" />
     <None Include="Pictures\freebie-slide-1394087512-1.gif" />
     <Content Include="Helper\htmlBodyMail.xml" />
     <Content Include="Pictures\printum_logo.png" />

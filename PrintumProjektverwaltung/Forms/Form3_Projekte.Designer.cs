@@ -49,6 +49,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1_beginn = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2_lieferung = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel_unten.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -98,7 +100,7 @@
             this.button1_Projekterstellen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button1_Projekterstellen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1_Projekterstellen.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1_Projekterstellen.Location = new System.Drawing.Point(378, 371);
+            this.button1_Projekterstellen.Location = new System.Drawing.Point(378, 432);
             this.button1_Projekterstellen.Name = "button1_Projekterstellen";
             this.button1_Projekterstellen.Size = new System.Drawing.Size(151, 32);
             this.button1_Projekterstellen.TabIndex = 3;
@@ -114,10 +116,10 @@
             this.panel_unten.Controls.Add(this.panel_balkenUnten);
             this.panel_unten.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_unten.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.panel_unten.Location = new System.Drawing.Point(0, 437);
+            this.panel_unten.Location = new System.Drawing.Point(0, 487);
             this.panel_unten.Name = "panel_unten";
             this.panel_unten.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel_unten.Size = new System.Drawing.Size(544, 25);
+            this.panel_unten.Size = new System.Drawing.Size(561, 25);
             this.panel_unten.TabIndex = 6;
             // 
             // panel8
@@ -125,7 +127,7 @@
             this.panel8.Controls.Add(this.label_Datum);
             this.panel8.Controls.Add(this.pictureBox2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(261, 1);
+            this.panel8.Location = new System.Drawing.Point(278, 1);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(0, 1, 0, 2);
             this.panel8.Size = new System.Drawing.Size(283, 23);
@@ -178,7 +180,7 @@
             this.panel_balkenoben.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_balkenoben.Location = new System.Drawing.Point(0, 0);
             this.panel_balkenoben.Name = "panel_balkenoben";
-            this.panel_balkenoben.Size = new System.Drawing.Size(544, 1);
+            this.panel_balkenoben.Size = new System.Drawing.Size(561, 1);
             this.panel_balkenoben.TabIndex = 0;
             // 
             // panel_balkenUnten
@@ -187,7 +189,7 @@
             this.panel_balkenUnten.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_balkenUnten.Location = new System.Drawing.Point(0, 24);
             this.panel_balkenUnten.Name = "panel_balkenUnten";
-            this.panel_balkenUnten.Size = new System.Drawing.Size(544, 1);
+            this.panel_balkenUnten.Size = new System.Drawing.Size(561, 1);
             this.panel_balkenUnten.TabIndex = 1;
             // 
             // panel1_header
@@ -199,7 +201,7 @@
             this.panel1_header.Location = new System.Drawing.Point(0, 0);
             this.panel1_header.Name = "panel1_header";
             this.panel1_header.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1_header.Size = new System.Drawing.Size(544, 46);
+            this.panel1_header.Size = new System.Drawing.Size(561, 46);
             this.panel1_header.TabIndex = 8;
             // 
             // label_ganzOben
@@ -211,7 +213,7 @@
             this.label_ganzOben.Location = new System.Drawing.Point(5, 6);
             this.label_ganzOben.Margin = new System.Windows.Forms.Padding(0);
             this.label_ganzOben.Name = "label_ganzOben";
-            this.label_ganzOben.Size = new System.Drawing.Size(534, 34);
+            this.label_ganzOben.Size = new System.Drawing.Size(551, 34);
             this.label_ganzOben.TabIndex = 4;
             this.label_ganzOben.Text = "Neues Projekte erstellen";
             // 
@@ -221,7 +223,7 @@
             this.panelOb_balkenoben.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelOb_balkenoben.Location = new System.Drawing.Point(5, 5);
             this.panelOb_balkenoben.Name = "panelOb_balkenoben";
-            this.panelOb_balkenoben.Size = new System.Drawing.Size(534, 1);
+            this.panelOb_balkenoben.Size = new System.Drawing.Size(551, 1);
             this.panelOb_balkenoben.TabIndex = 3;
             // 
             // panelOb_balkenUnten
@@ -230,7 +232,7 @@
             this.panelOb_balkenUnten.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelOb_balkenUnten.Location = new System.Drawing.Point(5, 40);
             this.panelOb_balkenUnten.Name = "panelOb_balkenUnten";
-            this.panelOb_balkenUnten.Size = new System.Drawing.Size(534, 1);
+            this.panelOb_balkenUnten.Size = new System.Drawing.Size(551, 1);
             this.panelOb_balkenUnten.TabIndex = 2;
             // 
             // label3
@@ -265,12 +267,35 @@
             this.dateTimePicker2_lieferung.Size = new System.Drawing.Size(343, 26);
             this.dateTimePicker2_lieferung.TabIndex = 2;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 386);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Projektart:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Anlage",
+            "Baugruppe"});
+            this.comboBox1.Location = new System.Drawing.Point(186, 383);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(343, 28);
+            this.comboBox1.TabIndex = 13;
+            // 
             // Form3_Projekte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(544, 462);
+            this.ClientSize = new System.Drawing.Size(561, 512);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker2_lieferung);
             this.Controls.Add(this.dateTimePicker1_beginn);
             this.Controls.Add(this.label4);
@@ -319,5 +344,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1_beginn;
         private System.Windows.Forms.DateTimePicker dateTimePicker2_lieferung;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

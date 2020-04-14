@@ -21,6 +21,7 @@ namespace PrintumProjektverwaltung.Models
         public Nullable<System.DateTime> Produktionsbeginn { get; set; }
         public Nullable<System.DateTime> Inbetriebname { get; set; }
         public bool aktiv { get; set; }
+        public string Projektart { get; set; }
 
         private Projekte _projekte = new Projekte();
 
