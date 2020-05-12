@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PrintumProjektverwaltung.Helper;
 
@@ -29,16 +21,16 @@ namespace PrintumProjektverwaltung.Forms
 
         private void priProLieferscheinRechnungBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.priProRechnungBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
+            Validate();
+            priProRechnungBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(dataSet1);
 
         }
 
         private void Rechnung01_main_Load(object sender, EventArgs e)
         {
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet1.PriProRechnung". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.priProRechnungTableAdapter.Fill(this.dataSet1.PriProRechnung);
+            priProRechnungTableAdapter.Fill(dataSet1.PriProRechnung);
 
 
         }
@@ -50,7 +42,7 @@ namespace PrintumProjektverwaltung.Forms
             {
                 Rechnung05_neueRE REneu = new Rechnung05_neueRE();
                 REneu.ShowDialog();
-                this.priProRechnungTableAdapter.Fill(this.dataSet1.PriProRechnung);
+                priProRechnungTableAdapter.Fill(dataSet1.PriProRechnung);
             }
             else
             {
@@ -65,14 +57,14 @@ namespace PrintumProjektverwaltung.Forms
 
         private void textBox1_suchen_TextChanged(object sender, EventArgs e)
         {
-            string filtertext = "LieferscheinNr LIKE '*" + this.textBox1_suchen.Text
-                                                + "*' OR CONVERT(Projektnummer, 'System.String')  LIKE '*" + this.textBox1_suchen.Text
-                                                + "*' OR RechnungBeschreibung LIKE '*" + this.textBox1_suchen.Text
-                                                + "*' OR RechnungNr LIKE '*" + this.textBox1_suchen.Text
-                                                + "*' OR RE_Firmenname LIKE '*" + this.textBox1_suchen.Text
+            string filtertext = "LieferscheinNr LIKE '*" + textBox1_suchen.Text
+                                                + "*' OR CONVERT(Projektnummer, 'System.String')  LIKE '*" + textBox1_suchen.Text
+                                                + "*' OR RechnungBeschreibung LIKE '*" + textBox1_suchen.Text
+                                                + "*' OR RechnungNr LIKE '*" + textBox1_suchen.Text
+                                                + "*' OR RE_Firmenname LIKE '*" + textBox1_suchen.Text
                                                 + "*'";
 
-            this.priProRechnungBindingSource.Filter = filtertext;
+            priProRechnungBindingSource.Filter = filtertext;
         }
 
 
@@ -80,25 +72,25 @@ namespace PrintumProjektverwaltung.Forms
         {
 
             ////    this.label_speichern.Text = "Liefertermin laut AB und Preise können geändert werden";
-            this.panel3.Visible = true;
+            panel3.Visible = true;
 
-            this.priProRechnungDataGridView.ReadOnly = false;
+            priProRechnungDataGridView.ReadOnly = false;
 
-            this.priProRechnungDataGridView.Columns["RechnungsNr"].ReadOnly = false;
-            this.priProRechnungDataGridView.Columns["RechnungDatum"].ReadOnly = false;
+            priProRechnungDataGridView.Columns["RechnungsNr"].ReadOnly = false;
+            priProRechnungDataGridView.Columns["RechnungDatum"].ReadOnly = false;
         }
 
         private void button_aenderungSpeichern_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.priProRechnungBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
-            this.panel3.Visible = false;
+            Validate();
+            priProRechnungBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(dataSet1);
+            panel3.Visible = false;
 
-            this.priProRechnungDataGridView.ReadOnly = true;
+            priProRechnungDataGridView.ReadOnly = true;
 
-            this.priProRechnungDataGridView.Columns["RechnungsNr"].ReadOnly = true;
-            this.priProRechnungDataGridView.Columns["RechnungDatum"].ReadOnly = true;
+            priProRechnungDataGridView.Columns["RechnungsNr"].ReadOnly = true;
+            priProRechnungDataGridView.Columns["RechnungDatum"].ReadOnly = true;
         }
 
 
@@ -106,22 +98,33 @@ namespace PrintumProjektverwaltung.Forms
         private void priProRechnungDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var row = ((DataGridView)sender).CurrentRow;
-            if (row != null && duDarfst)
+            var senderGrid = (DataGridView)sender;
+            if (e != null)
             {
-                var pfad = row.Cells["RechnungPfad"].Value.ToString();
-                pfad = fileHelper.EntwicklungsPfadHelper(pfad);
-                if (System.IO.File.Exists(pfad))
+                var colmn = senderGrid.Columns[e.ColumnIndex];
+
+                if (row != null && duDarfst)
                 {
-                    System.Diagnostics.Process.Start(pfad);
+                    if (colmn.HeaderText == "PDF öffnen" || colmn.HeaderText == "Excel öffnen")
+                    {
+
+
+                        var pfad = row.Cells["RechnungPfad"].Value.ToString();
+                        pfad = fileHelper.EntwicklungsPfadHelper(pfad);
+                        if (System.IO.File.Exists(pfad))
+                        {
+                            System.Diagnostics.Process.Start(pfad);
+                        }
+                        else { MessageBox.Show("die Datei existiert nicht! " + Environment.NewLine + Environment.NewLine + pfad); }
+                    }
                 }
-                else { MessageBox.Show("die Datei existiert nicht! " + Environment.NewLine + Environment.NewLine + pfad); }
             }
         }
 
 
         private void priProRechnungDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.priProRechnungDataGridView_RowHeaderMouseClick(sender, null);
+            priProRechnungDataGridView_RowHeaderMouseClick(sender, null);
         }
 
         private void priProRechnungDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -139,19 +142,36 @@ namespace PrintumProjektverwaltung.Forms
 
                 if (row != null && duDarfst)
                 {
-
-                    if (colmn.HeaderText == "PDF öffnen")
+                    if (colmn.HeaderText == "PDF öffnen" || colmn.HeaderText == "Excel öffnen")
                     {
-                        pfad = pfad.Replace(".xlsx", ".pdf");
+
+
+                        if (colmn.HeaderText == "PDF öffnen")
+                        {
+                            pfad = pfad.Replace(".xlsx", ".pdf");
+                        }
+
+
+
+                        if (System.IO.File.Exists(pfad))
+                        {
+                            System.Diagnostics.Process.Start(pfad);
+                        }
+
+                        else { MessageBox.Show("die Datei existiert nicht! " + Environment.NewLine + Environment.NewLine + pfad); }
+
                     }
 
-          
-                    if (System.IO.File.Exists(pfad))
-                    {
-                        System.Diagnostics.Process.Start(pfad);
-                    }
 
-                    else { MessageBox.Show("die Datei existiert nicht! " + Environment.NewLine + Environment.NewLine + pfad); }
+
+                    if (colmn.HeaderText == "Zahlungen")
+                    {
+                        //MessageBox.Show(row.Cells["PriProRechnungID"].Value.ToString());
+                        Rechnung07_Zahlungen r7 = new Rechnung07_Zahlungen(row);
+                        r7.ShowDialog();
+                        priProRechnungTableAdapter.Fill(dataSet1.PriProRechnung);
+
+                    }
 
                 }
             }

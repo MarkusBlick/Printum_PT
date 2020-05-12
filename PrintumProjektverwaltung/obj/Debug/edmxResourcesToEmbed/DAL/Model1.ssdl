@@ -322,6 +322,9 @@
     <Property Name="Projektnummer" Type="int" />
     <Property Name="Projektname" Type="nvarchar(max)" />
     <Property Name="LieferscheinNr" Type="nvarchar(max)" />
+    <Property Name="Rechnungsbetrag" Type="float" />
+    <Property Name="Zahlungsdatum" Type="datetime" />
+    <Property Name="Zahlungsbetrag" Type="float" />
   </EntityType>
   <EntityType Name="Projekte">
     <Key>

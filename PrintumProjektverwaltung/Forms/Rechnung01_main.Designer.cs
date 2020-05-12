@@ -30,33 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rechnung01_main));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1_suchen = new System.Windows.Forms.TextBox();
             this.button1_neueRechnung = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.priProRechnungDataGridView = new System.Windows.Forms.DataGridView();
-            this.XLSX = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PDF = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.RechnungNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungBeschreibung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Projektnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungErsteller = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LieferscheinNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Firmenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Strasse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Stadt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Land = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungPfad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priProRechnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new PrintumProjektverwaltung.DAL.DataSet1();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tableAdapterManager = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager();
-            this.priProRechnungTableAdapter = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.PriProRechnungTableAdapter();
             this.priProRechnungBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -70,13 +52,38 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.priProLieferscheinRechnungBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.priProRechnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new PrintumProjektverwaltung.DAL.DataSet1();
+            this.tableAdapterManager = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager();
+            this.priProRechnungTableAdapter = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.PriProRechnungTableAdapter();
+            this.XLSX = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PDF = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RechnungNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungBeschreibung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Projektnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungErsteller = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rechnungsbetrag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ändern = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Zahlungsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Zahlungsbetrag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LieferscheinNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Firmenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Strasse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Stadt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Land = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungPfad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriProRechnungID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priProRechnungDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.priProRechnungBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priProRechnungBindingNavigator)).BeginInit();
             this.priProRechnungBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.priProRechnungBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -153,6 +160,10 @@
             this.Projektnummer,
             this.RechnungDatum,
             this.RechnungErsteller,
+            this.Rechnungsbetrag,
+            this.Ändern,
+            this.Zahlungsdatum,
+            this.Zahlungsbetrag,
             this.LieferscheinNr,
             this.RE_Firmenname,
             this.RE_Name,
@@ -160,7 +171,8 @@
             this.dataGridViewTextBoxColumn21,
             this.RE_Stadt,
             this.RE_Land,
-            this.RechnungPfad});
+            this.RechnungPfad,
+            this.PriProRechnungID});
             this.priProRechnungDataGridView.DataSource = this.priProRechnungBindingSource;
             this.priProRechnungDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.priProRechnungDataGridView.Location = new System.Drawing.Point(10, 42);
@@ -175,138 +187,6 @@
             this.priProRechnungDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.priProRechnungDataGridView_CellDoubleClick);
             this.priProRechnungDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.priProRechnungDataGridView_RowHeaderMouseClick);
             // 
-            // XLSX
-            // 
-            this.XLSX.HeaderText = "Excel öffnen";
-            this.XLSX.Name = "XLSX";
-            this.XLSX.ReadOnly = true;
-            this.XLSX.Text = ".xlsx";
-            this.XLSX.UseColumnTextForButtonValue = true;
-            this.XLSX.Width = 50;
-            // 
-            // PDF
-            // 
-            this.PDF.HeaderText = "PDF öffnen";
-            this.PDF.Name = "PDF";
-            this.PDF.ReadOnly = true;
-            this.PDF.Text = ".pdf";
-            this.PDF.UseColumnTextForButtonValue = true;
-            this.PDF.Width = 50;
-            // 
-            // RechnungNr
-            // 
-            this.RechnungNr.DataPropertyName = "RechnungNr";
-            this.RechnungNr.HeaderText = "Rechn.Nr";
-            this.RechnungNr.Name = "RechnungNr";
-            this.RechnungNr.ReadOnly = true;
-            // 
-            // RechnungBeschreibung
-            // 
-            this.RechnungBeschreibung.DataPropertyName = "RechnungBeschreibung";
-            this.RechnungBeschreibung.HeaderText = "Beschreibung";
-            this.RechnungBeschreibung.Name = "RechnungBeschreibung";
-            this.RechnungBeschreibung.ReadOnly = true;
-            this.RechnungBeschreibung.Width = 300;
-            // 
-            // RechnungTyp
-            // 
-            this.RechnungTyp.DataPropertyName = "RechnungTyp";
-            this.RechnungTyp.HeaderText = "Typ";
-            this.RechnungTyp.Name = "RechnungTyp";
-            this.RechnungTyp.ReadOnly = true;
-            // 
-            // Projektnummer
-            // 
-            this.Projektnummer.DataPropertyName = "Projektnummer";
-            this.Projektnummer.HeaderText = "Projekt -Nr";
-            this.Projektnummer.Name = "Projektnummer";
-            this.Projektnummer.ReadOnly = true;
-            // 
-            // RechnungDatum
-            // 
-            this.RechnungDatum.DataPropertyName = "RechnungDatum";
-            this.RechnungDatum.HeaderText = "Rechnungs - Datum";
-            this.RechnungDatum.MinimumWidth = 110;
-            this.RechnungDatum.Name = "RechnungDatum";
-            this.RechnungDatum.ReadOnly = true;
-            this.RechnungDatum.Width = 110;
-            // 
-            // RechnungErsteller
-            // 
-            this.RechnungErsteller.DataPropertyName = "RechnungErsteller";
-            this.RechnungErsteller.HeaderText = "Rechnungs - Ersteller";
-            this.RechnungErsteller.Name = "RechnungErsteller";
-            this.RechnungErsteller.ReadOnly = true;
-            // 
-            // LieferscheinNr
-            // 
-            this.LieferscheinNr.DataPropertyName = "LieferscheinNr";
-            this.LieferscheinNr.HeaderText = "Lieferschein -Nr";
-            this.LieferscheinNr.Name = "LieferscheinNr";
-            this.LieferscheinNr.ReadOnly = true;
-            // 
-            // RE_Firmenname
-            // 
-            this.RE_Firmenname.DataPropertyName = "RE_Firmenname";
-            this.RE_Firmenname.HeaderText = "Firmenname";
-            this.RE_Firmenname.Name = "RE_Firmenname";
-            this.RE_Firmenname.ReadOnly = true;
-            this.RE_Firmenname.Width = 200;
-            // 
-            // RE_Name
-            // 
-            this.RE_Name.DataPropertyName = "RE_Name";
-            this.RE_Name.HeaderText = "Name";
-            this.RE_Name.Name = "RE_Name";
-            this.RE_Name.ReadOnly = true;
-            // 
-            // RE_Strasse
-            // 
-            this.RE_Strasse.DataPropertyName = "RE_Strasse";
-            this.RE_Strasse.HeaderText = "Strasse";
-            this.RE_Strasse.Name = "RE_Strasse";
-            this.RE_Strasse.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "RE_PLZ";
-            this.dataGridViewTextBoxColumn21.HeaderText = "RE_PLZ";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // RE_Stadt
-            // 
-            this.RE_Stadt.DataPropertyName = "RE_Stadt";
-            this.RE_Stadt.HeaderText = "Stadt";
-            this.RE_Stadt.Name = "RE_Stadt";
-            this.RE_Stadt.ReadOnly = true;
-            // 
-            // RE_Land
-            // 
-            this.RE_Land.DataPropertyName = "RE_Land";
-            this.RE_Land.HeaderText = "Land";
-            this.RE_Land.Name = "RE_Land";
-            this.RE_Land.ReadOnly = true;
-            // 
-            // RechnungPfad
-            // 
-            this.RechnungPfad.DataPropertyName = "RechnungPfad";
-            this.RechnungPfad.HeaderText = "RechnungPfad";
-            this.RechnungPfad.Name = "RechnungPfad";
-            this.RechnungPfad.ReadOnly = true;
-            this.RechnungPfad.Visible = false;
-            // 
-            // priProRechnungBindingSource
-            // 
-            this.priProRechnungBindingSource.DataMember = "PriProRechnung";
-            this.priProRechnungBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -315,27 +195,6 @@
             this.panel3.Size = new System.Drawing.Size(1180, 32);
             this.panel3.TabIndex = 1;
             this.panel3.Visible = false;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AdressenTableAdapter = null;
-            this.tableAdapterManager.ArtikelTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BestellungenTableAdapter = null;
-            this.tableAdapterManager.BestellungPositionenTableAdapter = null;
-            this.tableAdapterManager.EinheitTableAdapter = null;
-            this.tableAdapterManager.LieferungLieferscheinTableAdapter = null;
-            this.tableAdapterManager.LieferungPositionenTableAdapter = null;
-            this.tableAdapterManager.LieferungRechnungenTableAdapter = null;
-            this.tableAdapterManager.LieferungTableAdapter = null;
-            this.tableAdapterManager.PriProLieferscheinRechnungTableAdapter = null;
-            this.tableAdapterManager.PriProRechnungTableAdapter = this.priProRechnungTableAdapter;
-            this.tableAdapterManager.ProjekteTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // priProRechnungTableAdapter
-            // 
-            this.priProRechnungTableAdapter.ClearBeforeFill = true;
             // 
             // priProRechnungBindingNavigator
             // 
@@ -462,6 +321,202 @@
             this.priProLieferscheinRechnungBindingNavigatorSaveItem.Text = "Daten speichern";
             this.priProLieferscheinRechnungBindingNavigatorSaveItem.Click += new System.EventHandler(this.priProLieferscheinRechnungBindingNavigatorSaveItem_Click);
             // 
+            // priProRechnungBindingSource
+            // 
+            this.priProRechnungBindingSource.DataMember = "PriProRechnung";
+            this.priProRechnungBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AdressenTableAdapter = null;
+            this.tableAdapterManager.ArtikelTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BestellungenTableAdapter = null;
+            this.tableAdapterManager.BestellungPositionenTableAdapter = null;
+            this.tableAdapterManager.EinheitTableAdapter = null;
+            this.tableAdapterManager.LieferungLieferscheinTableAdapter = null;
+            this.tableAdapterManager.LieferungPositionenTableAdapter = null;
+            this.tableAdapterManager.LieferungRechnungenTableAdapter = null;
+            this.tableAdapterManager.LieferungTableAdapter = null;
+            this.tableAdapterManager.PriProLieferscheinRechnungTableAdapter = null;
+            this.tableAdapterManager.PriProRechnungTableAdapter = this.priProRechnungTableAdapter;
+            this.tableAdapterManager.ProjekteTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // priProRechnungTableAdapter
+            // 
+            this.priProRechnungTableAdapter.ClearBeforeFill = true;
+            // 
+            // XLSX
+            // 
+            this.XLSX.HeaderText = "Excel öffnen";
+            this.XLSX.Name = "XLSX";
+            this.XLSX.ReadOnly = true;
+            this.XLSX.Text = ".xlsx";
+            this.XLSX.UseColumnTextForButtonValue = true;
+            this.XLSX.Width = 50;
+            // 
+            // PDF
+            // 
+            this.PDF.HeaderText = "PDF öffnen";
+            this.PDF.Name = "PDF";
+            this.PDF.ReadOnly = true;
+            this.PDF.Text = ".pdf";
+            this.PDF.UseColumnTextForButtonValue = true;
+            this.PDF.Width = 50;
+            // 
+            // RechnungNr
+            // 
+            this.RechnungNr.DataPropertyName = "RechnungNr";
+            this.RechnungNr.HeaderText = "Rechn.Nr";
+            this.RechnungNr.Name = "RechnungNr";
+            this.RechnungNr.ReadOnly = true;
+            // 
+            // RechnungBeschreibung
+            // 
+            this.RechnungBeschreibung.DataPropertyName = "RechnungBeschreibung";
+            this.RechnungBeschreibung.HeaderText = "Beschreibung";
+            this.RechnungBeschreibung.Name = "RechnungBeschreibung";
+            this.RechnungBeschreibung.ReadOnly = true;
+            this.RechnungBeschreibung.Width = 300;
+            // 
+            // RechnungTyp
+            // 
+            this.RechnungTyp.DataPropertyName = "RechnungTyp";
+            this.RechnungTyp.HeaderText = "Typ";
+            this.RechnungTyp.Name = "RechnungTyp";
+            this.RechnungTyp.ReadOnly = true;
+            // 
+            // Projektnummer
+            // 
+            this.Projektnummer.DataPropertyName = "Projektnummer";
+            this.Projektnummer.HeaderText = "Projekt -Nr";
+            this.Projektnummer.Name = "Projektnummer";
+            this.Projektnummer.ReadOnly = true;
+            // 
+            // RechnungDatum
+            // 
+            this.RechnungDatum.DataPropertyName = "RechnungDatum";
+            this.RechnungDatum.HeaderText = "Rechnungs - Datum";
+            this.RechnungDatum.MinimumWidth = 110;
+            this.RechnungDatum.Name = "RechnungDatum";
+            this.RechnungDatum.ReadOnly = true;
+            this.RechnungDatum.Width = 110;
+            // 
+            // RechnungErsteller
+            // 
+            this.RechnungErsteller.DataPropertyName = "RechnungErsteller";
+            this.RechnungErsteller.HeaderText = "Rechnungs - Ersteller";
+            this.RechnungErsteller.Name = "RechnungErsteller";
+            this.RechnungErsteller.ReadOnly = true;
+            // 
+            // Rechnungsbetrag
+            // 
+            this.Rechnungsbetrag.DataPropertyName = "Rechnungsbetrag";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Rechnungsbetrag.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Rechnungsbetrag.HeaderText = "Rechnungs - Betrag";
+            this.Rechnungsbetrag.Name = "Rechnungsbetrag";
+            this.Rechnungsbetrag.ReadOnly = true;
+            // 
+            // Ändern
+            // 
+            this.Ändern.HeaderText = "Zahlungen";
+            this.Ändern.Name = "Ändern";
+            this.Ändern.ReadOnly = true;
+            this.Ändern.Text = "ändern";
+            this.Ändern.UseColumnTextForButtonValue = true;
+            // 
+            // Zahlungsdatum
+            // 
+            this.Zahlungsdatum.DataPropertyName = "Zahlungsdatum";
+            this.Zahlungsdatum.HeaderText = "Zahlungs - Datum";
+            this.Zahlungsdatum.Name = "Zahlungsdatum";
+            this.Zahlungsdatum.ReadOnly = true;
+            // 
+            // Zahlungsbetrag
+            // 
+            this.Zahlungsbetrag.DataPropertyName = "Zahlungsbetrag";
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Zahlungsbetrag.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Zahlungsbetrag.HeaderText = "Zahlungs - Betrag";
+            this.Zahlungsbetrag.Name = "Zahlungsbetrag";
+            this.Zahlungsbetrag.ReadOnly = true;
+            // 
+            // LieferscheinNr
+            // 
+            this.LieferscheinNr.DataPropertyName = "LieferscheinNr";
+            this.LieferscheinNr.HeaderText = "Lieferschein -Nr";
+            this.LieferscheinNr.Name = "LieferscheinNr";
+            this.LieferscheinNr.ReadOnly = true;
+            // 
+            // RE_Firmenname
+            // 
+            this.RE_Firmenname.DataPropertyName = "RE_Firmenname";
+            this.RE_Firmenname.HeaderText = "Firmenname";
+            this.RE_Firmenname.Name = "RE_Firmenname";
+            this.RE_Firmenname.ReadOnly = true;
+            this.RE_Firmenname.Width = 200;
+            // 
+            // RE_Name
+            // 
+            this.RE_Name.DataPropertyName = "RE_Name";
+            this.RE_Name.HeaderText = "Name";
+            this.RE_Name.Name = "RE_Name";
+            this.RE_Name.ReadOnly = true;
+            // 
+            // RE_Strasse
+            // 
+            this.RE_Strasse.DataPropertyName = "RE_Strasse";
+            this.RE_Strasse.HeaderText = "Strasse";
+            this.RE_Strasse.Name = "RE_Strasse";
+            this.RE_Strasse.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "RE_PLZ";
+            this.dataGridViewTextBoxColumn21.HeaderText = "RE_PLZ";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // RE_Stadt
+            // 
+            this.RE_Stadt.DataPropertyName = "RE_Stadt";
+            this.RE_Stadt.HeaderText = "Stadt";
+            this.RE_Stadt.Name = "RE_Stadt";
+            this.RE_Stadt.ReadOnly = true;
+            // 
+            // RE_Land
+            // 
+            this.RE_Land.DataPropertyName = "RE_Land";
+            this.RE_Land.HeaderText = "Land";
+            this.RE_Land.Name = "RE_Land";
+            this.RE_Land.ReadOnly = true;
+            // 
+            // RechnungPfad
+            // 
+            this.RechnungPfad.DataPropertyName = "RechnungPfad";
+            this.RechnungPfad.HeaderText = "RechnungPfad";
+            this.RechnungPfad.Name = "RechnungPfad";
+            this.RechnungPfad.ReadOnly = true;
+            this.RechnungPfad.Visible = false;
+            // 
+            // PriProRechnungID
+            // 
+            this.PriProRechnungID.DataPropertyName = "PriProRechnungID";
+            this.PriProRechnungID.HeaderText = "PriProRechnungID";
+            this.PriProRechnungID.Name = "PriProRechnungID";
+            this.PriProRechnungID.ReadOnly = true;
+            this.PriProRechnungID.Visible = false;
+            // 
             // Rechnung01_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -481,11 +536,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.priProRechnungDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.priProRechnungBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priProRechnungBindingNavigator)).EndInit();
             this.priProRechnungBindingNavigator.ResumeLayout(false);
             this.priProRechnungBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.priProRechnungBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,6 +580,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Projektnummer;
         private System.Windows.Forms.DataGridViewTextBoxColumn RechnungDatum;
         private System.Windows.Forms.DataGridViewTextBoxColumn RechnungErsteller;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rechnungsbetrag;
+        private System.Windows.Forms.DataGridViewButtonColumn Ändern;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zahlungsdatum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Zahlungsbetrag;
         private System.Windows.Forms.DataGridViewTextBoxColumn LieferscheinNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn RE_Firmenname;
         private System.Windows.Forms.DataGridViewTextBoxColumn RE_Name;
@@ -533,5 +592,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RE_Stadt;
         private System.Windows.Forms.DataGridViewTextBoxColumn RE_Land;
         private System.Windows.Forms.DataGridViewTextBoxColumn RechnungPfad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriProRechnungID;
     }
 }

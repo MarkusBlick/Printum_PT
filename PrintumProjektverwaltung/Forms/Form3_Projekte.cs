@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace PrintumProjektverwaltung.Forms
 {
@@ -49,8 +44,8 @@ namespace PrintumProjektverwaltung.Forms
                 neuesP.Projektnummer = neueNr;
             }
 
-            this.textBox1_Projektnummer.Text = neuesP.Projektnummer.ToString();
-            this.dateTimePicker2_lieferung.Value = DateTime.Now.AddMonths(3);
+            textBox1_Projektnummer.Text = neuesP.Projektnummer.ToString();
+            dateTimePicker2_lieferung.Value = DateTime.Now.AddMonths(3);
 
         }
 
@@ -58,14 +53,14 @@ namespace PrintumProjektverwaltung.Forms
 
         private void button1_Projekterstellen_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Cursor = Cursors.WaitCursor;
 
-            neuesP.Projektname = this.textBox_Name.Text;
+            neuesP.Projektname = textBox_Name.Text;
 
-            neuesP.Projektart = this.comboBox1.SelectedItem == null? this.comboBox1.Items[1].ToString() : this.comboBox1.SelectedItem.ToString();
+            neuesP.Projektart = comboBox1.SelectedItem == null ? comboBox1.Items[1].ToString() : comboBox1.SelectedItem.ToString();
 
             int dieNeueNummer;
-            if (Int32.TryParse(this.textBox1_Projektnummer.Text.Trim(), out dieNeueNummer))
+            if (Int32.TryParse(textBox1_Projektnummer.Text.Trim(), out dieNeueNummer))
             {
                 neuesP.Projektnummer = dieNeueNummer;
             }
@@ -76,7 +71,7 @@ namespace PrintumProjektverwaltung.Forms
             }
 
 
-            string projektOrdner = projektRoot + this.textBox1_Projektnummer.Text + " - " + neuesP.Projektname;
+            string projektOrdner = projektRoot + textBox1_Projektnummer.Text + " - " + neuesP.Projektname;
             neuesP.RootOrdner = projektOrdner;
 
             try
@@ -86,21 +81,20 @@ namespace PrintumProjektverwaltung.Forms
                 //Now Create all of the directories
                 foreach (string dirPath in Directory.GetDirectories(ordnerStruktur, "*", SearchOption.AllDirectories))
                 {
-                    Directory.CreateDirectory(dirPath.Replace(ordnerStruktur, projektOrdner));
+                    // Directory.CreateDirectory(dirPath.Replace(ordnerStruktur, projektOrdner));
+                    Helper.folderHelper.FolderCopy(ordnerStruktur, projektOrdner);
                 }
 
 
-                //Copy all the files & Replaces any files with the same name
-                foreach (string newPath in Directory.GetFiles(ordnerStruktur, "*.*", SearchOption.AllDirectories))
-                {
-                    File.Copy(newPath, newPath.Replace(ordnerStruktur, projektOrdner), true);
-                }
+                ////Copy all the files & Replaces any files with the same name
+                //foreach (string newPath in Directory.GetFiles(ordnerStruktur, "*.*", SearchOption.AllDirectories))
+                //{
+                //    File.Copy(newPath, newPath.Replace(ordnerStruktur, projektOrdner),true);
+                //}
             }
             catch (Exception ex)
             {
-
-
-                                    Helper.LogHelper.WriteDebugLog(ex.ToString());
+                Helper.LogHelper.WriteDebugLog(ex.ToString());
             }
 
             if (checkProjektnummer())
@@ -114,7 +108,7 @@ namespace PrintumProjektverwaltung.Forms
 
 
 
-                this.Close();
+                Close();
 
             }
 
@@ -128,7 +122,7 @@ namespace PrintumProjektverwaltung.Forms
         {
             int dieNeue;
 
-            bool istDasEineZahl = Int32.TryParse(this.textBox1_Projektnummer.Text, out dieNeue);
+            bool istDasEineZahl = Int32.TryParse(textBox1_Projektnummer.Text, out dieNeue);
             if (istDasEineZahl)
             {
                 var gibtsSchon = db.Projekte.Find(dieNeue);

@@ -53,7 +53,7 @@ namespace PrintumProjektverwaltung.Helper
             Outlook.Inspector mailInspector = dieMail.GetInspector;
             mailInspector.Activate();
 
-            dieMail.Subject = "PRINTUM Bestellung  " + bestellnr + "  Projekt: " + projektnr.ToString();
+            dieMail.Subject = "PT-PRINTUM Bestellung  " + bestellnr + "  Projekt: " + projektnr.ToString();
 
             dieMail.To = email;
 
@@ -70,7 +70,7 @@ namespace PrintumProjektverwaltung.Helper
                                     pdfPfad,
                                     Outlook.OlAttachmentType.olByValue,
                                     1,
-                                    "PRINTUM Bestellung  " + bestellnr);
+                                    "PT-PRINTUM Bestellung  " + bestellnr);
 
             dieMail.Display(true);
             Form4_Spinner f4 = (Application.OpenForms["Form4_Spinner"] as Form4_Spinner);

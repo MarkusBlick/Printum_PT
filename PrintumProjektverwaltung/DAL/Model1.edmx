@@ -327,6 +327,9 @@
           <Property Name="Projektnummer" Type="int" />
           <Property Name="Projektname" Type="nvarchar(max)" />
           <Property Name="LieferscheinNr" Type="nvarchar(max)" />
+          <Property Name="Rechnungsbetrag" Type="float" />
+          <Property Name="Zahlungsdatum" Type="datetime" />
+          <Property Name="Zahlungsbetrag" Type="float" />
         </EntityType>
         <EntityType Name="Projekte">
           <Key>
@@ -857,6 +860,9 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungProProjekt' 
           <Property Name="Projektnummer" Type="Int32" />
           <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LieferscheinNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rechnungsbetrag" Type="Double" />
+          <Property Name="Zahlungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Zahlungsbetrag" Type="Double" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1245,6 +1251,9 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungProProjekt' 
           <EntitySetMapping Name="PriProRechnung">
             <EntityTypeMapping TypeName="PrintumProjekteModel.PriProRechnung">
               <MappingFragment StoreEntitySet="PriProRechnung">
+                <ScalarProperty Name="Zahlungsbetrag" ColumnName="Zahlungsbetrag" />
+                <ScalarProperty Name="Zahlungsdatum" ColumnName="Zahlungsdatum" />
+                <ScalarProperty Name="Rechnungsbetrag" ColumnName="Rechnungsbetrag" />
                 <ScalarProperty Name="LieferscheinNr" ColumnName="LieferscheinNr" />
                 <ScalarProperty Name="Projektname" ColumnName="Projektname" />
                 <ScalarProperty Name="Projektnummer" ColumnName="Projektnummer" />

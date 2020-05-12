@@ -30,5 +30,8 @@ namespace PrintumProjektverwaltung.DAL
         public Nullable<int> Projektnummer { get; set; }
         public string Projektname { get; set; }
         public string LieferscheinNr { get; set; }
+        public Nullable<double> Rechnungsbetrag { get; set; }
+        public Nullable<System.DateTime> Zahlungsdatum { get; set; }
+        public Nullable<double> Zahlungsbetrag { get; set; }
     }
 }

@@ -402,5 +402,8 @@
     <Property Name="Projektnummer" Type="Int32" />
     <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LieferscheinNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Rechnungsbetrag" Type="Double" />
+    <Property Name="Zahlungsdatum" Type="DateTime" Precision="3" />
+    <Property Name="Zahlungsbetrag" Type="Double" />
   </EntityType>
 </Schema>

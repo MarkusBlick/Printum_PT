@@ -7610,6 +7610,12 @@ namespace PrintumProjektverwaltung.DAL {
             
             private global::System.Data.DataColumn columnLieferscheinNr;
             
+            private global::System.Data.DataColumn columnRechnungsbetrag;
+            
+            private global::System.Data.DataColumn columnZahlungsdatum;
+            
+            private global::System.Data.DataColumn columnZahlungsbetrag;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PriProRechnungDataTable() {
@@ -7773,6 +7779,30 @@ namespace PrintumProjektverwaltung.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn RechnungsbetragColumn {
+                get {
+                    return this.columnRechnungsbetrag;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ZahlungsdatumColumn {
+                get {
+                    return this.columnZahlungsdatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ZahlungsbetragColumn {
+                get {
+                    return this.columnZahlungsbetrag;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7824,7 +7854,10 @@ namespace PrintumProjektverwaltung.DAL {
                         string RechnungPfad, 
                         int Projektnummer, 
                         string Projektname, 
-                        string LieferscheinNr) {
+                        string LieferscheinNr, 
+                        double Rechnungsbetrag, 
+                        System.DateTime Zahlungsdatum, 
+                        double Zahlungsbetrag) {
                 PriProRechnungRow rowPriProRechnungRow = ((PriProRechnungRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PriProRechnungID,
@@ -7842,7 +7875,10 @@ namespace PrintumProjektverwaltung.DAL {
                         RechnungPfad,
                         Projektnummer,
                         Projektname,
-                        LieferscheinNr};
+                        LieferscheinNr,
+                        Rechnungsbetrag,
+                        Zahlungsdatum,
+                        Zahlungsbetrag};
                 rowPriProRechnungRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPriProRechnungRow);
                 return rowPriProRechnungRow;
@@ -7888,6 +7924,9 @@ namespace PrintumProjektverwaltung.DAL {
                 this.columnProjektnummer = base.Columns["Projektnummer"];
                 this.columnProjektname = base.Columns["Projektname"];
                 this.columnLieferscheinNr = base.Columns["LieferscheinNr"];
+                this.columnRechnungsbetrag = base.Columns["Rechnungsbetrag"];
+                this.columnZahlungsdatum = base.Columns["Zahlungsdatum"];
+                this.columnZahlungsbetrag = base.Columns["Zahlungsbetrag"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7925,6 +7964,12 @@ namespace PrintumProjektverwaltung.DAL {
                 base.Columns.Add(this.columnProjektname);
                 this.columnLieferscheinNr = new global::System.Data.DataColumn("LieferscheinNr", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLieferscheinNr);
+                this.columnRechnungsbetrag = new global::System.Data.DataColumn("Rechnungsbetrag", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRechnungsbetrag);
+                this.columnZahlungsdatum = new global::System.Data.DataColumn("Zahlungsdatum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZahlungsdatum);
+                this.columnZahlungsbetrag = new global::System.Data.DataColumn("Zahlungsbetrag", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZahlungsbetrag);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPriProRechnungID}, true));
                 this.columnPriProRechnungID.AllowDBNull = false;
@@ -14989,6 +15034,54 @@ namespace PrintumProjektverwaltung.DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double Rechnungsbetrag {
+                get {
+                    try {
+                        return ((double)(this[this.tablePriProRechnung.RechnungsbetragColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Der Wert für Spalte Rechnungsbetrag in Tabelle PriProRechnung ist DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePriProRechnung.RechnungsbetragColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Zahlungsdatum {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePriProRechnung.ZahlungsdatumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Der Wert für Spalte Zahlungsdatum in Tabelle PriProRechnung ist DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePriProRechnung.ZahlungsdatumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double Zahlungsbetrag {
+                get {
+                    try {
+                        return ((double)(this[this.tablePriProRechnung.ZahlungsbetragColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Der Wert für Spalte Zahlungsbetrag in Tabelle PriProRechnung ist DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePriProRechnung.ZahlungsbetragColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsRechnungNrNull() {
                 return this.IsNull(this.tablePriProRechnung.RechnungNrColumn);
             }
@@ -15165,6 +15258,42 @@ namespace PrintumProjektverwaltung.DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLieferscheinNrNull() {
                 this[this.tablePriProRechnung.LieferscheinNrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsRechnungsbetragNull() {
+                return this.IsNull(this.tablePriProRechnung.RechnungsbetragColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetRechnungsbetragNull() {
+                this[this.tablePriProRechnung.RechnungsbetragColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsZahlungsdatumNull() {
+                return this.IsNull(this.tablePriProRechnung.ZahlungsdatumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetZahlungsdatumNull() {
+                this[this.tablePriProRechnung.ZahlungsdatumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsZahlungsbetragNull() {
+                return this.IsNull(this.tablePriProRechnung.ZahlungsbetragColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetZahlungsbetragNull() {
+                this[this.tablePriProRechnung.ZahlungsbetragColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24471,20 +24600,29 @@ ORDER BY LieferscheinNr DESC";
             tableMapping.ColumnMappings.Add("Projektnummer", "Projektnummer");
             tableMapping.ColumnMappings.Add("Projektname", "Projektname");
             tableMapping.ColumnMappings.Add("LieferscheinNr", "LieferscheinNr");
+            tableMapping.ColumnMappings.Add("Rechnungsbetrag", "Rechnungsbetrag");
+            tableMapping.ColumnMappings.Add("Zahlungsdatum", "Zahlungsdatum");
+            tableMapping.ColumnMappings.Add("Zahlungsbetrag", "Zahlungsbetrag");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PriProRechnung] WHERE (([PriProRechnungID] = @Original_PriProRechnungID) AND ((@IsNull_RechnungDatum = 1 AND [RechnungDatum] IS NULL) OR ([RechnungDatum] = @Original_RechnungDatum)) AND ((@IsNull_Projektnummer = 1 AND [Projektnummer] IS NULL) OR ([Projektnummer] = @Original_Projektnummer)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [PriProRechnung] WHERE (([PriProRechnungID] = @Original_PriProRechnungID) AND ((@IsNull_RechnungDatum = 1 AND [RechnungDatum] IS NULL) OR ([RechnungDatum] = @Original_RechnungDatum)) AND ((@IsNull_Projektnummer = 1 AND [Projektnummer] IS NULL) OR ([Projektnummer] = @Original_Projektnummer)) AND ((@IsNull_Rechnungsbetrag = 1 AND [Rechnungsbetrag] IS NULL) OR ([Rechnungsbetrag] = @Original_Rechnungsbetrag)) AND ((@IsNull_Zahlungsdatum = 1 AND [Zahlungsdatum] IS NULL) OR ([Zahlungsdatum] = @Original_Zahlungsdatum)) AND ((@IsNull_Zahlungsbetrag = 1 AND [Zahlungsbetrag] IS NULL) OR ([Zahlungsbetrag] = @Original_Zahlungsbetrag)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PriProRechnungID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PriProRechnungID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RechnungDatum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RechnungDatum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RechnungDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RechnungDatum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Rechnungsbetrag", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rechnungsbetrag", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rechnungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rechnungsbetrag", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zahlungsdatum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsdatum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zahlungsdatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsdatum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zahlungsbetrag", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsbetrag", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zahlungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsbetrag", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PriProRechnung] ([PriProRechnungID], [RechnungNr], [RechnungBeschreibung], [RechnungTyp], [RechnungDatum], [RechnungErsteller], [RE_Firmenname], [RE_Name], [RE_Strasse], [RE_PLZ], [RE_Stadt], [RE_Land], [RechnungPfad], [Projektnummer], [Projektname], [LieferscheinNr]) VALUES (@PriProRechnungID, @RechnungNr, @RechnungBeschreibung, @RechnungTyp, @RechnungDatum, @RechnungErsteller, @RE_Firmenname, @RE_Name, @RE_Strasse, @RE_PLZ, @RE_Stadt, @RE_Land, @RechnungPfad, @Projektnummer, @Projektname, @LieferscheinNr);
-SELECT PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, RechnungDatum, RechnungErsteller, RE_Firmenname, RE_Name, RE_Strasse, RE_PLZ, RE_Stadt, RE_Land, RechnungPfad, Projektnummer, Projektname, LieferscheinNr FROM PriProRechnung WHERE (PriProRechnungID = @PriProRechnungID) ORDER BY RechnungNr DESC";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [PriProRechnung] ([PriProRechnungID], [RechnungNr], [RechnungBeschreibung], [RechnungTyp], [RechnungDatum], [RechnungErsteller], [RE_Firmenname], [RE_Name], [RE_Strasse], [RE_PLZ], [RE_Stadt], [RE_Land], [RechnungPfad], [Projektnummer], [Projektname], [LieferscheinNr], [Rechnungsbetrag], [Zahlungsdatum], [Zahlungsbetrag]) VALUES (@PriProRechnungID, @RechnungNr, @RechnungBeschreibung, @RechnungTyp, @RechnungDatum, @RechnungErsteller, @RE_Firmenname, @RE_Name, @RE_Strasse, @RE_PLZ, @RE_Stadt, @RE_Land, @RechnungPfad, @Projektnummer, @Projektname, @LieferscheinNr, @Rechnungsbetrag, @Zahlungsdatum, @Zahlungsbetrag);
+SELECT PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, RechnungDatum, RechnungErsteller, RE_Firmenname, RE_Name, RE_Strasse, RE_PLZ, RE_Stadt, RE_Land, RechnungPfad, Projektnummer, Projektname, LieferscheinNr, Rechnungsbetrag, Zahlungsdatum, Zahlungsbetrag FROM PriProRechnung WHERE (PriProRechnungID = @PriProRechnungID) ORDER BY RechnungNr DESC";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PriProRechnungID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PriProRechnungID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RechnungNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RechnungNr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24502,10 +24640,32 @@ SELECT PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, Rechnung
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LieferscheinNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LieferscheinNr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rechnungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rechnungsbetrag", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zahlungsdatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsdatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zahlungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsbetrag", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [PriProRechnung] SET [PriProRechnungID] = @PriProRechnungID, [RechnungNr] = @RechnungNr, [RechnungBeschreibung] = @RechnungBeschreibung, [RechnungTyp] = @RechnungTyp, [RechnungDatum] = @RechnungDatum, [RechnungErsteller] = @RechnungErsteller, [RE_Firmenname] = @RE_Firmenname, [RE_Name] = @RE_Name, [RE_Strasse] = @RE_Strasse, [RE_PLZ] = @RE_PLZ, [RE_Stadt] = @RE_Stadt, [RE_Land] = @RE_Land, [RechnungPfad] = @RechnungPfad, [Projektnummer] = @Projektnummer, [Projektname] = @Projektname, [LieferscheinNr] = @LieferscheinNr WHERE (([PriProRechnungID] = @Original_PriProRechnungID) AND ((@IsNull_RechnungDatum = 1 AND [RechnungDatum] IS NULL) OR ([RechnungDatum] = @Original_RechnungDatum)) AND ((@IsNull_Projektnummer = 1 AND [Projektnummer] IS NULL) OR ([Projektnummer] = @Original_Projektnummer)));
-SELECT PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, RechnungDatum, RechnungErsteller, RE_Firmenname, RE_Name, RE_Strasse, RE_PLZ, RE_Stadt, RE_Land, RechnungPfad, Projektnummer, Projektname, LieferscheinNr FROM PriProRechnung WHERE (PriProRechnungID = @PriProRechnungID) ORDER BY RechnungNr DESC";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [PriProRechnung] SET [PriProRechnungID] = @PriProRechnungID, [RechnungNr] " +
+                "= @RechnungNr, [RechnungBeschreibung] = @RechnungBeschreibung, [RechnungTyp] = @" +
+                "RechnungTyp, [RechnungDatum] = @RechnungDatum, [RechnungErsteller] = @RechnungEr" +
+                "steller, [RE_Firmenname] = @RE_Firmenname, [RE_Name] = @RE_Name, [RE_Strasse] = " +
+                "@RE_Strasse, [RE_PLZ] = @RE_PLZ, [RE_Stadt] = @RE_Stadt, [RE_Land] = @RE_Land, [" +
+                "RechnungPfad] = @RechnungPfad, [Projektnummer] = @Projektnummer, [Projektname] =" +
+                " @Projektname, [LieferscheinNr] = @LieferscheinNr, [Rechnungsbetrag] = @Rechnung" +
+                "sbetrag, [Zahlungsdatum] = @Zahlungsdatum, [Zahlungsbetrag] = @Zahlungsbetrag WH" +
+                "ERE (([PriProRechnungID] = @Original_PriProRechnungID) AND ((@IsNull_RechnungDat" +
+                "um = 1 AND [RechnungDatum] IS NULL) OR ([RechnungDatum] = @Original_RechnungDatu" +
+                "m)) AND ((@IsNull_Projektnummer = 1 AND [Projektnummer] IS NULL) OR ([Projektnum" +
+                "mer] = @Original_Projektnummer)) AND ((@IsNull_Rechnungsbetrag = 1 AND [Rechnung" +
+                "sbetrag] IS NULL) OR ([Rechnungsbetrag] = @Original_Rechnungsbetrag)) AND ((@IsN" +
+                "ull_Zahlungsdatum = 1 AND [Zahlungsdatum] IS NULL) OR ([Zahlungsdatum] = @Origin" +
+                "al_Zahlungsdatum)) AND ((@IsNull_Zahlungsbetrag = 1 AND [Zahlungsbetrag] IS NULL" +
+                ") OR ([Zahlungsbetrag] = @Original_Zahlungsbetrag)));\r\nSELECT PriProRechnungID, " +
+                "RechnungNr, RechnungBeschreibung, RechnungTyp, RechnungDatum, RechnungErsteller," +
+                " RE_Firmenname, RE_Name, RE_Strasse, RE_PLZ, RE_Stadt, RE_Land, RechnungPfad, Pr" +
+                "ojektnummer, Projektname, LieferscheinNr, Rechnungsbetrag, Zahlungsdatum, Zahlun" +
+                "gsbetrag FROM PriProRechnung WHERE (PriProRechnungID = @PriProRechnungID) ORDER " +
+                "BY RechnungNr DESC";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PriProRechnungID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PriProRechnungID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RechnungNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RechnungNr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24523,11 +24683,20 @@ SELECT PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, Rechnung
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Projektname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LieferscheinNr", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LieferscheinNr", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rechnungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rechnungsbetrag", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zahlungsdatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsdatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zahlungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsbetrag", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PriProRechnungID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PriProRechnungID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RechnungDatum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RechnungDatum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RechnungDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RechnungDatum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Projektnummer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Projektnummer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Rechnungsbetrag", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rechnungsbetrag", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rechnungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rechnungsbetrag", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zahlungsdatum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsdatum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zahlungsdatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsdatum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zahlungsbetrag", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsbetrag", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zahlungsbetrag", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zahlungsbetrag", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24544,7 +24713,7 @@ SELECT PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, Rechnung
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, RechnungDatum, RechnungErsteller, RE_Firmenname, RE_Name, RE_Strasse, RE_PLZ, 
-                         RE_Stadt, RE_Land, RechnungPfad, Projektnummer, Projektname, LieferscheinNr
+                         RE_Stadt, RE_Land, RechnungPfad, Projektnummer, Projektname, LieferscheinNr, Rechnungsbetrag, Zahlungsdatum, Zahlungsbetrag
 FROM            PriProRechnung
 ORDER BY RechnungNr DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -24611,7 +24780,7 @@ ORDER BY RechnungNr DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PriProRechnungID, global::System.Nullable<global::System.DateTime> Original_RechnungDatum, global::System.Nullable<int> Original_Projektnummer) {
+        public virtual int Delete(int Original_PriProRechnungID, global::System.Nullable<global::System.DateTime> Original_RechnungDatum, global::System.Nullable<int> Original_Projektnummer, global::System.Nullable<double> Original_Rechnungsbetrag, global::System.Nullable<global::System.DateTime> Original_Zahlungsdatum, global::System.Nullable<double> Original_Zahlungsbetrag) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PriProRechnungID));
             if ((Original_RechnungDatum.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -24628,6 +24797,30 @@ ORDER BY RechnungNr DESC";
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Rechnungsbetrag.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((double)(Original_Rechnungsbetrag.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Zahlungsdatum.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Zahlungsdatum.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Zahlungsbetrag.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((double)(Original_Zahlungsbetrag.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -24665,7 +24858,10 @@ ORDER BY RechnungNr DESC";
                     string RechnungPfad, 
                     global::System.Nullable<int> Projektnummer, 
                     string Projektname, 
-                    string LieferscheinNr) {
+                    string LieferscheinNr, 
+                    global::System.Nullable<double> Rechnungsbetrag, 
+                    global::System.Nullable<global::System.DateTime> Zahlungsdatum, 
+                    global::System.Nullable<double> Zahlungsbetrag) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PriProRechnungID));
             if ((RechnungNr == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -24757,6 +24953,24 @@ ORDER BY RechnungNr DESC";
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = ((string)(LieferscheinNr));
             }
+            if ((Rechnungsbetrag.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(Rechnungsbetrag.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Zahlungsdatum.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((System.DateTime)(Zahlungsdatum.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Zahlungsbetrag.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(Zahlungsbetrag.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24794,9 +25008,15 @@ ORDER BY RechnungNr DESC";
                     global::System.Nullable<int> Projektnummer, 
                     string Projektname, 
                     string LieferscheinNr, 
+                    global::System.Nullable<double> Rechnungsbetrag, 
+                    global::System.Nullable<global::System.DateTime> Zahlungsdatum, 
+                    global::System.Nullable<double> Zahlungsbetrag, 
                     int Original_PriProRechnungID, 
                     global::System.Nullable<global::System.DateTime> Original_RechnungDatum, 
-                    global::System.Nullable<int> Original_Projektnummer) {
+                    global::System.Nullable<int> Original_Projektnummer, 
+                    global::System.Nullable<double> Original_Rechnungsbetrag, 
+                    global::System.Nullable<global::System.DateTime> Original_Zahlungsdatum, 
+                    global::System.Nullable<double> Original_Zahlungsbetrag) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PriProRechnungID));
             if ((RechnungNr == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -24888,22 +25108,64 @@ ORDER BY RechnungNr DESC";
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(LieferscheinNr));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_PriProRechnungID));
-            if ((Original_RechnungDatum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_RechnungDatum.Value));
+            if ((Rechnungsbetrag.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Rechnungsbetrag.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Zahlungsdatum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Zahlungsdatum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Zahlungsbetrag.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Zahlungsbetrag.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_Projektnummer.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_Projektnummer.Value));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_PriProRechnungID));
+            if ((Original_RechnungDatum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_RechnungDatum.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Projektnummer.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_Projektnummer.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Rechnungsbetrag.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Original_Rechnungsbetrag.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Zahlungsdatum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_Zahlungsdatum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Zahlungsbetrag.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(Original_Zahlungsbetrag.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -24941,10 +25203,16 @@ ORDER BY RechnungNr DESC";
                     global::System.Nullable<int> Projektnummer, 
                     string Projektname, 
                     string LieferscheinNr, 
+                    global::System.Nullable<double> Rechnungsbetrag, 
+                    global::System.Nullable<global::System.DateTime> Zahlungsdatum, 
+                    global::System.Nullable<double> Zahlungsbetrag, 
                     int Original_PriProRechnungID, 
                     global::System.Nullable<global::System.DateTime> Original_RechnungDatum, 
-                    global::System.Nullable<int> Original_Projektnummer) {
-            return this.Update(Original_PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, RechnungDatum, RechnungErsteller, RE_Firmenname, RE_Name, RE_Strasse, RE_PLZ, RE_Stadt, RE_Land, RechnungPfad, Projektnummer, Projektname, LieferscheinNr, Original_PriProRechnungID, Original_RechnungDatum, Original_Projektnummer);
+                    global::System.Nullable<int> Original_Projektnummer, 
+                    global::System.Nullable<double> Original_Rechnungsbetrag, 
+                    global::System.Nullable<global::System.DateTime> Original_Zahlungsdatum, 
+                    global::System.Nullable<double> Original_Zahlungsbetrag) {
+            return this.Update(Original_PriProRechnungID, RechnungNr, RechnungBeschreibung, RechnungTyp, RechnungDatum, RechnungErsteller, RE_Firmenname, RE_Name, RE_Strasse, RE_PLZ, RE_Stadt, RE_Land, RechnungPfad, Projektnummer, Projektname, LieferscheinNr, Rechnungsbetrag, Zahlungsdatum, Zahlungsbetrag, Original_PriProRechnungID, Original_RechnungDatum, Original_Projektnummer, Original_Rechnungsbetrag, Original_Zahlungsdatum, Original_Zahlungsbetrag);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
