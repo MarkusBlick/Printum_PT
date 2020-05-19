@@ -15,7 +15,7 @@ namespace PrintumProjektverwaltung.Helper
             }
             catch (Exception ex)
             {
-                Helper.LogHelper.WriteDebugLog(ex.ToString());                
+                Helper.LogHelper.WriteDebugLog(ex.ToString());
             }
         }
 
@@ -41,30 +41,37 @@ namespace PrintumProjektverwaltung.Helper
                 destinationDirectory = new DirectoryInfo(destinationFolder);
             }
 
-
-
-            DirectorySecurity security = sourceDirectory.GetAccessControl();
-
-            security.SetAccessRuleProtection(true, true);
-            destinationDirectory.SetAccessControl(security);
-
-            var filesToCopy = sourceDirectory.GetFiles();
-
-            foreach (FileInfo file in filesToCopy)
+            try
             {
-                String path = Path.Combine(destinationFolder, file.Name);
-                FileSecurity fileSecurity = file.GetAccessControl();
 
-                fileSecurity.SetAccessRuleProtection(true, true);
 
-                file.CopyTo(path, false);
 
-                FileInfo copiedFile = new FileInfo(path);
+                DirectorySecurity security = sourceDirectory.GetAccessControl();
 
-                copiedFile.SetAccessControl(fileSecurity);
+                security.SetAccessRuleProtection(true, true);
+                destinationDirectory.SetAccessControl(security);
+
+                var filesToCopy = sourceDirectory.GetFiles();
+
+                foreach (FileInfo file in filesToCopy)
+                {
+                    String path = Path.Combine(destinationFolder, file.Name);
+                    FileSecurity fileSecurity = file.GetAccessControl();
+
+                    fileSecurity.SetAccessRuleProtection(true, true);
+
+                    file.CopyTo(path, false);
+
+                    FileInfo copiedFile = new FileInfo(path);
+
+                    copiedFile.SetAccessControl(fileSecurity);
+                }
+
             }
-
-
+            catch (Exception ex)
+            {
+                Helper.LogHelper.WriteDebugLog(ex.ToString());
+            }
         }
 
 

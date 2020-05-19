@@ -242,6 +242,7 @@ C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.F
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Lieferschein02_Projekt.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Lieferschein03_Adresse.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Lieferschein04_Rechnung.resources
+C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Rechnung07_Zahlungen.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.ReportViewer1.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.ReportViewer_Lieferschein.resources
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms._test_Form.resources
@@ -257,4 +258,4 @@ C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektve
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.csproj.CopyComplete
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektverwaltung.exe
 C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektverwaltung.pdb
-C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.Forms.Rechnung07_Zahlungen.resources
+C:\_git\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.csprojAssemblyReference.cache

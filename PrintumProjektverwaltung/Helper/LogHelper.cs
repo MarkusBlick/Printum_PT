@@ -13,7 +13,7 @@ namespace PrintumProjektverwaltung.Helper
         //    C:\Users\Public\PrintumProjekte\Logs\
 
         private static readonly ILog _debugLogger;
-        private static readonly ILog _emailLogger;
+  //      private static readonly ILog _emailLogger;
 
         private static ILog GetLogger(string logName)
       {

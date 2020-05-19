@@ -20,6 +20,8 @@ namespace PrintumProjektverwaltung
 
         public string Projektname;
         public int Projektnummer;
+        public string Projektordnerpfad;
+
 
         public string LieferscheinNr;
         public string LieferscheinBeschreibung;
@@ -122,6 +124,7 @@ namespace PrintumProjektverwaltung
             {
                 this.Projektname = L02. rrrow.Projektname;
                 this.Projektnummer = L02.rrrow.Projektnummer;
+                this.Projektordnerpfad = L02.rrrow.RootOrdner;
 
                 this.projektnummerTextBox.Text = this.Projektnummer.ToString();
                 this.projektnameTextBox.Text = this.Projektname;
@@ -134,8 +137,10 @@ namespace PrintumProjektverwaltung
 
         private string getLieferscheindateiPfad()
         {
-            //"\\192.168.26.250\buchhaltung\R e c h n u n g e n\2018\11 November"
-            var pfad = @"\\192.168.26.250\PT-Rechnungen\";
+            ////"\\192.168.26.250\buchhaltung\R e c h n u n g e n\2018\11 November"
+            //var pfad = @"\\192.168.26.250\PT-Rechnungen\";
+            //\\192.168.26.250\PT-PriPro\20413 - Kurz Subtratwickler 350 4500816996
+            var pfad = this.Projektordnerpfad + @"\12 Rechnungen\";
             var jahr = DateTime.Now.Year.ToString();
             string monat = getCurrenMonthString();
 

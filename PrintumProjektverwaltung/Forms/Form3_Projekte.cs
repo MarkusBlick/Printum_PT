@@ -53,6 +53,22 @@ namespace PrintumProjektverwaltung.Forms
 
         private void button1_Projekterstellen_Click(object sender, EventArgs e)
         {
+
+            bool kannImpersonifizieren = true;
+            try
+            {
+                using (new Impersonator())
+                {
+                    var q = new DirectoryInfo(ordnerStruktur);
+                }
+            }
+            catch (Exception ex)
+            {
+                kannImpersonifizieren = false;
+                MessageBox.Show("Aufruf mit besonderen Rechten hat irgendwie wohl nicht geklappt \r\n\r\n" + ex.Message);
+            }
+
+
             Cursor = Cursors.WaitCursor;
 
             neuesP.Projektname = textBox_Name.Text;
@@ -76,13 +92,46 @@ namespace PrintumProjektverwaltung.Forms
 
             try
             {
+
                 Directory.CreateDirectory(projektOrdner);
 
+                var alle = Directory.GetDirectories(ordnerStruktur, "*", SearchOption.AllDirectories);
                 //Now Create all of the directories
-                foreach (string dirPath in Directory.GetDirectories(ordnerStruktur, "*", SearchOption.AllDirectories))
+                foreach (string dirPath in alle)
                 {
-                    // Directory.CreateDirectory(dirPath.Replace(ordnerStruktur, projektOrdner));
-                    Helper.folderHelper.FolderCopy(ordnerStruktur, projektOrdner);
+                    string dirPathNeu = dirPath.Replace(ordnerStruktur, projektOrdner);
+                    if (kannImpersonifizieren)
+                    {
+                        using (new Impersonator())
+                        {
+                            try
+                            {
+
+                                // hier kommt die Kopiererei
+                                Helper.folderHelper.FolderCopy(dirPath, dirPathNeu);
+
+                            }
+                            catch (Exception ex1)
+                            {
+                                Helper.LogHelper.WriteDebugLog(ex1.ToString());
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            // veruch ohne Impersonation
+                            Helper.folderHelper.FolderCopy(dirPath, dirPathNeu);
+
+                        }
+                        catch (Exception ex1)
+                        {
+                            Helper.LogHelper.WriteDebugLog(ex1.ToString());
+                        }
+                    }
+
                 }
 
 
@@ -91,6 +140,7 @@ namespace PrintumProjektverwaltung.Forms
                 //{
                 //    File.Copy(newPath, newPath.Replace(ordnerStruktur, projektOrdner),true);
                 //}
+
             }
             catch (Exception ex)
             {
