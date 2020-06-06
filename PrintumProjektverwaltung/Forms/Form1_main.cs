@@ -314,7 +314,7 @@ namespace PrintumProjektverwaltung.Forms
                 printumProjekt currP = (printumProjekt)this.treeView1.SelectedNode.Tag;
                 if (currP.RootOrdner != null)
                 {
-                    var pfad = currP.RootOrdner;
+                    var pfad = currP.RootOrdner.Trim();
                     if (this.folderroot.Contains("192.168.26.250"))
                     {
                         pfad = pfad.Replace("PRINTUMSERVER", "192.168.26.250");

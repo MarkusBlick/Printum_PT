@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.DirectoryServices.AccountManagement;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PrintumProjektverwaltung.DAL;
 using PrintumProjektverwaltung.Models;
@@ -38,7 +34,7 @@ namespace PrintumProjektverwaltung.Forms
 
             string sourceDirectory = dasP.RootOrdner;
             string destinationDirectory = @"\\PRINTUMSERVER\PT-PriPro\"
-                                           + dasP.Projektnummer + @" - " + this.textBox1.Text.Trim();
+                                           + dasP.Projektnummer + @" - " + textBox1.Text.Trim();
 
 
 
@@ -57,41 +53,57 @@ namespace PrintumProjektverwaltung.Forms
             var Password = "Bernd$Finest";
             using (var domainContext = new PrincipalContext(ContextType.Domain, "192.168.26.250", ADUser_Id, Password))
             {
+                string alleSchreibbar = "";
                 using (var user = new UserPrincipal(domainContext))
                 {
-                    //DirectoryInfo disource = new DirectoryInfo(sourceDirectory);
-
-                    //Directory.Move(sourceDirectory, destinationDirectory);
-
-
-                    try
+                    alleSchreibbar = CheckDieFiles(sourceDirectory);
+                    if (alleSchreibbar.Count()>0)
                     {
-                        DirectoryCopy(sourceDirectory, destinationDirectory, true);
+
+
+                        try
+                        {
+                        //DirectoryInfo disource = new DirectoryInfo(sourceDirectory);
+
+                        //Directory.Move(sourceDirectory, destinationDirectory);
+
+
+                            DirectoryCopy(sourceDirectory, destinationDirectory, true);
+
+
+                            try
+                            {
+
+
+                                Directory.Delete(sourceDirectory, true);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Da hat was nicht geklappt" + Environment.NewLine + Environment.NewLine
+                                    + " bei Directory.Delete"
+                                    + Environment.NewLine + Environment.NewLine
+                                    + Environment.NewLine + Environment.NewLine + ex.ToString());
+                            }
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Da hat was nicht geklappt" + Environment.NewLine + Environment.NewLine
+                                + " bei DirectoryCopy"
+                                + Environment.NewLine + Environment.NewLine
+                                + Environment.NewLine + Environment.NewLine + ex.ToString());
+
+
+                        }
+
+
+
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Da hat was nicht geklappt" + Environment.NewLine + Environment.NewLine
-                            + " bei DirectoryCopy"
-                            + Environment.NewLine + Environment.NewLine
-                            + Environment.NewLine + Environment.NewLine + ex.ToString());
-
-
-                    }
-
-                    try
-                    {
-
-
-                        Directory.Delete(sourceDirectory, true);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Da hat was nicht geklappt" + Environment.NewLine + Environment.NewLine
-                            + " bei Directory.Delete"
-                            + Environment.NewLine + Environment.NewLine
-                            + Environment.NewLine + Environment.NewLine + ex.ToString());
-
-
+                        MessageBox.Show("Umbenennen geht nicht , denn folgende Dateien sind noch offen:" + Environment.NewLine +
+                            alleSchreibbar);
                     }
                 }
             }
@@ -106,7 +118,7 @@ namespace PrintumProjektverwaltung.Forms
                 {
 
 
-                    List<PriProLieferscheinRechnung> Lieferscheine = this.getLieferscheine(db);
+                    List<PriProLieferscheinRechnung> Lieferscheine = getLieferscheine(db);
                     if (Lieferscheine.Count() > 0)
                     {
                         foreach (var item in Lieferscheine)
@@ -133,7 +145,7 @@ namespace PrintumProjektverwaltung.Forms
                 {
 
 
-                    List<Bestellungen> Bestellungen = this.getBestellungen(db);
+                    List<Bestellungen> Bestellungen = getBestellungen(db);
                     if (Bestellungen.Count() > 0)
                     {
                         foreach (var item in Bestellungen)
@@ -165,10 +177,44 @@ namespace PrintumProjektverwaltung.Forms
 
 
                 // Datenbank speichern
-                this.datenbankSpeichern(db, destinationDirectory);
+                datenbankSpeichern(db, destinationDirectory);
             }
-            this.Close();
+            Close();
 
+        }
+
+        private string CheckDieFiles(string sourceDirectory)
+        {
+            string blockedFile = "";
+            DirectoryInfo dirinf = new DirectoryInfo(sourceDirectory);
+            foreach (var file in dirinf.GetFiles())
+            {
+
+                try
+                {
+                    using (FileStream stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None))
+                    {
+                        stream.Close();
+                    }
+                }
+                catch (IOException)
+                {
+                    //the file is unavailable because it is:
+                    //still being written to
+                    //or being processed by another thread
+                    //or does not exist (has already been processed)
+                    blockedFile += file.FullName + Environment.NewLine;
+                }
+
+            }
+
+            var subdirs = dirinf.GetDirectories();
+            foreach (var subdir in subdirs)
+            {
+                blockedFile += CheckDieFiles(subdir.FullName);
+            }
+
+            return blockedFile;
         }
 
         private List<Bestellungen> getBestellungen(PrintumProjekteEntities db)
@@ -204,7 +250,7 @@ namespace PrintumProjektverwaltung.Forms
                      where p.Projektnummer == dasP.Projektnummer
                      select p)
                     .FirstOrDefault();
-            q.Projektname = this.textBox1.Text.Trim();
+            q.Projektname = textBox1.Text.Trim();
             q.RootOrdner = destinationDirectory;
             db.SaveChanges();
 
@@ -217,10 +263,10 @@ namespace PrintumProjektverwaltung.Forms
 
             try
             {
-                this.dasP = (printumProjekt)this.derTag;
-                this.label1.Text = dasP.Projektnummer.ToString();
-                this.label2.Text = dasP.Projektname;
-                this.textBox1.Text = dasP.Projektname;
+                dasP = (printumProjekt)derTag;
+                label1.Text = dasP.Projektnummer.ToString();
+                label2.Text = dasP.Projektname;
+                textBox1.Text = dasP.Projektname;
             }
             catch (Exception ex)
             {

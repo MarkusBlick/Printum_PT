@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Exchange.WebServices.Data;
 using PrintumProjektverwaltung.DAL;
 using PrintumProjektverwaltung.Forms;
 using PrintumProjektverwaltung.Helper;
@@ -35,20 +28,20 @@ namespace PrintumProjektverwaltung
 
         private void priProLieferscheinRechnungBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.priProLieferscheinRechnungBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
+            Validate();
+            priProLieferscheinRechnungBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(dataSet1);
 
         }
 
         private void Lieferschein05_neuerLS_Load(object sender, EventArgs e)
         {
-            this.priProLieferscheinRechnungTableAdapter.Fill(this.dataSet1.PriProLieferscheinRechnung);
+            priProLieferscheinRechnungTableAdapter.Fill(dataSet1.PriProLieferscheinRechnung);
 
-            this.priProLieferscheinRechnungBindingNavigator.BindingSource.AddNew();
-            this.priProLieferscheinRechnungBindingNavigator.BindingSource.MoveLast();
+            priProLieferscheinRechnungBindingNavigator.BindingSource.AddNew();
+            priProLieferscheinRechnungBindingNavigator.BindingSource.MoveLast();
 
-            DataRowView etwas = (DataRowView)this.priProLieferscheinRechnungBindingSource.Current;
+            DataRowView etwas = (DataRowView)priProLieferscheinRechnungBindingSource.Current;
 
             newrow = (DataSet1.PriProLieferscheinRechnungRow)etwas.Row;//  dataSet1.PriProLieferscheinRechnung.NewPriProLieferscheinRechnungRow();
 
@@ -63,11 +56,11 @@ namespace PrintumProjektverwaltung
 
             newrow.LieferscheinErsteller = Environment.UserName;
             newrow.LieferscheinDatum = DateTime.Now;
-            newrow.PriProLieferscheinRechnungID = this.GetNeueNummer();
+            newrow.PriProLieferscheinRechnungID = GetNeueNummer();
             newrow.LieferscheinNr = "LS-" + newrow.PriProLieferscheinRechnungID.ToString();
 
 
-            this.priProLieferscheinRechnungBindingSource.ResetBindings(false);
+            priProLieferscheinRechnungBindingSource.ResetBindings(false);
 
         }
 
@@ -78,7 +71,7 @@ namespace PrintumProjektverwaltung
             string LieferscheinID = (DateTime.Now.Year - 2000).ToString() + "0500";
             Int32.TryParse(LieferscheinID, out Lid);
 
-            var q = this.priProLieferscheinRechnungTableAdapter.ScalarQueryMaxID();
+            var q = priProLieferscheinRechnungTableAdapter.ScalarQueryMaxID();
             if (q != null)
             {
                 int liefer;
@@ -111,13 +104,13 @@ namespace PrintumProjektverwaltung
             DialogResult dr = L02.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                this.Projektname = L02.rrrow.Projektname;
-                this.Projektnummer = L02.rrrow.Projektnummer;
-                this.RootOrdner = L02.rrrow.RootOrdner;
+                Projektname = L02.rrrow.Projektname;
+                Projektnummer = L02.rrrow.Projektnummer;
+                RootOrdner = L02.rrrow.RootOrdner.Trim();
 
-                this.projektnummerTextBox.Text = this.Projektnummer.ToString();
-                this.projektnameTextBox.Text = this.Projektname;
-                this.lieferscheinPfadTextBox.Text = getLieferscheindateiPfad();
+                projektnummerTextBox.Text = Projektnummer.ToString();
+                projektnameTextBox.Text = Projektname;
+                lieferscheinPfadTextBox.Text = getLieferscheindateiPfad();
 
             }
 
@@ -131,16 +124,16 @@ namespace PrintumProjektverwaltung
 
         private string getLieferscheindateiPfad()
         {
-            var pfad = this.RootOrdner + @"\05 Lieferscheine PriPro\";
+            var pfad = RootOrdner == null ? "" : RootOrdner.Trim() + @"\05 Lieferscheine PriPro\";
             lieferordner = pfad;
-            if (this.RootOrdner != null && this.RootOrdner.Contains("192.168.26.250"))
+            if (RootOrdner != null && RootOrdner.Contains("192.168.26.250"))
             {
                 pfad = pfad.Replace("PRINTUMSERVER", "192.168.26.250");
             }
             lieferordner = pfad;
             exceldateiname = pfad
-                                + this.lieferscheinNrTextBox.Text + "-"
-                                + this.lieferscheinBeschreibungTextBox.Text.Trim()
+                                + lieferscheinNrTextBox.Text + "-"
+                                + lieferscheinBeschreibungTextBox.Text.Trim()
                                 + ".xlsx";
             return exceldateiname;
         }
@@ -155,7 +148,7 @@ namespace PrintumProjektverwaltung
             DialogResult dr = F08.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                this.Adressenrow = F08.rrrow;
+                Adressenrow = F08.rrrow;
                 AdresseEinschreiben();
             }
 
@@ -165,12 +158,12 @@ namespace PrintumProjektverwaltung
 
         private void AdresseEinschreiben()
         {
-            this.lS_FirmennameTextBox.Text = this.Adressenrow.Firmenname == null ? "" : this.Adressenrow.Firmenname;
-            this.lS_LandTextEdit.Text = this.Adressenrow.Land == null ? "" : this.Adressenrow.Land;
-            this.lS_NameTextBox.Text = this.Adressenrow.Name == null ? "" : this.Adressenrow.Name;
-            this.lS_PLZTextBox.Text = this.Adressenrow.PLZ == null ? "" : this.Adressenrow.PLZ;
-            this.lS_StadtTextBox.Text = this.Adressenrow.Ort == null ? "" : this.Adressenrow.Ort;
-            this.lS_StrasseTextBox.Text = this.Adressenrow.Strasse == null ? "" : this.Adressenrow.Strasse;
+            lS_FirmennameTextBox.Text = Adressenrow.Firmenname == null ? "" : Adressenrow.Firmenname;
+            lS_LandTextEdit.Text = Adressenrow.Land == null ? "" : Adressenrow.Land;
+            lS_NameTextBox.Text = Adressenrow.Name == null ? "" : Adressenrow.Name;
+            lS_PLZTextBox.Text = Adressenrow.PLZ == null ? "" : Adressenrow.PLZ;
+            lS_StadtTextBox.Text = Adressenrow.Ort == null ? "" : Adressenrow.Ort;
+            lS_StrasseTextBox.Text = Adressenrow.Strasse == null ? "" : Adressenrow.Strasse;
         }
 
         private void button3_LsErstellen_Click(object sender, EventArgs e)
@@ -178,7 +171,7 @@ namespace PrintumProjektverwaltung
             aufVollstaendigkeitChecken(sender, e);
 
 
-            ExcelHelperLieferschein.createNewExcel(this.newrow, "Unterschrift");
+            ExcelHelperLieferschein.createNewExcel(newrow, "Unterschrift");
         }
 
 
@@ -186,7 +179,7 @@ namespace PrintumProjektverwaltung
         {
             aufVollstaendigkeitChecken(sender, e);
 
-            ExcelHelperLieferschein.createNewExcel(this.newrow, "blanko");
+            ExcelHelperLieferschein.createNewExcel(newrow, "blanko");
 
         }
 
@@ -195,7 +188,7 @@ namespace PrintumProjektverwaltung
         {
             aufVollstaendigkeitChecken(sender, e);
 
-            ExcelHelperLieferschein.createNewExcel(this.newrow, "LKW");
+            ExcelHelperLieferschein.createNewExcel(newrow, "LKW");
 
         }
 
@@ -204,25 +197,25 @@ namespace PrintumProjektverwaltung
         {
 
 
-            if (this.lieferscheinBeschreibungTextBox.Text == null || this.lieferscheinBeschreibungTextBox.Text.Length == 0)
+            if (lieferscheinBeschreibungTextBox.Text == null || lieferscheinBeschreibungTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Der Lieferschein braucht eine Beschreibung");
-                this.lieferscheinBeschreibungTextBox.Focus();
+                lieferscheinBeschreibungTextBox.Focus();
                 return;
             }
 
-            if (this.lS_FirmennameTextBox.Text == null || this.lS_FirmennameTextBox.Text.Length == 0)
+            if (lS_FirmennameTextBox.Text == null || lS_FirmennameTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Bitte eine Adresse auswählen!");
-                this.button2_adresse_Click(sender, e);
+                button2_adresse_Click(sender, e);
                 return;
             }
 
 
-            if (this.projektnummerTextBox.Text == null || this.projektnummerTextBox.Text.Length == 0)
+            if (projektnummerTextBox.Text == null || projektnummerTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Bitte ein Projekt auswählen!");
-                this.button1_Projekt_Click(sender, e);
+                button1_Projekt_Click(sender, e);
                 return;
             }
 
@@ -234,7 +227,7 @@ namespace PrintumProjektverwaltung
         {
             aufVollstaendigkeitChecken(sender, e);
 
-            ExcelHelperLieferschein.createNewExcel(this.newrow, "blankoEN");
+            ExcelHelperLieferschein.createNewExcel(newrow, "blankoEN");
 
         }
 
@@ -243,14 +236,14 @@ namespace PrintumProjektverwaltung
             aufVollstaendigkeitChecken(sender, e);
 
 
-            ExcelHelperLieferschein.createNewExcel(this.newrow, "UnterschriftEN");
+            ExcelHelperLieferschein.createNewExcel(newrow, "UnterschriftEN");
         }
 
         private void button6_DeliveryNoteLKW_Click(object sender, EventArgs e)
         {
             aufVollstaendigkeitChecken(sender, e);
 
-            ExcelHelperLieferschein.createNewExcel(this.newrow, "LKWEN");
+            ExcelHelperLieferschein.createNewExcel(newrow, "LKWEN");
 
         }
     }

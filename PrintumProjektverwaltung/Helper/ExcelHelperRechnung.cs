@@ -98,10 +98,14 @@ namespace PrintumProjektverwaltung.Helper
 
         private static void createNewRechnung(DataSet1.PriProRechnungRow newrow)
         {
+
+
             string destination = newrow.RechnungPfad;
 
             try
             {
+
+
                 File.Copy(excelTemplate, destination, true);
 
 
@@ -110,13 +114,18 @@ namespace PrintumProjektverwaltung.Helper
             }
             catch (Exception ex)
             {
-                Helper.LogHelper.WriteDebugLog(ex.ToString());
+                Helper.LogHelper.WriteDebugLog("excelTemplate: " + excelTemplate + Environment.NewLine
+                    + "destination: " + destination + Environment.NewLine +
+                    ex.ToString()
+                    );
             }
 
 
             // das Excelsheet offnen
             if (File.Exists(destination))
             {
+
+
                 try
                 {
                     // die Excelanwendung
@@ -124,12 +133,13 @@ namespace PrintumProjektverwaltung.Helper
                     excelApp.DisplayAlerts = false;
 
 
+
                     // die Excelmappe
                     excelWorkbook = excelApp.Workbooks.Open(destination,
-                                        Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                        Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                        Type.Missing, Type.Missing, Type.Missing, Type.Missing,
-                                        Type.Missing, Type.Missing);
+                                Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                                Type.Missing, Type.Missing);
 
                     int anzahlBlaetter = excelWorkbook.Sheets.Count;
                     if (anzahlBlaetter > 0)
@@ -161,8 +171,6 @@ namespace PrintumProjektverwaltung.Helper
 
                 }
 
-
-
             }
         }
 
@@ -179,12 +187,12 @@ namespace PrintumProjektverwaltung.Helper
                 excelSheet.Rows.Replace(What: "####Datum####", Replacement: DateTime.Now.Date.ToShortDateString());
 
 
-                if (dieRow.IsRE_FirmennameNull()==false)
+                if (dieRow.IsRE_FirmennameNull() == false)
                 {
                     excelSheet.Rows.Replace(What: "####Firmenname####", Replacement: dieRow.RE_Firmenname);
                 }
 
-                if (dieRow.IsRE_StrasseNull()==false)
+                if (dieRow.IsRE_StrasseNull() == false)
                 {
                     excelSheet.Rows.Replace(What: "####Strasse####", Replacement: dieRow.RE_Strasse);
                 }
@@ -206,7 +214,7 @@ namespace PrintumProjektverwaltung.Helper
                 if (dieRow.IsProjektnummerNull() == false)
                 {
                     excelSheet.Rows.Replace(What: "####Projektnummer####", Replacement: dieRow.Projektnummer.ToString());
-                    var middleHeaderPRo = excelSheet.PageSetup.CenterHeader.Replace( "####Projektnummer####",  dieRow.Projektnummer.ToString());
+                    var middleHeaderPRo = excelSheet.PageSetup.CenterHeader.Replace("####Projektnummer####", dieRow.Projektnummer.ToString());
                     excelSheet.PageSetup.CenterHeader = middleHeaderPRo;
                 }
 

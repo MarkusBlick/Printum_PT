@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using PrintumProjektverwaltung.Models;
 
@@ -18,9 +15,13 @@ namespace PrintumProjektverwaltung.Helper
                 TreeNode parent = new TreeNode();
 
                 parent.ImageKey = "File.gif";
-                if (item.Projektart =="Anlage")
+                if (item.Projektart == "Anlage")
                 {
                     parent.ImageKey = "Folder.gif";
+                }
+                if (item.Projektart == "Service")
+                {
+                    parent.ImageKey = "Service1-16x22.gif";
                 }
 
 
@@ -43,11 +44,20 @@ namespace PrintumProjektverwaltung.Helper
                 if (txt.ToLower().Contains(suchtxt.ToLower()))
                 {
 
-                TreeNode parent = new TreeNode();
-                parent.ImageKey = "Folder.gif";
-                parent.Tag = item;
-                parent.Text = txt;
-                treeView1.Nodes.Add(parent);
+                    TreeNode parent = new TreeNode();
+                    parent.ImageKey = "File.gif";
+                    if (item.Projektart == "Anlage")
+                    {
+                        parent.ImageKey = "Folder.gif";
+                    }
+                    if (item.Projektart == "Service")
+                    {
+                        parent.ImageKey = "Service1-16x22.gif";
+                    }
+
+                    parent.Tag = item;
+                    parent.Text = txt;
+                    treeView1.Nodes.Add(parent);
 
 
                 }

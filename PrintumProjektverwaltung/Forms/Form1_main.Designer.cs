@@ -520,9 +520,10 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "File.gif");
+            this.imageList1.Images.SetKeyName(0, "8i");
             this.imageList1.Images.SetKeyName(1, "Folder.gif");
             this.imageList1.Images.SetKeyName(2, "mail.gif");
+            this.imageList1.Images.SetKeyName(3, "Service1-16x22.gif");
             // 
             // panel6
             // 

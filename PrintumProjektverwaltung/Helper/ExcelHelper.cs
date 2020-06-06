@@ -641,7 +641,7 @@ namespace PrintumProjektverwaltung.Helper
             }
             catch (Exception ex)
             {
-                Helper.LogHelper.WriteDebugLog(ex.ToString());
+                Helper.LogHelper.WriteDebugLog("destination: " + destination + Environment.NewLine + ex.ToString());
             }
             return destination;
         }

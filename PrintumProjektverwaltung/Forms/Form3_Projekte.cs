@@ -54,6 +54,8 @@ namespace PrintumProjektverwaltung.Forms
         private void button1_Projekterstellen_Click(object sender, EventArgs e)
         {
 
+            Cursor = Cursors.WaitCursor;
+
             bool kannImpersonifizieren = true;
             try
             {
@@ -65,11 +67,11 @@ namespace PrintumProjektverwaltung.Forms
             catch (Exception ex)
             {
                 kannImpersonifizieren = false;
-                MessageBox.Show("Aufruf mit besonderen Rechten hat irgendwie wohl nicht geklappt \r\n\r\n" + ex.Message);
+                //MessageBox.Show("Aufruf mit besonderen Rechten hat irgendwie wohl nicht geklappt \r\n\r\n"
+                //    + ".. dann mach ich halt ohne weiter...\r\n\r\n" + ex.Message);
             }
 
 
-            Cursor = Cursors.WaitCursor;
 
             neuesP.Projektname = textBox_Name.Text;
 
@@ -92,6 +94,7 @@ namespace PrintumProjektverwaltung.Forms
 
             try
             {
+                this.Cursor = Cursors.WaitCursor;
 
                 Directory.CreateDirectory(projektOrdner);
 
@@ -109,6 +112,7 @@ namespace PrintumProjektverwaltung.Forms
 
                                 // hier kommt die Kopiererei
                                 Helper.folderHelper.FolderCopy(dirPath, dirPathNeu);
+
 
                             }
                             catch (Exception ex1)
@@ -134,12 +138,42 @@ namespace PrintumProjektverwaltung.Forms
 
                 }
 
+                // und jetzt noch die Dateien
 
-                ////Copy all the files & Replaces any files with the same name
-                //foreach (string newPath in Directory.GetFiles(ordnerStruktur, "*.*", SearchOption.AllDirectories))
-                //{
-                //    File.Copy(newPath, newPath.Replace(ordnerStruktur, projektOrdner),true);
-                //}
+                if (kannImpersonifizieren)
+                {
+                    using (new Impersonator())
+                    {
+                        try
+                        {
+                            //Copy all the files & Replaces any files with the same name
+                            foreach (string newPath in Directory.GetFiles(ordnerStruktur, "*.*", SearchOption.TopDirectoryOnly))
+                            {
+                                File.Copy(newPath, newPath.Replace(ordnerStruktur, projektOrdner), true);
+                            }
+                        }
+                        catch (Exception ex1)
+                        {
+                            Helper.LogHelper.WriteDebugLog(ex1.ToString());
+                        }
+
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        //Copy all the files & Replaces any files with the same name
+                        foreach (string newPath in Directory.GetFiles(ordnerStruktur, "*.*", SearchOption.TopDirectoryOnly))
+                        {
+                            File.Copy(newPath, newPath.Replace(ordnerStruktur, projektOrdner), true);
+                        }
+                    }
+                    catch (Exception ex1)
+                    {
+                        Helper.LogHelper.WriteDebugLog(ex1.ToString());
+                    }
+                }
 
             }
             catch (Exception ex)
@@ -163,7 +197,7 @@ namespace PrintumProjektverwaltung.Forms
             }
 
 
-
+            this.Cursor = Cursors.Default;
 
 
         }

@@ -140,7 +140,7 @@ namespace PrintumProjektverwaltung
             ////"\\192.168.26.250\buchhaltung\R e c h n u n g e n\2018\11 November"
             //var pfad = @"\\192.168.26.250\PT-Rechnungen\";
             //\\192.168.26.250\PT-PriPro\20413 - Kurz Subtratwickler 350 4500816996
-            var pfad = this.Projektordnerpfad + @"\12 Rechnungen\";
+            var pfad = this.Projektordnerpfad == null? "": this.Projektordnerpfad.Trim() + @"\12 Rechnungen\";
             var jahr = DateTime.Now.Year.ToString();
             string monat = getCurrenMonthString();
 
