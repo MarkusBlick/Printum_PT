@@ -35,6 +35,9 @@ namespace PrintumProjektverwaltung.Forms
 
         internal List<printumProjekt> AlleProjekte { get => alleProjekte; set => alleProjekte = value; }
 
+
+        private DataGridViewCellEventArgs mouseLocation;
+
         public Form1_main()
         {
             InitializeComponent();
@@ -625,15 +628,15 @@ namespace PrintumProjektverwaltung.Forms
 
         }
 
-        private void label1_MouseClick(object sender, MouseEventArgs e)
+        private void label1_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
 
             adressenAsyncLaden();
             loadDieProjekte();
             BestellungenNeuLaden();
 
-            this.Cursor = Cursors.Default;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
 
         }
 
@@ -777,7 +780,7 @@ namespace PrintumProjektverwaltung.Forms
                 }
                 catch (Exception ex)
                 {
-                                        Helper.LogHelper.WriteDebugLog(ex.ToString());
+                    Helper.LogHelper.WriteDebugLog(ex.ToString());
                 }
             }
             return dieID;
@@ -912,11 +915,11 @@ namespace PrintumProjektverwaltung.Forms
 
         private void textBox3_projekt_TextChanged(object sender, EventArgs e)
         {
-            if (this.textBox3_projekt.Text.Length>2)
+            if (this.textBox3_projekt.Text.Length > 2)
             {
-          bestellungenFiltern();
+                bestellungenFiltern();
             }
-  
+
         }
 
 
@@ -984,6 +987,106 @@ namespace PrintumProjektverwaltung.Forms
 
         }
 
+        private void contextMenuStrip3_Bestellung_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_delete_Click(object sender, EventArgs e)
+        {
+            var row = this.bestellungenDataGridView.Rows[mouseLocation.RowIndex];
+            string bestellnr = row.Cells["bestellungIDTextDataGridViewTextBoxColumn"].Value.ToString();
+
+            var antwort = MessageBox.Show(" Bestellung: " + bestellnr + " wirklich löschen? ", "Neee, oder?", MessageBoxButtons.OKCancel);
+            if (antwort == DialogResult.OK)
+            {
+                var a2 = MessageBox.Show(" ...echt?" + Environment.NewLine + Environment.NewLine
+                    + " ... dann ist aber alles weg.","",MessageBoxButtons.OKCancel);
+                if (a2 == DialogResult.OK)
+                {
+                    var a3 = MessageBox.Show("Wenn du jetzt nicht Michael Weiss bist, kann das GANZ unangenehm werden....", "Oh-Ha!", MessageBoxButtons.OKCancel);
+                    if (a3 == DialogResult.OK)
+                    {
+
+
+                        var pfad = row.Cells[11].Value;
+                        if (pfad != null & File.Exists(pfad.ToString()))
+                        {
+                            try
+                            {
+                                File.Delete(pfad.ToString());
+                            }
+                            catch (Exception ex)
+                            {
+                                Helper.LogHelper.WriteDebugLog(ex.ToString());
+                                MessageBox.Show(ex.ToString());
+                            }
+                        }
+                        using (var db = new DAL.PrintumProjekteEntities())
+                        {
+                            try
+                            {
+                                var q1 = from p in db.BestellungPositionen
+                                         where p.BestellnungIDTest == bestellnr
+                                         select p;
+                                if (q1.Count() > 0)
+                                {
+                                    foreach (var item in q1.ToList())
+                                    {
+                                        db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+                                    }
+                                    db.SaveChanges();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Helper.LogHelper.WriteDebugLog(ex.ToString());
+                                MessageBox.Show(ex.ToString());
+                            }
+
+                            try
+                            {
+                                var q2 = from p in db.Bestellungen
+                                         where p.BestellungIDText == bestellnr
+                                         select p;
+                                if (q2.Count() > 0)
+                                {
+                                    foreach (var item2 in q2.ToList())
+                                    {
+                                        db.Entry(item2).State = System.Data.Entity.EntityState.Deleted;
+                                    }
+                                    db.SaveChanges();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Helper.LogHelper.WriteDebugLog(ex.ToString());
+                                MessageBox.Show(ex.ToString());
+                            }
+
+
+
+
+                            // TODO: Diese Codezeile lädt Daten in die Tabelle "dataSet11.BestellungPositionen". Sie können sie bei Bedarf verschieben oder entfernen.
+                            this.bestellungPositionenTableAdapter.FillBy(this.dataSet11.BestellungPositionen);
+
+                            // TODO: This line of code loads data into the 'dataSet1.Bestellungen' table. You can move, or remove it, as needed.
+                            this.bestellungenTableAdapter.Fill(this.dataSet11.Bestellungen);
+
+
+                        }
+                        MessageBox.Show("Gelöscht!!");
+                    }
+
+
+                }
+            }
+        }
+
+        private void bestellungenDataGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            this.mouseLocation = e;
+        }
     }
 }
 

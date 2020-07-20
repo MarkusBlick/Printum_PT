@@ -14,14 +14,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PrintumTechnologyProjektverwaltung.exe.manifest" size="131310">
+    <dependentAssembly dependencyType="install" codebase="PrintumTechnologyProjektverwaltung.exe.manifest" size="43923">
       <assemblyIdentity name="PrintumTechnologyProjektverwaltung.exe" version="2.0.2.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iRgaf5ZVGpaZO+4dRRKXM0eX+RJFRjtz1eum2NjPhKc=</dsig:DigestValue>
+        <dsig:DigestValue>qJMuhGZN2rpM/bRQkbGdWdtn9Kg9oQ1S1SpzTrjtrg4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

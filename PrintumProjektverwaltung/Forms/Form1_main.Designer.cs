@@ -85,6 +85,8 @@
             this.PDFpfad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdressID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bestellung_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip3_Bestellung = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new PrintumProjektverwaltung.DAL.DataSet1();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -153,6 +155,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenDataGridView)).BeginInit();
+            this.contextMenuStrip3_Bestellung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.panel3.SuspendLayout();
@@ -499,20 +502,20 @@
             this.toolStripMenuItem1_projektname,
             this.toolStripMenuItem2_projektart});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(212, 52);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripMenuItem1_projektname
             // 
             this.toolStripMenuItem1_projektname.Name = "toolStripMenuItem1_projektname";
-            this.toolStripMenuItem1_projektname.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItem1_projektname.Size = new System.Drawing.Size(211, 24);
             this.toolStripMenuItem1_projektname.Text = "Projektname ändern";
             this.toolStripMenuItem1_projektname.Click += new System.EventHandler(this.toolStripMenuItem1_projektname_Click);
             // 
             // toolStripMenuItem2_projektart
             // 
             this.toolStripMenuItem2_projektart.Name = "toolStripMenuItem2_projektart";
-            this.toolStripMenuItem2_projektart.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItem2_projektart.Size = new System.Drawing.Size(211, 24);
             this.toolStripMenuItem2_projektart.Text = "Projektart ändern";
             this.toolStripMenuItem2_projektart.Click += new System.EventHandler(this.toolStripMenuItem2_projektart_Click);
             // 
@@ -551,7 +554,7 @@
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 29);
+            this.textBox1.Size = new System.Drawing.Size(200, 34);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -573,7 +576,7 @@
             this.label1.ImageList = this.imageList1;
             this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 24);
+            this.label1.Size = new System.Drawing.Size(103, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Projekte";
             this.toolTip1.SetToolTip(this.label1, "Mit einfachem Klick werden die Projekte und die Bestellungen neu geladen\r\n");
@@ -643,6 +646,7 @@
             this.PDFpfad,
             this.AdressID,
             this.Bestellung_ID});
+            this.bestellungenDataGridView.ContextMenuStrip = this.contextMenuStrip3_Bestellung;
             this.bestellungenDataGridView.DataSource = this.bestellungenBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -659,17 +663,20 @@
             this.bestellungenDataGridView.Name = "bestellungenDataGridView";
             this.bestellungenDataGridView.ReadOnly = true;
             this.bestellungenDataGridView.RowHeadersVisible = false;
+            this.bestellungenDataGridView.RowHeadersWidth = 51;
             this.bestellungenDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.bestellungenDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bestellungenDataGridView.Size = new System.Drawing.Size(959, 173);
             this.bestellungenDataGridView.TabIndex = 4;
             this.bestellungenDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungenDataGridView_CellDoubleClick);
+            this.bestellungenDataGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungenDataGridView_CellMouseEnter);
             this.bestellungenDataGridView.SelectionChanged += new System.EventHandler(this.bestellungenDataGridView_SelectionChanged);
             // 
             // projektnummerDataGridViewTextBoxColumn
             // 
             this.projektnummerDataGridViewTextBoxColumn.DataPropertyName = "Projektnummer";
             this.projektnummerDataGridViewTextBoxColumn.HeaderText = "Projektnr";
+            this.projektnummerDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.projektnummerDataGridViewTextBoxColumn.Name = "projektnummerDataGridViewTextBoxColumn";
             this.projektnummerDataGridViewTextBoxColumn.ReadOnly = true;
             this.projektnummerDataGridViewTextBoxColumn.Width = 60;
@@ -678,13 +685,16 @@
             // 
             this.bestellungIDTextDataGridViewTextBoxColumn.DataPropertyName = "BestellungIDText";
             this.bestellungIDTextDataGridViewTextBoxColumn.HeaderText = "BestellungIDText";
+            this.bestellungIDTextDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.bestellungIDTextDataGridViewTextBoxColumn.Name = "bestellungIDTextDataGridViewTextBoxColumn";
             this.bestellungIDTextDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bestellungIDTextDataGridViewTextBoxColumn.Width = 125;
             // 
             // adresseDataGridViewTextBoxColumn
             // 
             this.adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
             this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
             this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
             this.adresseDataGridViewTextBoxColumn.Width = 400;
@@ -693,6 +703,7 @@
             // 
             this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
             this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
             this.datumDataGridViewTextBoxColumn.ReadOnly = true;
             this.datumDataGridViewTextBoxColumn.Width = 150;
@@ -701,36 +712,45 @@
             // 
             this.erstelltVonDataGridViewTextBoxColumn.DataPropertyName = "ErstelltVon";
             this.erstelltVonDataGridViewTextBoxColumn.HeaderText = "ErstelltVon";
+            this.erstelltVonDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.erstelltVonDataGridViewTextBoxColumn.Name = "erstelltVonDataGridViewTextBoxColumn";
             this.erstelltVonDataGridViewTextBoxColumn.ReadOnly = true;
+            this.erstelltVonDataGridViewTextBoxColumn.Width = 125;
             // 
             // istAbgeschickt
             // 
             this.istAbgeschickt.DataPropertyName = "istAbgeschickt";
             this.istAbgeschickt.HeaderText = "istAbgeschickt";
             this.istAbgeschickt.IndeterminateValue = "false";
+            this.istAbgeschickt.MinimumWidth = 6;
             this.istAbgeschickt.Name = "istAbgeschickt";
             this.istAbgeschickt.ReadOnly = true;
+            this.istAbgeschickt.Width = 125;
             // 
             // AB
             // 
             this.AB.DataPropertyName = "AB";
             this.AB.HeaderText = "bestätigt(AB)";
             this.AB.IndeterminateValue = "false";
+            this.AB.MinimumWidth = 6;
             this.AB.Name = "AB";
             this.AB.ReadOnly = true;
+            this.AB.Width = 125;
             // 
             // EmailAdresse
             // 
             this.EmailAdresse.DataPropertyName = "EmailAdresse";
             this.EmailAdresse.HeaderText = "EmailAdresse";
+            this.EmailAdresse.MinimumWidth = 6;
             this.EmailAdresse.Name = "EmailAdresse";
             this.EmailAdresse.ReadOnly = true;
+            this.EmailAdresse.Width = 125;
             // 
             // speicherortDataGridViewTextBoxColumn
             // 
             this.speicherortDataGridViewTextBoxColumn.DataPropertyName = "Speicherort";
             this.speicherortDataGridViewTextBoxColumn.HeaderText = "Speicherort";
+            this.speicherortDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.speicherortDataGridViewTextBoxColumn.Name = "speicherortDataGridViewTextBoxColumn";
             this.speicherortDataGridViewTextBoxColumn.ReadOnly = true;
             this.speicherortDataGridViewTextBoxColumn.Width = 10;
@@ -739,38 +759,64 @@
             // 
             this.GeaendertVon.DataPropertyName = "GeaendertVon";
             this.GeaendertVon.HeaderText = "GeaendertVon";
+            this.GeaendertVon.MinimumWidth = 6;
             this.GeaendertVon.Name = "GeaendertVon";
             this.GeaendertVon.ReadOnly = true;
+            this.GeaendertVon.Width = 125;
             // 
             // geaendert
             // 
             this.geaendert.DataPropertyName = "geaendert";
             this.geaendert.HeaderText = "geaendert";
+            this.geaendert.MinimumWidth = 6;
             this.geaendert.Name = "geaendert";
             this.geaendert.ReadOnly = true;
+            this.geaendert.Width = 125;
             // 
             // PDFpfad
             // 
             this.PDFpfad.DataPropertyName = "PDFpfad";
             this.PDFpfad.HeaderText = "PDFpfad";
+            this.PDFpfad.MinimumWidth = 6;
             this.PDFpfad.Name = "PDFpfad";
             this.PDFpfad.ReadOnly = true;
+            this.PDFpfad.Width = 125;
             // 
             // AdressID
             // 
             this.AdressID.DataPropertyName = "AdressID";
             this.AdressID.HeaderText = "AdressID";
+            this.AdressID.MinimumWidth = 6;
             this.AdressID.Name = "AdressID";
             this.AdressID.ReadOnly = true;
             this.AdressID.Visible = false;
+            this.AdressID.Width = 125;
             // 
             // Bestellung_ID
             // 
             this.Bestellung_ID.DataPropertyName = "Bestellung_ID";
             this.Bestellung_ID.HeaderText = "Bestellung_ID";
+            this.Bestellung_ID.MinimumWidth = 6;
             this.Bestellung_ID.Name = "Bestellung_ID";
             this.Bestellung_ID.ReadOnly = true;
             this.Bestellung_ID.Visible = false;
+            this.Bestellung_ID.Width = 125;
+            // 
+            // contextMenuStrip3_Bestellung
+            // 
+            this.contextMenuStrip3_Bestellung.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip3_Bestellung.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1_delete});
+            this.contextMenuStrip3_Bestellung.Name = "contextMenuStrip2_nextNr";
+            this.contextMenuStrip3_Bestellung.Size = new System.Drawing.Size(217, 28);
+            this.contextMenuStrip3_Bestellung.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip3_Bestellung_Opening);
+            // 
+            // toolStripMenuItem1_delete
+            // 
+            this.toolStripMenuItem1_delete.Name = "toolStripMenuItem1_delete";
+            this.toolStripMenuItem1_delete.Size = new System.Drawing.Size(216, 24);
+            this.toolStripMenuItem1_delete.Text = "Bestellung LÖSCHEN";
+            this.toolStripMenuItem1_delete.Click += new System.EventHandler(this.toolStripMenuItem1_delete_Click);
             // 
             // bestellungenBindingSource
             // 
@@ -913,7 +959,7 @@
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox2.Location = new System.Drawing.Point(121, 0);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 29);
+            this.textBox2.Size = new System.Drawing.Size(200, 34);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -933,7 +979,7 @@
             this.textBox3_projekt.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox3_projekt.Location = new System.Drawing.Point(0, 0);
             this.textBox3_projekt.Name = "textBox3_projekt";
-            this.textBox3_projekt.Size = new System.Drawing.Size(104, 29);
+            this.textBox3_projekt.Size = new System.Drawing.Size(104, 34);
             this.textBox3_projekt.TabIndex = 15;
             this.textBox3_projekt.TextChanged += new System.EventHandler(this.textBox3_projekt_TextChanged);
             // 
@@ -955,9 +1001,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(121, 0);
+            this.label2.Location = new System.Drawing.Point(143, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 24);
+            this.label2.Size = new System.Drawing.Size(154, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Bestellungen";
             // 
@@ -967,19 +1013,19 @@
             this.contextMenuStrip2_nextNr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.contextMenuStrip2_nextNr.Name = "contextMenuStrip2_nextNr";
-            this.contextMenuStrip2_nextNr.Size = new System.Drawing.Size(225, 26);
+            this.contextMenuStrip2_nextNr.Size = new System.Drawing.Size(266, 28);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(265, 24);
             this.toolStripMenuItem1.Text = "nächste freie Bestellnummer";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // panel16
             // 
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel16.Location = new System.Drawing.Point(67, 0);
+            this.panel16.Location = new System.Drawing.Point(89, 0);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(54, 30);
             this.panel16.TabIndex = 12;
@@ -993,7 +1039,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkGray;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 24);
+            this.label5.Size = new System.Drawing.Size(89, 29);
             this.label5.TabIndex = 2;
             this.label5.Text = "Projekt";
             // 
@@ -1048,13 +1094,14 @@
             this.bestellungPositionenDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.bestellungPositionenDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bestellungPositionenDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.bestellungPositionenDataGridView.Location = new System.Drawing.Point(0, 24);
+            this.bestellungPositionenDataGridView.Location = new System.Drawing.Point(0, 29);
             this.bestellungPositionenDataGridView.MultiSelect = false;
             this.bestellungPositionenDataGridView.Name = "bestellungPositionenDataGridView";
             this.bestellungPositionenDataGridView.ReadOnly = true;
             this.bestellungPositionenDataGridView.RowHeadersVisible = false;
+            this.bestellungPositionenDataGridView.RowHeadersWidth = 51;
             this.bestellungPositionenDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bestellungPositionenDataGridView.Size = new System.Drawing.Size(959, 247);
+            this.bestellungPositionenDataGridView.Size = new System.Drawing.Size(959, 242);
             this.bestellungPositionenDataGridView.TabIndex = 0;
             this.bestellungPositionenDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungPositionenDataGridView_CellDoubleClick);
             this.bestellungPositionenDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungPositionenDataGridView_CellValueChanged);
@@ -1066,6 +1113,7 @@
             this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn4.FillWeight = 71.06599F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Pos";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 40;
@@ -1077,6 +1125,7 @@
             this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn5.FillWeight = 103.2149F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Stk";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 40;
@@ -1086,6 +1135,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Artikelbezeichnung";
             this.dataGridViewTextBoxColumn6.FillWeight = 103.2149F;
             this.dataGridViewTextBoxColumn6.HeaderText = "Artikelbezeichnung";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 290;
@@ -1095,47 +1145,59 @@
             this.Liefertermin.DataPropertyName = "Liefertermin";
             this.Liefertermin.FillWeight = 103.2149F;
             this.Liefertermin.HeaderText = "Liefertermin";
+            this.Liefertermin.MinimumWidth = 6;
             this.Liefertermin.Name = "Liefertermin";
             this.Liefertermin.ReadOnly = true;
+            this.Liefertermin.Width = 125;
             // 
             // AB_datum
             // 
             this.AB_datum.DataPropertyName = "AB_datum";
             this.AB_datum.FillWeight = 103.2149F;
             this.AB_datum.HeaderText = "AB-Liefertermin";
+            this.AB_datum.MinimumWidth = 6;
             this.AB_datum.Name = "AB_datum";
             this.AB_datum.ReadOnly = true;
+            this.AB_datum.Width = 125;
             // 
             // ABestaetiger
             // 
             this.ABestaetiger.DataPropertyName = "ABestaetiger";
             this.ABestaetiger.FillWeight = 103.2149F;
             this.ABestaetiger.HeaderText = "AB eingetragen";
+            this.ABestaetiger.MinimumWidth = 6;
             this.ABestaetiger.Name = "ABestaetiger";
             this.ABestaetiger.ReadOnly = true;
+            this.ABestaetiger.Width = 125;
             // 
             // WE_datum
             // 
             this.WE_datum.DataPropertyName = "WE_datum";
             this.WE_datum.FillWeight = 103.2149F;
             this.WE_datum.HeaderText = "WE-Datum";
+            this.WE_datum.MinimumWidth = 6;
             this.WE_datum.Name = "WE_datum";
             this.WE_datum.ReadOnly = true;
+            this.WE_datum.Width = 125;
             // 
             // WEingaenger
             // 
             this.WEingaenger.DataPropertyName = "WEingaenger";
             this.WEingaenger.FillWeight = 103.2149F;
             this.WEingaenger.HeaderText = "WE eingetragen";
+            this.WEingaenger.MinimumWidth = 6;
             this.WEingaenger.Name = "WEingaenger";
             this.WEingaenger.ReadOnly = true;
+            this.WEingaenger.Width = 125;
             // 
             // Lagerort
             // 
             this.Lagerort.DataPropertyName = "Lagerort";
             this.Lagerort.HeaderText = "Lagerort";
+            this.Lagerort.MinimumWidth = 6;
             this.Lagerort.Name = "Lagerort";
             this.Lagerort.ReadOnly = true;
+            this.Lagerort.Width = 125;
             // 
             // Einzelpreis
             // 
@@ -1146,8 +1208,10 @@
             this.Einzelpreis.DefaultCellStyle = dataGridViewCellStyle6;
             this.Einzelpreis.FillWeight = 103.2149F;
             this.Einzelpreis.HeaderText = "Einzelpreis";
+            this.Einzelpreis.MinimumWidth = 6;
             this.Einzelpreis.Name = "Einzelpreis";
             this.Einzelpreis.ReadOnly = true;
+            this.Einzelpreis.Width = 125;
             // 
             // Gesammtpreis
             // 
@@ -1158,8 +1222,10 @@
             this.Gesammtpreis.DefaultCellStyle = dataGridViewCellStyle7;
             this.Gesammtpreis.FillWeight = 103.2149F;
             this.Gesammtpreis.HeaderText = "Gesammt- preis";
+            this.Gesammtpreis.MinimumWidth = 6;
             this.Gesammtpreis.Name = "Gesammtpreis";
             this.Gesammtpreis.ReadOnly = true;
+            this.Gesammtpreis.Width = 125;
             // 
             // bestellungPositionenBindingSource
             // 
@@ -1174,7 +1240,7 @@
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 24);
+            this.label3.Size = new System.Drawing.Size(209, 29);
             this.label3.TabIndex = 1;
             this.label3.Text = "Bestell-Positionen";
             // 
@@ -1196,7 +1262,7 @@
             this.label_speichern.ForeColor = System.Drawing.Color.DarkGray;
             this.label_speichern.Location = new System.Drawing.Point(246, 3);
             this.label_speichern.Name = "label_speichern";
-            this.label_speichern.Size = new System.Drawing.Size(486, 24);
+            this.label_speichern.Size = new System.Drawing.Size(618, 29);
             this.label_speichern.TabIndex = 4;
             this.label_speichern.Text = "Liefertermin laut AB und Preise können geändert werden";
             // 
@@ -1253,7 +1319,7 @@
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(567, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 15);
+            this.label4.Size = new System.Drawing.Size(97, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "Kurzanleitung";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1268,7 +1334,7 @@
             this.label_Datum.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_Datum.Location = new System.Drawing.Point(0, 1);
             this.label_Datum.Name = "label_Datum";
-            this.label_Datum.Size = new System.Drawing.Size(33, 12);
+            this.label_Datum.Size = new System.Drawing.Size(44, 15);
             this.label_Datum.TabIndex = 4;
             this.label_Datum.Text = "Datum";
             this.label_Datum.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1365,7 +1431,7 @@
             // 
             // Form1_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1370, 750);
@@ -1395,6 +1461,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenDataGridView)).EndInit();
+            this.contextMenuStrip3_Bestellung.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -1520,5 +1587,7 @@
         private System.Windows.Forms.Button button12_rechnungen;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2_projektart;
         private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3_Bestellung;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1_delete;
     }
 }
