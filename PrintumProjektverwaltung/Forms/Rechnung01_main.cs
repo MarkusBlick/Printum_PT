@@ -183,9 +183,13 @@ namespace PrintumProjektverwaltung.Forms
         {
             var rBetrag = 0.0;
             var zBetrag = 0.0;
+            var offeneR = 0.0;
+
             foreach (DataGridViewRow row in this.priProRechnungDataGridView.Rows)
             {
 
+                var currR = 0.0;
+                var currZ = 0.0;
 
                 var value1 = row.Cells["Rechnungsbetrag"].Value;
                 var value2 = row.Cells["Zahlungsbetrag"].Value;
@@ -196,7 +200,7 @@ namespace PrintumProjektverwaltung.Forms
                         if (value1.GetType().Name != "DBNull")
                         {
                             rBetrag += (double)value1;
-
+                            currR = (double)value1;
                         }
                     }
                     if (value2 != null)
@@ -204,10 +208,17 @@ namespace PrintumProjektverwaltung.Forms
                         if (value2.GetType().Name != "DBNull")
                         {
                             zBetrag += (double)value2;
-
+                            currZ = (double)value2;
                         }
                     }
-
+                     
+                    var currOffen = currZ - currR;
+                    if (currOffen < 0)
+                    {
+                        row.Cells["NochOffen"].Value = currOffen;
+                        offeneR += currOffen;
+                    }
+                     
                 }
                 catch (Exception ex)
                 {
@@ -218,6 +229,7 @@ namespace PrintumProjektverwaltung.Forms
 
             this.SummeRechnungsBetragTextBox.Text = rBetrag.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"));
             this.zahlungsBetragTextbox.Text = zBetrag.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"));
+            this.offeneRechnungenTextBox.Text = offeneR.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"));
         }
     }
 }

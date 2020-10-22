@@ -328,6 +328,8 @@
     <Property Name="Mahnung1datum" Type="datetime" />
     <Property Name="Mahnung2datum" Type="datetime" />
     <Property Name="Mahnung3datum" Type="datetime" />
+    <Property Name="Zahlungsziel" Type="datetime" />
+    <Property Name="Bemerkungen" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Projekte">
     <Key>

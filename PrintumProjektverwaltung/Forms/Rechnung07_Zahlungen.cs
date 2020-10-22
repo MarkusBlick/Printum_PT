@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace PrintumProjektverwaltung.Forms
@@ -31,16 +32,34 @@ namespace PrintumProjektverwaltung.Forms
             var mahnung1datum = row.Cells["Mahnung1datum"].Value.ToString();
             var mahnung2datum = row.Cells["Mahnung2datum"].Value.ToString();
             var mahnung3datum = row.Cells["Mahnung3datum"].Value.ToString();
+            var zahlungsziel = row.Cells["Zahlungsziel"].Value.ToString();
+            var bemerkungen = row.Cells["Bemerkungen"].Value.ToString();
 
             rechnungBetragTextBox.Text = rechnungsbetrag;
             zahlungsBetragTextBox.Text = zahlungsbetrag;
-            zahlungsDatumTextBox.Text = zahldatum;
-            mahnung1textBox.Text = mahnung1datum;
-            mahnung2textBox.Text = mahnung2datum;
-            mahnung3textBox.Text = mahnung3datum;
+            zahlungsDatumTextBox.Text = MachSchoenesDatum(zahldatum);
+            mahnung1textBox.Text = MachSchoenesDatum(mahnung1datum);
+            mahnung2textBox.Text = MachSchoenesDatum(mahnung2datum);
+            mahnung3textBox.Text = MachSchoenesDatum(mahnung3datum);
+            zahlungsZielTextBox.Text = MachSchoenesDatum(zahlungsziel);
+            bemerkungTextBox.Text = bemerkungen;
 
 
 
+        }
+
+
+
+        private string MachSchoenesDatum(string datum)
+        {
+            if (datum.Length>10)
+            {
+                return datum.Substring(0, 10);
+            }
+            else
+            {
+                return datum;
+            }
         }
 
         private void button2_adresse_Click(object sender, EventArgs e)
@@ -139,10 +158,46 @@ namespace PrintumProjektverwaltung.Forms
                     }
                 }
 
+
+
+                if (zahlungsZielTextBox.Text != "")
+                {
+                    DateTime zdt;
+                    try
+                    {
+                        zdt = Convert.ToDateTime(zahlungsZielTextBox.Text);
+                        dieRow.Zahlungsziel = zdt;
+                    }
+                    catch (Exception ex)
+                    {
+                        var bal = ex.ToString();
+                    }
+                }
+
+
+                if (bemerkungTextBox.Text != "")
+                {
+                    
+                    try
+                    {
+                        
+                        dieRow.Bemerkungen = bemerkungTextBox.Text;
+                    }
+                    catch (Exception ex)
+                    {
+                        var bal = ex.ToString();
+                    }
+                }
+
                 db.Entry(dieRow).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 this.Close();
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

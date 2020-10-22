@@ -36,5 +36,7 @@ namespace PrintumProjektverwaltung.DAL
         public Nullable<System.DateTime> Mahnung1datum { get; set; }
         public Nullable<System.DateTime> Mahnung2datum { get; set; }
         public Nullable<System.DateTime> Mahnung3datum { get; set; }
+        public Nullable<System.DateTime> Zahlungsziel { get; set; }
+        public string Bemerkungen { get; set; }
     }
 }

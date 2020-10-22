@@ -408,5 +408,7 @@
     <Property Name="Mahnung1datum" Type="DateTime" Precision="3" />
     <Property Name="Mahnung2datum" Type="DateTime" Precision="3" />
     <Property Name="Mahnung3datum" Type="DateTime" Precision="3" />
+    <Property Name="Zahlungsziel" Type="DateTime" Precision="3" />
+    <Property Name="Bemerkungen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

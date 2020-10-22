@@ -29,18 +29,48 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rechnung01_main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1_suchen = new System.Windows.Forms.TextBox();
             this.button1_neueRechnung = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.priProRechnungDataGridView = new System.Windows.Forms.DataGridView();
+            this.XLSX = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PDF = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RechnungNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungBeschreibung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Projektnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungErsteller = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rechnungsbetrag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ändern = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Zahlungsziel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Zahlungsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Zahlungsbetrag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NochOffen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mahnung1datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mahnung2datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mahnung3datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bemerkungen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LieferscheinNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Firmenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Strasse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Stadt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RE_Land = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RechnungPfad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriProRechnungID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priProRechnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new PrintumProjektverwaltung.DAL.DataSet1();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.offeneRechnungenTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.zahlungsBetragTextbox = new System.Windows.Forms.TextBox();
@@ -60,32 +90,6 @@
             this.priProLieferscheinRechnungBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.tableAdapterManager = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.TableAdapterManager();
             this.priProRechnungTableAdapter = new PrintumProjektverwaltung.DAL.DataSet1TableAdapters.PriProRechnungTableAdapter();
-            this.XLSX = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PDF = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.RechnungNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungBeschreibung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Projektnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungErsteller = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rechnungsbetrag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ändern = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Zahlungsziel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Zahlungsdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Zahlungsbetrag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mahnung1datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mahnung2datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mahnung3datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bemerkungen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LieferscheinNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Firmenname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Strasse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Stadt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RE_Land = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RechnungPfad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriProRechnungID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priProRechnungDataGridView)).BeginInit();
@@ -105,7 +109,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1670, 68);
+            this.panel1.Size = new System.Drawing.Size(1751, 68);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -152,7 +156,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 68);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(1670, 597);
+            this.panel2.Size = new System.Drawing.Size(1751, 597);
             this.panel2.TabIndex = 1;
             // 
             // priProRechnungDataGridView
@@ -175,6 +179,7 @@
             this.Zahlungsziel,
             this.Zahlungsdatum,
             this.Zahlungsbetrag,
+            this.NochOffen,
             this.Mahnung1datum,
             this.Mahnung2datum,
             this.Mahnung3datum,
@@ -197,12 +202,273 @@
             this.priProRechnungDataGridView.RowHeadersVisible = false;
             this.priProRechnungDataGridView.RowHeadersWidth = 51;
             this.priProRechnungDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.priProRechnungDataGridView.Size = new System.Drawing.Size(1650, 520);
+            this.priProRechnungDataGridView.Size = new System.Drawing.Size(1731, 520);
             this.priProRechnungDataGridView.TabIndex = 0;
             this.priProRechnungDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.priProRechnungDataGridView_CellContentClick);
             this.priProRechnungDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.priProRechnungDataGridView_CellDoubleClick);
             this.priProRechnungDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.priProRechnungDataGridView_DataBindingComplete);
             this.priProRechnungDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.priProRechnungDataGridView_RowHeaderMouseClick);
+            // 
+            // XLSX
+            // 
+            this.XLSX.HeaderText = "Excel öffnen";
+            this.XLSX.MinimumWidth = 6;
+            this.XLSX.Name = "XLSX";
+            this.XLSX.ReadOnly = true;
+            this.XLSX.Text = ".xlsx";
+            this.XLSX.UseColumnTextForButtonValue = true;
+            this.XLSX.Width = 50;
+            // 
+            // PDF
+            // 
+            this.PDF.HeaderText = "PDF öffnen";
+            this.PDF.MinimumWidth = 6;
+            this.PDF.Name = "PDF";
+            this.PDF.ReadOnly = true;
+            this.PDF.Text = ".pdf";
+            this.PDF.UseColumnTextForButtonValue = true;
+            this.PDF.Width = 50;
+            // 
+            // RechnungNr
+            // 
+            this.RechnungNr.DataPropertyName = "RechnungNr";
+            this.RechnungNr.HeaderText = "Rechn.Nr";
+            this.RechnungNr.MinimumWidth = 6;
+            this.RechnungNr.Name = "RechnungNr";
+            this.RechnungNr.ReadOnly = true;
+            this.RechnungNr.Width = 125;
+            // 
+            // RechnungBeschreibung
+            // 
+            this.RechnungBeschreibung.DataPropertyName = "RechnungBeschreibung";
+            this.RechnungBeschreibung.HeaderText = "Beschreibung";
+            this.RechnungBeschreibung.MinimumWidth = 6;
+            this.RechnungBeschreibung.Name = "RechnungBeschreibung";
+            this.RechnungBeschreibung.ReadOnly = true;
+            this.RechnungBeschreibung.Width = 300;
+            // 
+            // RechnungTyp
+            // 
+            this.RechnungTyp.DataPropertyName = "RechnungTyp";
+            this.RechnungTyp.HeaderText = "Typ";
+            this.RechnungTyp.MinimumWidth = 6;
+            this.RechnungTyp.Name = "RechnungTyp";
+            this.RechnungTyp.ReadOnly = true;
+            this.RechnungTyp.Width = 125;
+            // 
+            // Projektnummer
+            // 
+            this.Projektnummer.DataPropertyName = "Projektnummer";
+            this.Projektnummer.HeaderText = "Projekt -Nr";
+            this.Projektnummer.MinimumWidth = 6;
+            this.Projektnummer.Name = "Projektnummer";
+            this.Projektnummer.ReadOnly = true;
+            this.Projektnummer.Width = 90;
+            // 
+            // RechnungDatum
+            // 
+            this.RechnungDatum.DataPropertyName = "RechnungDatum";
+            this.RechnungDatum.HeaderText = "Rechnungs - Datum";
+            this.RechnungDatum.MinimumWidth = 110;
+            this.RechnungDatum.Name = "RechnungDatum";
+            this.RechnungDatum.ReadOnly = true;
+            this.RechnungDatum.Width = 110;
+            // 
+            // RechnungErsteller
+            // 
+            this.RechnungErsteller.DataPropertyName = "RechnungErsteller";
+            this.RechnungErsteller.HeaderText = "Rechnungs - Ersteller";
+            this.RechnungErsteller.MinimumWidth = 6;
+            this.RechnungErsteller.Name = "RechnungErsteller";
+            this.RechnungErsteller.ReadOnly = true;
+            this.RechnungErsteller.Width = 125;
+            // 
+            // Rechnungsbetrag
+            // 
+            this.Rechnungsbetrag.DataPropertyName = "Rechnungsbetrag";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Rechnungsbetrag.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Rechnungsbetrag.HeaderText = "Rechnungs - Betrag";
+            this.Rechnungsbetrag.MinimumWidth = 6;
+            this.Rechnungsbetrag.Name = "Rechnungsbetrag";
+            this.Rechnungsbetrag.ReadOnly = true;
+            this.Rechnungsbetrag.Width = 125;
+            // 
+            // Ändern
+            // 
+            this.Ändern.HeaderText = "Zahlungen";
+            this.Ändern.MinimumWidth = 6;
+            this.Ändern.Name = "Ändern";
+            this.Ändern.ReadOnly = true;
+            this.Ändern.Text = "ändern";
+            this.Ändern.UseColumnTextForButtonValue = true;
+            this.Ändern.Width = 125;
+            // 
+            // Zahlungsziel
+            // 
+            this.Zahlungsziel.DataPropertyName = "Zahlungsziel";
+            this.Zahlungsziel.HeaderText = "Zahlungsziel";
+            this.Zahlungsziel.MinimumWidth = 6;
+            this.Zahlungsziel.Name = "Zahlungsziel";
+            this.Zahlungsziel.ReadOnly = true;
+            this.Zahlungsziel.Width = 125;
+            // 
+            // Zahlungsdatum
+            // 
+            this.Zahlungsdatum.DataPropertyName = "Zahlungsdatum";
+            this.Zahlungsdatum.HeaderText = "Zahlungs - Datum";
+            this.Zahlungsdatum.MinimumWidth = 6;
+            this.Zahlungsdatum.Name = "Zahlungsdatum";
+            this.Zahlungsdatum.ReadOnly = true;
+            this.Zahlungsdatum.Width = 110;
+            // 
+            // Zahlungsbetrag
+            // 
+            this.Zahlungsbetrag.DataPropertyName = "Zahlungsbetrag";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Zahlungsbetrag.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Zahlungsbetrag.HeaderText = "Zahlungs - Betrag";
+            this.Zahlungsbetrag.MinimumWidth = 6;
+            this.Zahlungsbetrag.Name = "Zahlungsbetrag";
+            this.Zahlungsbetrag.ReadOnly = true;
+            this.Zahlungsbetrag.Width = 125;
+            // 
+            // NochOffen
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle9.Format = "C2";
+            this.NochOffen.DefaultCellStyle = dataGridViewCellStyle9;
+            this.NochOffen.HeaderText = "noch offen";
+            this.NochOffen.MinimumWidth = 6;
+            this.NochOffen.Name = "NochOffen";
+            this.NochOffen.ReadOnly = true;
+            this.NochOffen.Width = 125;
+            // 
+            // Mahnung1datum
+            // 
+            this.Mahnung1datum.DataPropertyName = "Mahnung1datum";
+            this.Mahnung1datum.HeaderText = "1.Mahnung";
+            this.Mahnung1datum.MinimumWidth = 6;
+            this.Mahnung1datum.Name = "Mahnung1datum";
+            this.Mahnung1datum.ReadOnly = true;
+            this.Mahnung1datum.Width = 125;
+            // 
+            // Mahnung2datum
+            // 
+            this.Mahnung2datum.DataPropertyName = "Mahnung2datum";
+            this.Mahnung2datum.HeaderText = "2.Mahnung";
+            this.Mahnung2datum.MinimumWidth = 6;
+            this.Mahnung2datum.Name = "Mahnung2datum";
+            this.Mahnung2datum.ReadOnly = true;
+            this.Mahnung2datum.Width = 125;
+            // 
+            // Mahnung3datum
+            // 
+            this.Mahnung3datum.DataPropertyName = "Mahnung3datum";
+            this.Mahnung3datum.HeaderText = "3.Mahnung";
+            this.Mahnung3datum.MinimumWidth = 6;
+            this.Mahnung3datum.Name = "Mahnung3datum";
+            this.Mahnung3datum.ReadOnly = true;
+            this.Mahnung3datum.Width = 125;
+            // 
+            // Bemerkungen
+            // 
+            this.Bemerkungen.DataPropertyName = "Bemerkungen";
+            this.Bemerkungen.HeaderText = "Bemerkungen";
+            this.Bemerkungen.MinimumWidth = 6;
+            this.Bemerkungen.Name = "Bemerkungen";
+            this.Bemerkungen.ReadOnly = true;
+            this.Bemerkungen.Width = 225;
+            // 
+            // LieferscheinNr
+            // 
+            this.LieferscheinNr.DataPropertyName = "LieferscheinNr";
+            this.LieferscheinNr.HeaderText = "Lieferschein -Nr";
+            this.LieferscheinNr.MinimumWidth = 6;
+            this.LieferscheinNr.Name = "LieferscheinNr";
+            this.LieferscheinNr.ReadOnly = true;
+            this.LieferscheinNr.Width = 125;
+            // 
+            // RE_Firmenname
+            // 
+            this.RE_Firmenname.DataPropertyName = "RE_Firmenname";
+            this.RE_Firmenname.HeaderText = "Firmenname";
+            this.RE_Firmenname.MinimumWidth = 6;
+            this.RE_Firmenname.Name = "RE_Firmenname";
+            this.RE_Firmenname.ReadOnly = true;
+            this.RE_Firmenname.Width = 200;
+            // 
+            // RE_Name
+            // 
+            this.RE_Name.DataPropertyName = "RE_Name";
+            this.RE_Name.HeaderText = "Name";
+            this.RE_Name.MinimumWidth = 6;
+            this.RE_Name.Name = "RE_Name";
+            this.RE_Name.ReadOnly = true;
+            this.RE_Name.Width = 125;
+            // 
+            // RE_Strasse
+            // 
+            this.RE_Strasse.DataPropertyName = "RE_Strasse";
+            this.RE_Strasse.HeaderText = "Strasse";
+            this.RE_Strasse.MinimumWidth = 6;
+            this.RE_Strasse.Name = "RE_Strasse";
+            this.RE_Strasse.ReadOnly = true;
+            this.RE_Strasse.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "RE_PLZ";
+            this.dataGridViewTextBoxColumn21.HeaderText = "RE_PLZ";
+            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            this.dataGridViewTextBoxColumn21.Width = 125;
+            // 
+            // RE_Stadt
+            // 
+            this.RE_Stadt.DataPropertyName = "RE_Stadt";
+            this.RE_Stadt.HeaderText = "Stadt";
+            this.RE_Stadt.MinimumWidth = 6;
+            this.RE_Stadt.Name = "RE_Stadt";
+            this.RE_Stadt.ReadOnly = true;
+            this.RE_Stadt.Width = 125;
+            // 
+            // RE_Land
+            // 
+            this.RE_Land.DataPropertyName = "RE_Land";
+            this.RE_Land.HeaderText = "Land";
+            this.RE_Land.MinimumWidth = 6;
+            this.RE_Land.Name = "RE_Land";
+            this.RE_Land.ReadOnly = true;
+            this.RE_Land.Width = 125;
+            // 
+            // RechnungPfad
+            // 
+            this.RechnungPfad.DataPropertyName = "RechnungPfad";
+            this.RechnungPfad.HeaderText = "RechnungPfad";
+            this.RechnungPfad.MinimumWidth = 6;
+            this.RechnungPfad.Name = "RechnungPfad";
+            this.RechnungPfad.ReadOnly = true;
+            this.RechnungPfad.Visible = false;
+            this.RechnungPfad.Width = 125;
+            // 
+            // PriProRechnungID
+            // 
+            this.PriProRechnungID.DataPropertyName = "PriProRechnungID";
+            this.PriProRechnungID.HeaderText = "PriProRechnungID";
+            this.PriProRechnungID.MinimumWidth = 6;
+            this.PriProRechnungID.Name = "PriProRechnungID";
+            this.PriProRechnungID.ReadOnly = true;
+            this.PriProRechnungID.Visible = false;
+            this.PriProRechnungID.Width = 125;
             // 
             // priProRechnungBindingSource
             // 
@@ -216,6 +482,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.offeneRechnungenTextBox);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.zahlungsBetragTextbox);
@@ -223,46 +491,66 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(10, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1650, 57);
+            this.panel3.Size = new System.Drawing.Size(1731, 57);
             this.panel3.TabIndex = 1;
+            // 
+            // offeneRechnungenTextBox
+            // 
+            this.offeneRechnungenTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offeneRechnungenTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.offeneRechnungenTextBox.Location = new System.Drawing.Point(1603, 25);
+            this.offeneRechnungenTextBox.Name = "offeneRechnungenTextBox";
+            this.offeneRechnungenTextBox.Size = new System.Drawing.Size(106, 23);
+            this.offeneRechnungenTextBox.TabIndex = 19;
+            this.offeneRechnungenTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1600, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "offene Rechnungen:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1325, 4);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1412, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 17);
+            this.label3.Size = new System.Drawing.Size(166, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "SUMME Zahlungsbetrag:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(937, 4);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(938, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 17);
+            this.label2.Size = new System.Drawing.Size(179, 17);
             this.label2.TabIndex = 16;
             this.label2.Text = "SUMME Rechnungsbetrag:";
             // 
             // zahlungsBetragTextbox
             // 
-            this.zahlungsBetragTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zahlungsBetragTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zahlungsBetragTextbox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.zahlungsBetragTextbox.Location = new System.Drawing.Point(1387, 24);
+            this.zahlungsBetragTextbox.Location = new System.Drawing.Point(1458, 25);
             this.zahlungsBetragTextbox.Name = "zahlungsBetragTextbox";
-            this.zahlungsBetragTextbox.Size = new System.Drawing.Size(125, 27);
+            this.zahlungsBetragTextbox.Size = new System.Drawing.Size(120, 23);
             this.zahlungsBetragTextbox.TabIndex = 15;
             this.zahlungsBetragTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // SummeRechnungsBetragTextBox
             // 
-            this.SummeRechnungsBetragTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SummeRechnungsBetragTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SummeRechnungsBetragTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.SummeRechnungsBetragTextBox.Location = new System.Drawing.Point(1013, 24);
+            this.SummeRechnungsBetragTextBox.Location = new System.Drawing.Point(979, 25);
             this.SummeRechnungsBetragTextBox.Name = "SummeRechnungsBetragTextBox";
-            this.SummeRechnungsBetragTextBox.Size = new System.Drawing.Size(125, 27);
+            this.SummeRechnungsBetragTextBox.Size = new System.Drawing.Size(125, 23);
             this.SummeRechnungsBetragTextBox.TabIndex = 14;
             this.SummeRechnungsBetragTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -414,260 +702,12 @@
             // 
             this.priProRechnungTableAdapter.ClearBeforeFill = true;
             // 
-            // XLSX
-            // 
-            this.XLSX.HeaderText = "Excel öffnen";
-            this.XLSX.MinimumWidth = 6;
-            this.XLSX.Name = "XLSX";
-            this.XLSX.ReadOnly = true;
-            this.XLSX.Text = ".xlsx";
-            this.XLSX.UseColumnTextForButtonValue = true;
-            this.XLSX.Width = 50;
-            // 
-            // PDF
-            // 
-            this.PDF.HeaderText = "PDF öffnen";
-            this.PDF.MinimumWidth = 6;
-            this.PDF.Name = "PDF";
-            this.PDF.ReadOnly = true;
-            this.PDF.Text = ".pdf";
-            this.PDF.UseColumnTextForButtonValue = true;
-            this.PDF.Width = 50;
-            // 
-            // RechnungNr
-            // 
-            this.RechnungNr.DataPropertyName = "RechnungNr";
-            this.RechnungNr.HeaderText = "Rechn.Nr";
-            this.RechnungNr.MinimumWidth = 6;
-            this.RechnungNr.Name = "RechnungNr";
-            this.RechnungNr.ReadOnly = true;
-            this.RechnungNr.Width = 125;
-            // 
-            // RechnungBeschreibung
-            // 
-            this.RechnungBeschreibung.DataPropertyName = "RechnungBeschreibung";
-            this.RechnungBeschreibung.HeaderText = "Beschreibung";
-            this.RechnungBeschreibung.MinimumWidth = 6;
-            this.RechnungBeschreibung.Name = "RechnungBeschreibung";
-            this.RechnungBeschreibung.ReadOnly = true;
-            this.RechnungBeschreibung.Width = 300;
-            // 
-            // RechnungTyp
-            // 
-            this.RechnungTyp.DataPropertyName = "RechnungTyp";
-            this.RechnungTyp.HeaderText = "Typ";
-            this.RechnungTyp.MinimumWidth = 6;
-            this.RechnungTyp.Name = "RechnungTyp";
-            this.RechnungTyp.ReadOnly = true;
-            this.RechnungTyp.Width = 125;
-            // 
-            // Projektnummer
-            // 
-            this.Projektnummer.DataPropertyName = "Projektnummer";
-            this.Projektnummer.HeaderText = "Projekt -Nr";
-            this.Projektnummer.MinimumWidth = 6;
-            this.Projektnummer.Name = "Projektnummer";
-            this.Projektnummer.ReadOnly = true;
-            this.Projektnummer.Width = 125;
-            // 
-            // RechnungDatum
-            // 
-            this.RechnungDatum.DataPropertyName = "RechnungDatum";
-            this.RechnungDatum.HeaderText = "Rechnungs - Datum";
-            this.RechnungDatum.MinimumWidth = 110;
-            this.RechnungDatum.Name = "RechnungDatum";
-            this.RechnungDatum.ReadOnly = true;
-            this.RechnungDatum.Width = 110;
-            // 
-            // RechnungErsteller
-            // 
-            this.RechnungErsteller.DataPropertyName = "RechnungErsteller";
-            this.RechnungErsteller.HeaderText = "Rechnungs - Ersteller";
-            this.RechnungErsteller.MinimumWidth = 6;
-            this.RechnungErsteller.Name = "RechnungErsteller";
-            this.RechnungErsteller.ReadOnly = true;
-            this.RechnungErsteller.Width = 125;
-            // 
-            // Rechnungsbetrag
-            // 
-            this.Rechnungsbetrag.DataPropertyName = "Rechnungsbetrag";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Rechnungsbetrag.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Rechnungsbetrag.HeaderText = "Rechnungs - Betrag";
-            this.Rechnungsbetrag.MinimumWidth = 6;
-            this.Rechnungsbetrag.Name = "Rechnungsbetrag";
-            this.Rechnungsbetrag.ReadOnly = true;
-            this.Rechnungsbetrag.Width = 125;
-            // 
-            // Ändern
-            // 
-            this.Ändern.HeaderText = "Zahlungen";
-            this.Ändern.MinimumWidth = 6;
-            this.Ändern.Name = "Ändern";
-            this.Ändern.ReadOnly = true;
-            this.Ändern.Text = "ändern";
-            this.Ändern.UseColumnTextForButtonValue = true;
-            this.Ändern.Width = 125;
-            // 
-            // Zahlungsziel
-            // 
-            this.Zahlungsziel.DataPropertyName = "Zahlungsziel";
-            this.Zahlungsziel.HeaderText = "Zahlungsziel";
-            this.Zahlungsziel.MinimumWidth = 6;
-            this.Zahlungsziel.Name = "Zahlungsziel";
-            this.Zahlungsziel.ReadOnly = true;
-            this.Zahlungsziel.Width = 125;
-            // 
-            // Zahlungsdatum
-            // 
-            this.Zahlungsdatum.DataPropertyName = "Zahlungsdatum";
-            this.Zahlungsdatum.HeaderText = "Zahlungs - Datum";
-            this.Zahlungsdatum.MinimumWidth = 6;
-            this.Zahlungsdatum.Name = "Zahlungsdatum";
-            this.Zahlungsdatum.ReadOnly = true;
-            this.Zahlungsdatum.Width = 125;
-            // 
-            // Zahlungsbetrag
-            // 
-            this.Zahlungsbetrag.DataPropertyName = "Zahlungsbetrag";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Zahlungsbetrag.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Zahlungsbetrag.HeaderText = "Zahlungs - Betrag";
-            this.Zahlungsbetrag.MinimumWidth = 6;
-            this.Zahlungsbetrag.Name = "Zahlungsbetrag";
-            this.Zahlungsbetrag.ReadOnly = true;
-            this.Zahlungsbetrag.Width = 125;
-            // 
-            // Mahnung1datum
-            // 
-            this.Mahnung1datum.DataPropertyName = "Mahnung1datum";
-            this.Mahnung1datum.HeaderText = "1.Mahnung";
-            this.Mahnung1datum.MinimumWidth = 6;
-            this.Mahnung1datum.Name = "Mahnung1datum";
-            this.Mahnung1datum.ReadOnly = true;
-            this.Mahnung1datum.Width = 125;
-            // 
-            // Mahnung2datum
-            // 
-            this.Mahnung2datum.DataPropertyName = "Mahnung2datum";
-            this.Mahnung2datum.HeaderText = "2.Mahnung";
-            this.Mahnung2datum.MinimumWidth = 6;
-            this.Mahnung2datum.Name = "Mahnung2datum";
-            this.Mahnung2datum.ReadOnly = true;
-            this.Mahnung2datum.Width = 125;
-            // 
-            // Mahnung3datum
-            // 
-            this.Mahnung3datum.DataPropertyName = "Mahnung3datum";
-            this.Mahnung3datum.HeaderText = "3.Mahnung";
-            this.Mahnung3datum.MinimumWidth = 6;
-            this.Mahnung3datum.Name = "Mahnung3datum";
-            this.Mahnung3datum.ReadOnly = true;
-            this.Mahnung3datum.Width = 125;
-            // 
-            // Bemerkungen
-            // 
-            this.Bemerkungen.DataPropertyName = "Bemerkungen";
-            this.Bemerkungen.HeaderText = "Bemerkungen";
-            this.Bemerkungen.MinimumWidth = 6;
-            this.Bemerkungen.Name = "Bemerkungen";
-            this.Bemerkungen.ReadOnly = true;
-            this.Bemerkungen.Width = 225;
-            // 
-            // LieferscheinNr
-            // 
-            this.LieferscheinNr.DataPropertyName = "LieferscheinNr";
-            this.LieferscheinNr.HeaderText = "Lieferschein -Nr";
-            this.LieferscheinNr.MinimumWidth = 6;
-            this.LieferscheinNr.Name = "LieferscheinNr";
-            this.LieferscheinNr.ReadOnly = true;
-            this.LieferscheinNr.Width = 125;
-            // 
-            // RE_Firmenname
-            // 
-            this.RE_Firmenname.DataPropertyName = "RE_Firmenname";
-            this.RE_Firmenname.HeaderText = "Firmenname";
-            this.RE_Firmenname.MinimumWidth = 6;
-            this.RE_Firmenname.Name = "RE_Firmenname";
-            this.RE_Firmenname.ReadOnly = true;
-            this.RE_Firmenname.Width = 200;
-            // 
-            // RE_Name
-            // 
-            this.RE_Name.DataPropertyName = "RE_Name";
-            this.RE_Name.HeaderText = "Name";
-            this.RE_Name.MinimumWidth = 6;
-            this.RE_Name.Name = "RE_Name";
-            this.RE_Name.ReadOnly = true;
-            this.RE_Name.Width = 125;
-            // 
-            // RE_Strasse
-            // 
-            this.RE_Strasse.DataPropertyName = "RE_Strasse";
-            this.RE_Strasse.HeaderText = "Strasse";
-            this.RE_Strasse.MinimumWidth = 6;
-            this.RE_Strasse.Name = "RE_Strasse";
-            this.RE_Strasse.ReadOnly = true;
-            this.RE_Strasse.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "RE_PLZ";
-            this.dataGridViewTextBoxColumn21.HeaderText = "RE_PLZ";
-            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            this.dataGridViewTextBoxColumn21.Width = 125;
-            // 
-            // RE_Stadt
-            // 
-            this.RE_Stadt.DataPropertyName = "RE_Stadt";
-            this.RE_Stadt.HeaderText = "Stadt";
-            this.RE_Stadt.MinimumWidth = 6;
-            this.RE_Stadt.Name = "RE_Stadt";
-            this.RE_Stadt.ReadOnly = true;
-            this.RE_Stadt.Width = 125;
-            // 
-            // RE_Land
-            // 
-            this.RE_Land.DataPropertyName = "RE_Land";
-            this.RE_Land.HeaderText = "Land";
-            this.RE_Land.MinimumWidth = 6;
-            this.RE_Land.Name = "RE_Land";
-            this.RE_Land.ReadOnly = true;
-            this.RE_Land.Width = 125;
-            // 
-            // RechnungPfad
-            // 
-            this.RechnungPfad.DataPropertyName = "RechnungPfad";
-            this.RechnungPfad.HeaderText = "RechnungPfad";
-            this.RechnungPfad.MinimumWidth = 6;
-            this.RechnungPfad.Name = "RechnungPfad";
-            this.RechnungPfad.ReadOnly = true;
-            this.RechnungPfad.Visible = false;
-            this.RechnungPfad.Width = 125;
-            // 
-            // PriProRechnungID
-            // 
-            this.PriProRechnungID.DataPropertyName = "PriProRechnungID";
-            this.PriProRechnungID.HeaderText = "PriProRechnungID";
-            this.PriProRechnungID.MinimumWidth = 6;
-            this.PriProRechnungID.Name = "PriProRechnungID";
-            this.PriProRechnungID.ReadOnly = true;
-            this.PriProRechnungID.Visible = false;
-            this.PriProRechnungID.Width = 125;
-            // 
             // Rechnung01_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1670, 665);
+            this.ClientSize = new System.Drawing.Size(1751, 665);
             this.Controls.Add(this.priProRechnungBindingNavigator);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -723,6 +763,8 @@
         private System.Windows.Forms.TextBox zahlungsBetragTextbox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox offeneRechnungenTextBox;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewButtonColumn XLSX;
         private System.Windows.Forms.DataGridViewButtonColumn PDF;
         private System.Windows.Forms.DataGridViewTextBoxColumn RechnungNr;
@@ -736,6 +778,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Zahlungsziel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Zahlungsdatum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Zahlungsbetrag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NochOffen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mahnung1datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mahnung2datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mahnung3datum;
