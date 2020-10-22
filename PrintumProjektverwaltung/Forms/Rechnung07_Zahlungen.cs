@@ -28,10 +28,16 @@ namespace PrintumProjektverwaltung.Forms
             var rechnungsbetrag = row.Cells["Rechnungsbetrag"].Value.ToString();
             var zahlungsbetrag = row.Cells["Zahlungsbetrag"].Value.ToString();
             var zahldatum = row.Cells["Zahlungsdatum"].Value.ToString();
+            var mahnung1datum = row.Cells["Mahnung1datum"].Value.ToString();
+            var mahnung2datum = row.Cells["Mahnung2datum"].Value.ToString();
+            var mahnung3datum = row.Cells["Mahnung3datum"].Value.ToString();
 
             rechnungBetragTextBox.Text = rechnungsbetrag;
             zahlungsBetragTextBox.Text = zahlungsbetrag;
             zahlungsDatumTextBox.Text = zahldatum;
+            mahnung1textBox.Text = mahnung1datum;
+            mahnung2textBox.Text = mahnung2datum;
+            mahnung3textBox.Text = mahnung3datum;
 
 
 
@@ -81,6 +87,51 @@ namespace PrintumProjektverwaltung.Forms
                     {
                         zdt = Convert.ToDateTime(zahlungsDatumTextBox.Text);
                         dieRow.Zahlungsdatum = zdt;
+                    }
+                    catch (Exception ex)
+                    {
+                        var bal = ex.ToString();
+                    }
+                }
+
+
+                if (mahnung1textBox.Text != "")
+                {
+                    DateTime zdt;
+                    try
+                    {
+                        zdt = Convert.ToDateTime(mahnung1textBox.Text);
+                        dieRow.Mahnung1datum = zdt;
+                    }
+                    catch (Exception ex)
+                    {
+                        var bal = ex.ToString();
+                    }
+                }
+
+
+                if (mahnung2textBox.Text != "")
+                {
+                    DateTime zdt;
+                    try
+                    {
+                        zdt = Convert.ToDateTime(mahnung2textBox.Text);
+                        dieRow.Mahnung2datum = zdt;
+                    }
+                    catch (Exception ex)
+                    {
+                        var bal = ex.ToString();
+                    }
+                }
+
+
+                if (mahnung3textBox.Text != "")
+                {
+                    DateTime zdt;
+                    try
+                    {
+                        zdt = Convert.ToDateTime(mahnung3textBox.Text);
+                        dieRow.Mahnung3datum = zdt;
                     }
                     catch (Exception ex)
                     {

@@ -325,6 +325,9 @@
     <Property Name="Rechnungsbetrag" Type="float" />
     <Property Name="Zahlungsdatum" Type="datetime" />
     <Property Name="Zahlungsbetrag" Type="float" />
+    <Property Name="Mahnung1datum" Type="datetime" />
+    <Property Name="Mahnung2datum" Type="datetime" />
+    <Property Name="Mahnung3datum" Type="datetime" />
   </EntityType>
   <EntityType Name="Projekte">
     <Key>

@@ -1001,7 +1001,7 @@ namespace PrintumProjektverwaltung.Forms
             if (antwort == DialogResult.OK)
             {
                 var a2 = MessageBox.Show(" ...echt?" + Environment.NewLine + Environment.NewLine
-                    + " ... dann ist aber alles weg.","",MessageBoxButtons.OKCancel);
+                    + " ... dann ist aber alles weg.", "", MessageBoxButtons.OKCancel);
                 if (a2 == DialogResult.OK)
                 {
                     var a3 = MessageBox.Show("Wenn du jetzt nicht Michael Weiss bist, kann das GANZ unangenehm werden....", "Oh-Ha!", MessageBoxButtons.OKCancel);

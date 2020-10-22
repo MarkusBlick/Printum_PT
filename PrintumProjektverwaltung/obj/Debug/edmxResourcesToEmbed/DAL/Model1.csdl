@@ -405,5 +405,8 @@
     <Property Name="Rechnungsbetrag" Type="Double" />
     <Property Name="Zahlungsdatum" Type="DateTime" Precision="3" />
     <Property Name="Zahlungsbetrag" Type="Double" />
+    <Property Name="Mahnung1datum" Type="DateTime" Precision="3" />
+    <Property Name="Mahnung2datum" Type="DateTime" Precision="3" />
+    <Property Name="Mahnung3datum" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

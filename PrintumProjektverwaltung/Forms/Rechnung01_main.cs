@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
+using PrintumProjektverwaltung.DAL;
 using PrintumProjektverwaltung.Helper;
 
 namespace PrintumProjektverwaltung.Forms
@@ -175,6 +177,47 @@ namespace PrintumProjektverwaltung.Forms
 
                 }
             }
+        }
+
+        private void priProRechnungDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var rBetrag = 0.0;
+            var zBetrag = 0.0;
+            foreach (DataGridViewRow row in this.priProRechnungDataGridView.Rows)
+            {
+
+
+                var value1 = row.Cells["Rechnungsbetrag"].Value;
+                var value2 = row.Cells["Zahlungsbetrag"].Value;
+                try
+                {
+                    if (value1 != null)
+                    {
+                        if (value1.GetType().Name != "DBNull")
+                        {
+                            rBetrag += (double)value1;
+
+                        }
+                    }
+                    if (value2 != null)
+                    {
+                        if (value2.GetType().Name != "DBNull")
+                        {
+                            zBetrag += (double)value2;
+
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    var bal = ex.ToString(); ;
+                }
+            }
+
+            this.SummeRechnungsBetragTextBox.Text = rBetrag.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"));
+            this.zahlungsBetragTextbox.Text = zBetrag.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"));
         }
     }
 }

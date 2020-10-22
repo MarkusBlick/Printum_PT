@@ -342,3 +342,4 @@ C:\Users\m.blick.NB-0427\Documents\GitHub\Printum_PT\PrintumProjektverwaltung\ob
 C:\Users\m.blick.NB-0427\Documents\GitHub\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.csproj.CopyComplete
 C:\Users\m.blick.NB-0427\Documents\GitHub\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektverwaltung.exe
 C:\Users\m.blick.NB-0427\Documents\GitHub\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumTechnologyProjektverwaltung.pdb
+C:\Users\m.blick.NB-0427\Documents\GitHub\Printum_PT\PrintumProjektverwaltung\obj\Debug\PrintumProjektverwaltung.csprojAssemblyReference.cache

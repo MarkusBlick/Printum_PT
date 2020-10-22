@@ -382,6 +382,9 @@
     <EntitySetMapping Name="PriProRechnung">
       <EntityTypeMapping TypeName="PrintumProjekteModel.PriProRechnung">
         <MappingFragment StoreEntitySet="PriProRechnung">
+          <ScalarProperty Name="Mahnung3datum" ColumnName="Mahnung3datum" />
+          <ScalarProperty Name="Mahnung2datum" ColumnName="Mahnung2datum" />
+          <ScalarProperty Name="Mahnung1datum" ColumnName="Mahnung1datum" />
           <ScalarProperty Name="Zahlungsbetrag" ColumnName="Zahlungsbetrag" />
           <ScalarProperty Name="Zahlungsdatum" ColumnName="Zahlungsdatum" />
           <ScalarProperty Name="Rechnungsbetrag" ColumnName="Rechnungsbetrag" />

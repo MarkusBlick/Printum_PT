@@ -330,6 +330,9 @@
           <Property Name="Rechnungsbetrag" Type="float" />
           <Property Name="Zahlungsdatum" Type="datetime" />
           <Property Name="Zahlungsbetrag" Type="float" />
+          <Property Name="Mahnung1datum" Type="datetime" />
+          <Property Name="Mahnung2datum" Type="datetime" />
+          <Property Name="Mahnung3datum" Type="datetime" />
         </EntityType>
         <EntityType Name="Projekte">
           <Key>
@@ -863,6 +866,9 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungProProjekt' 
           <Property Name="Rechnungsbetrag" Type="Double" />
           <Property Name="Zahlungsdatum" Type="DateTime" Precision="3" />
           <Property Name="Zahlungsbetrag" Type="Double" />
+          <Property Name="Mahnung1datum" Type="DateTime" Precision="3" />
+          <Property Name="Mahnung2datum" Type="DateTime" Precision="3" />
+          <Property Name="Mahnung3datum" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1251,6 +1257,9 @@ Warnung 6002: Für Tabelle/Sicht 'PrintumTechnologyDB.dbo.BestellungProProjekt' 
           <EntitySetMapping Name="PriProRechnung">
             <EntityTypeMapping TypeName="PrintumProjekteModel.PriProRechnung">
               <MappingFragment StoreEntitySet="PriProRechnung">
+                <ScalarProperty Name="Mahnung3datum" ColumnName="Mahnung3datum" />
+                <ScalarProperty Name="Mahnung2datum" ColumnName="Mahnung2datum" />
+                <ScalarProperty Name="Mahnung1datum" ColumnName="Mahnung1datum" />
                 <ScalarProperty Name="Zahlungsbetrag" ColumnName="Zahlungsbetrag" />
                 <ScalarProperty Name="Zahlungsdatum" ColumnName="Zahlungsdatum" />
                 <ScalarProperty Name="Rechnungsbetrag" ColumnName="Rechnungsbetrag" />

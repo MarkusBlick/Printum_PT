@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrintumTechnologyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Projekte">
+    <Key>
+      <PropertyRef Name="Projektnummer" />
+    </Key>
+    <Property Name="Projektnummer" Type="Int32" Nullable="false" />
+    <Property Name="Projektname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrdnersturkturJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BestellungenJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MailsJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektbeginn" Type="DateTime" Precision="3" />
+    <Property Name="Produktionsbeginn" Type="DateTime" Precision="3" />
+    <Property Name="Inbetriebname" Type="DateTime" Precision="3" />
+    <Property Name="aktiv" Type="Boolean" Nullable="false" />
+    <Property Name="RootOrdner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Projektart" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="PrintumTechnologyDBEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Projekte" EntityType="Self.Projekte" />
+  </EntityContainer>
+</Schema>

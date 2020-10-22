@@ -31,14 +31,23 @@
             System.Windows.Forms.Label lieferscheinNrLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rechnung07_Zahlungen));
             this.rechnungBetragTextBox = new System.Windows.Forms.TextBox();
             this.zahlungsBetragTextBox = new System.Windows.Forms.TextBox();
             this.zahlungsDatumTextBox = new System.Windows.Forms.TextBox();
             this.button2_adresse = new System.Windows.Forms.Button();
+            this.mahnung1textBox = new System.Windows.Forms.TextBox();
+            this.mahnung2textBox = new System.Windows.Forms.TextBox();
+            this.mahnung3textBox = new System.Windows.Forms.TextBox();
             lieferscheinNrLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lieferscheinNrLabel
@@ -51,14 +60,6 @@
             lieferscheinNrLabel.TabIndex = 4;
             lieferscheinNrLabel.Text = "Rechnungsbetrag";
             // 
-            // rechnungBetragTextBox
-            // 
-            this.rechnungBetragTextBox.Location = new System.Drawing.Point(152, 21);
-            this.rechnungBetragTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.rechnungBetragTextBox.Name = "rechnungBetragTextBox";
-            this.rechnungBetragTextBox.Size = new System.Drawing.Size(148, 26);
-            this.rechnungBetragTextBox.TabIndex = 5;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -69,14 +70,6 @@
             label1.TabIndex = 6;
             label1.Text = "Zahlungsbetrag";
             // 
-            // zahlungsBetragTextBox
-            // 
-            this.zahlungsBetragTextBox.Location = new System.Drawing.Point(489, 21);
-            this.zahlungsBetragTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.zahlungsBetragTextBox.Name = "zahlungsBetragTextBox";
-            this.zahlungsBetragTextBox.Size = new System.Drawing.Size(148, 26);
-            this.zahlungsBetragTextBox.TabIndex = 7;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -86,6 +79,22 @@
             label2.Size = new System.Drawing.Size(132, 20);
             label2.TabIndex = 8;
             label2.Text = "Zahlungseingang";
+            // 
+            // rechnungBetragTextBox
+            // 
+            this.rechnungBetragTextBox.Location = new System.Drawing.Point(152, 21);
+            this.rechnungBetragTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rechnungBetragTextBox.Name = "rechnungBetragTextBox";
+            this.rechnungBetragTextBox.Size = new System.Drawing.Size(148, 26);
+            this.rechnungBetragTextBox.TabIndex = 5;
+            // 
+            // zahlungsBetragTextBox
+            // 
+            this.zahlungsBetragTextBox.Location = new System.Drawing.Point(489, 21);
+            this.zahlungsBetragTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.zahlungsBetragTextBox.Name = "zahlungsBetragTextBox";
+            this.zahlungsBetragTextBox.Size = new System.Drawing.Size(148, 26);
+            this.zahlungsBetragTextBox.TabIndex = 7;
             // 
             // zahlungsDatumTextBox
             // 
@@ -103,7 +112,7 @@
             this.button2_adresse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.button2_adresse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2_adresse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2_adresse.Location = new System.Drawing.Point(416, 132);
+            this.button2_adresse.Location = new System.Drawing.Point(416, 276);
             this.button2_adresse.Name = "button2_adresse";
             this.button2_adresse.Size = new System.Drawing.Size(221, 36);
             this.button2_adresse.TabIndex = 15;
@@ -111,12 +120,72 @@
             this.button2_adresse.UseVisualStyleBackColor = false;
             this.button2_adresse.Click += new System.EventHandler(this.button2_adresse_Click);
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(18, 152);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(93, 20);
+            label3.TabIndex = 16;
+            label3.Text = "1. Mahnung";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(18, 201);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(93, 20);
+            label4.TabIndex = 17;
+            label4.Text = "2. Mahnung";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(18, 253);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(93, 20);
+            label5.TabIndex = 18;
+            label5.Text = "3. Mahnung";
+            // 
+            // mahnung1textBox
+            // 
+            this.mahnung1textBox.Location = new System.Drawing.Point(152, 146);
+            this.mahnung1textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mahnung1textBox.Name = "mahnung1textBox";
+            this.mahnung1textBox.Size = new System.Drawing.Size(148, 26);
+            this.mahnung1textBox.TabIndex = 19;
+            // 
+            // mahnung2textBox
+            // 
+            this.mahnung2textBox.Location = new System.Drawing.Point(152, 195);
+            this.mahnung2textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mahnung2textBox.Name = "mahnung2textBox";
+            this.mahnung2textBox.Size = new System.Drawing.Size(148, 26);
+            this.mahnung2textBox.TabIndex = 20;
+            // 
+            // mahnung3textBox
+            // 
+            this.mahnung3textBox.Location = new System.Drawing.Point(152, 250);
+            this.mahnung3textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mahnung3textBox.Name = "mahnung3textBox";
+            this.mahnung3textBox.Size = new System.Drawing.Size(148, 26);
+            this.mahnung3textBox.TabIndex = 21;
+            // 
             // Rechnung07_Zahlungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(654, 195);
+            this.ClientSize = new System.Drawing.Size(675, 347);
+            this.Controls.Add(this.mahnung3textBox);
+            this.Controls.Add(this.mahnung2textBox);
+            this.Controls.Add(this.mahnung1textBox);
+            this.Controls.Add(label5);
+            this.Controls.Add(label4);
+            this.Controls.Add(label3);
             this.Controls.Add(this.button2_adresse);
             this.Controls.Add(label2);
             this.Controls.Add(this.zahlungsDatumTextBox);
@@ -140,5 +209,8 @@
         private System.Windows.Forms.TextBox zahlungsBetragTextBox;
         private System.Windows.Forms.TextBox zahlungsDatumTextBox;
         private System.Windows.Forms.Button button2_adresse;
+        private System.Windows.Forms.TextBox mahnung1textBox;
+        private System.Windows.Forms.TextBox mahnung2textBox;
+        private System.Windows.Forms.TextBox mahnung3textBox;
     }
 }
