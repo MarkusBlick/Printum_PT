@@ -122,7 +122,7 @@ namespace PrintumProjektverwaltung
             DialogResult dr = L02.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                this.Projektname = L02. rrrow.Projektname;
+                this.Projektname = L02.rrrow.Projektname;
                 this.Projektnummer = L02.rrrow.Projektnummer;
                 this.Projektordnerpfad = L02.rrrow.RootOrdner;
 
@@ -140,7 +140,7 @@ namespace PrintumProjektverwaltung
             ////"\\192.168.26.250\buchhaltung\R e c h n u n g e n\2018\11 November"
             //var pfad = @"\\192.168.26.250\PT-Rechnungen\";
             //\\192.168.26.250\PT-PriPro\20413 - Kurz Subtratwickler 350 4500816996
-            var pfad = this.Projektordnerpfad == null? "": this.Projektordnerpfad.Trim() + @"\12 Rechnungen\";
+            var pfad = this.Projektordnerpfad == null ? "" : this.Projektordnerpfad.Trim() + @"\12 Rechnungen\";
             var jahr = DateTime.Now.Year.ToString();
             string monat = getCurrenMonthString();
 
@@ -272,35 +272,41 @@ namespace PrintumProjektverwaltung
 
         private void SaveExcelClose(object sender, EventArgs e, string typ)
         {
-            this.Cursor = Cursors.WaitCursor;
-            this.newrow.RechnungTyp = typ;
-            aufVollstaendigkeitChecken(sender, e);
-            priProLieferscheinRechnungBindingNavigatorSaveItem_Click(sender, e);
+            if (aufVollstaendigkeitChecken(sender, e))
+            {
+                this.Cursor = Cursors.WaitCursor;
+                this.newrow.RechnungTyp = typ;
 
-            ExcelHelperRechnung.CreateNewExcel(this.newrow, typ);
+                priProLieferscheinRechnungBindingNavigatorSaveItem_Click(sender, e);
 
-            this.Close();
+                ExcelHelperRechnung.CreateNewExcel(this.newrow, typ);
+
+                this.Close();
+            }
+
+
         }
 
 
 
 
 
-        private void aufVollstaendigkeitChecken(object sender, EventArgs e)
+        private bool aufVollstaendigkeitChecken(object sender, EventArgs e)
         {
+
 
 
             if (this.rechnungBeschreibungTextBox.Text == null || this.rechnungBeschreibungTextBox.Text.Length == 0)
             {
                 this.rechnungBeschreibungTextBox.Focus();
-                return;
+                return false;
             }
 
             if (this.lS_FirmennameTextBox.Text == null || this.lS_FirmennameTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Bitte eine Adresse auswählen!");
                 this.button2_adresse_Click(sender, e);
-                return;
+                return false;
             }
 
 
@@ -308,7 +314,7 @@ namespace PrintumProjektverwaltung
             {
                 MessageBox.Show("Bitte ein Projekt auswählen!");
                 this.button1_Projekt_Click(sender, e);
-                return;
+                return false;
             }
 
             this.newrow.RechnungPfad = this.rechnungPfadTextBox.Text;
@@ -318,6 +324,8 @@ namespace PrintumProjektverwaltung
             this.newrow.RE_PLZ = this.lS_PLZTextBox.Text;
             this.newrow.RE_Stadt = this.lS_StadtTextBox.Text;
             this.newrow.RE_Strasse = this.lS_StrasseTextBox.Text;
+
+            return true;
 
         }
 
@@ -330,7 +338,7 @@ namespace PrintumProjektverwaltung
                 this.lieferRechRow = R06.rrrow;
                 this.lieferscheinTextBox.Text = R06.rrrow.LieferscheinNr == null ? "" : R06.rrrow.LieferscheinNr;
             }
- 
+
         }
 
 
@@ -339,13 +347,14 @@ namespace PrintumProjektverwaltung
         {
             this.Cursor = Cursors.WaitCursor;
             this.rechnungPfadTextBox.Text = getLieferscheindateiPfad();
-            this.Cursor = Cursors.Default;        }
+            this.Cursor = Cursors.Default;
+        }
 
 
 
         private void rechnungBeschreibungTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (this.rechnungBeschreibungTextBox.Text.Count()>3)
+            if (this.rechnungBeschreibungTextBox.Text.Count() > 3)
             {
                 this.rechnungPfadTextBox.Text = getLieferscheindateiPfad();
             }

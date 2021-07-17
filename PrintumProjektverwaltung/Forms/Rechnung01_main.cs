@@ -15,6 +15,8 @@ namespace PrintumProjektverwaltung.Forms
             string user = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToLower();
 
             if (user.Contains("blick") ||
+                user.Contains("uta") ||
+                user.Contains("fitzenschaft") ||
                 user.Contains("sekretariat"))
             {
                 duDarfst = true;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintumProjektverwaltung.Helper;
+using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,8 +13,13 @@ namespace PrintumProjektverwaltung.Forms
         int letzteMaxProjektnummer = 0;
 
         // C:\ZSD\PrintumProjekte\PT-99-Vorl
-        string ordnerStruktur = @"\\192.168.26.250\PT-99-Vorl\Ordnerstruktur";
-        string projektRoot = @"\\192.168.26.250\PT-PriPro\";
+        // G:\Projektmanagement
+        // string ordnerStruktur = @"\\printumserver.print.local\PT-99-Vorl\Ordnerstruktur";
+        string ordnerStruktur = @"\\printumserver.print.local\PT-99-Vorl\Dokumente\Archiv UF\Ordnerstruktur";
+
+        
+        // string projektRoot = @"\\192.168.26.250\PT-PriPro\";
+        string projektRoot = @"G:\Projekte\";
 
 
         public Form3_Projekte()
@@ -59,6 +65,7 @@ namespace PrintumProjektverwaltung.Forms
             bool kannImpersonifizieren = true;
             try
             {
+                var userr = Environment.UserDomainName;
                 using (new Impersonator())
                 {
                     var q = new DirectoryInfo(ordnerStruktur);
@@ -89,7 +96,7 @@ namespace PrintumProjektverwaltung.Forms
             }
 
 
-            string projektOrdner = projektRoot + textBox1_Projektnummer.Text + " - " + neuesP.Projektname;
+            string projektOrdner = projektRoot + fileHelper.replaceInvalidChars(textBox1_Projektnummer.Text + " - " + neuesP.Projektname);
             neuesP.RootOrdner = projektOrdner;
 
             try

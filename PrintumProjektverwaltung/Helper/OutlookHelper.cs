@@ -27,7 +27,7 @@ namespace PrintumProjektverwaltung.Helper
 
             pdfPfad = pfad.Substring(0, pfad.Length - 4) + @".pdf";
             mailPfad = pfad.Substring(0, pfad.Length - 4) + @".msg";
-            string mailtemplate = @"\\192.168.26.250\PT-99-Vorl\Dokumente\BestellungsMail-Template.oft";
+            string mailtemplate = @"\\printumserver.print.local\PT-99-Vorl\Dokumente\BestellungsMail-Template.oft";
 
             Excel.Application excelApp = new Excel.Application();
             Excel.Workbook excelWorkbook = excelApp.Workbooks.Open(pfad);

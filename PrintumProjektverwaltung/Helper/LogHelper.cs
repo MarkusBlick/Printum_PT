@@ -13,7 +13,6 @@ namespace PrintumProjektverwaltung.Helper
         //    C:\Users\Public\PrintumProjekte\Logs\
 
         private static readonly ILog _debugLogger;
-  //      private static readonly ILog _emailLogger;
 
         private static ILog GetLogger(string logName)
       {
@@ -25,7 +24,6 @@ namespace PrintumProjektverwaltung.Helper
        {
            //logger names are mentioned in <log4net> section of config file
            _debugLogger = GetLogger("MyApplicationDebugLog");
-            //_emailLogger = GetLogger("EmailLogger");
        }
     
        /// <summary>
@@ -35,7 +33,6 @@ namespace PrintumProjektverwaltung.Helper
        public static void WriteDebugLog(string message)
        {
            _debugLogger.DebugFormat(message);
-            //_emailLogger.DebugFormat(message);
        }
    }
 }

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PrintumTechnologyProjektverwaltung.exe" version="2.0.3.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="PrintumTechnologyProjektverwaltung.exe" version="2.0.3.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="printum_logo_quadratisch.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="PrintumTechnologyProjektverwaltung" version="2.0.3.2" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="PrintumTechnologyProjektverwaltung" version="2.0.4.1" language="neutral" processorArchitecture="msil" />
     <commandLine file="PrintumTechnologyProjektverwaltung.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -679,14 +679,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PrintumTechnologyProjektverwaltung.exe" size="7539712">
-      <assemblyIdentity name="PrintumTechnologyProjektverwaltung" version="2.0.3.2" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PrintumTechnologyProjektverwaltung.exe" size="7540224">
+      <assemblyIdentity name="PrintumTechnologyProjektverwaltung" version="2.0.4.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iUaMdF0XgN4hpPc/n6yiL0JT678CJO0cKMwzZlqz3Uw=</dsig:DigestValue>
+        <dsig:DigestValue>BKV5a2ieBeK5kyRXXzlVFLmTaZUCN99nHcTdI9HFhWU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -744,13 +744,13 @@
       <dsig:DigestValue>2YHb+FodXv9g/SVGtFU/rPnBct4AVYolUD3Js8ILQ9g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PrintumTechnologyProjektverwaltung.exe.config" size="6623">
+  <file name="PrintumTechnologyProjektverwaltung.exe.config" size="5685">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+8gEhRy61L2Cz5hyJNIMGkJj2Z4CbHi0r8mMwOg88+Q=</dsig:DigestValue>
+      <dsig:DigestValue>qR9jhMxF+VDifYoeTBOga8pDfp1+3FKjL9uYB6VBzCQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

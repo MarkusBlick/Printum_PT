@@ -7,7 +7,7 @@ using System.IO;
 
 namespace PrintumProjektverwaltung.Helper
 {
-  public  class fileHelper
+    public class fileHelper
     {
         public static string EntwicklungsPfadHelper(string pfad)
         {
@@ -32,21 +32,29 @@ namespace PrintumProjektverwaltung.Helper
         public static string replaceInvalidChars(string path)
         {
 
-            string bereinigt = path;
 
-            var invalidPathChars = path.Where(Path.GetInvalidPathChars().Contains).ToArray();
-            if (invalidPathChars.Length > 0)
+            string invalid = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+
+            foreach (char c in invalid)
             {
-                //  Console.WriteLine("invalid path chars: " + string.Join(string.Empty, invalidPathChars));
-
-                foreach (var item in invalidPathChars)
-                {
-                    bereinigt = bereinigt.Replace(item, '_');
-                }
+                path = path.Replace(c.ToString(), "_");
             }
 
 
-            return bereinigt;
+
+            //var invalidPathChars = path.Where(Path.GetInvalidPathChars().Contains).ToArray();
+            //if (invalidPathChars.Length > 0)
+            //{
+            //    //  Console.WriteLine("invalid path chars: " + string.Join(string.Empty, invalidPathChars));
+
+            //    foreach (var item in invalidPathChars)
+            //    {
+            //        bereinigt = bereinigt.Replace(item, '_');
+            //    }
+            //}
+
+
+            return path;
         }
 
     }

@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Printum Technology GmbH")]
 [assembly: AssemblyProduct("PrintumTechnologyProjektverwaltung")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("Markuss Finest")]
 [assembly: AssemblyCulture("")]
 
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.3.2")]
-[assembly: AssemblyFileVersion("2.0.3.2")]
+[assembly: AssemblyVersion("2.0.4.1")]
+[assembly: AssemblyFileVersion("2.0.4.1")]
 [assembly: XmlConfigurator(Watch = true)]
 

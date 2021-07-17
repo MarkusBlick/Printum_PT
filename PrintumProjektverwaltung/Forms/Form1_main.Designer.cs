@@ -502,20 +502,20 @@
             this.toolStripMenuItem1_projektname,
             this.toolStripMenuItem2_projektart});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(212, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 48);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripMenuItem1_projektname
             // 
             this.toolStripMenuItem1_projektname.Name = "toolStripMenuItem1_projektname";
-            this.toolStripMenuItem1_projektname.Size = new System.Drawing.Size(211, 24);
+            this.toolStripMenuItem1_projektname.Size = new System.Drawing.Size(181, 22);
             this.toolStripMenuItem1_projektname.Text = "Projektname ändern";
             this.toolStripMenuItem1_projektname.Click += new System.EventHandler(this.toolStripMenuItem1_projektname_Click);
             // 
             // toolStripMenuItem2_projektart
             // 
             this.toolStripMenuItem2_projektart.Name = "toolStripMenuItem2_projektart";
-            this.toolStripMenuItem2_projektart.Size = new System.Drawing.Size(211, 24);
+            this.toolStripMenuItem2_projektart.Size = new System.Drawing.Size(181, 22);
             this.toolStripMenuItem2_projektart.Text = "Projektart ändern";
             this.toolStripMenuItem2_projektart.Click += new System.EventHandler(this.toolStripMenuItem2_projektart_Click);
             // 
@@ -554,7 +554,7 @@
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 34);
+            this.textBox1.Size = new System.Drawing.Size(200, 29);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -576,7 +576,7 @@
             this.label1.ImageList = this.imageList1;
             this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 29);
+            this.label1.Size = new System.Drawing.Size(78, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Projekte";
             this.toolTip1.SetToolTip(this.label1, "Mit einfachem Klick werden die Projekte und die Bestellungen neu geladen\r\n");
@@ -808,13 +808,13 @@
             this.contextMenuStrip3_Bestellung.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1_delete});
             this.contextMenuStrip3_Bestellung.Name = "contextMenuStrip2_nextNr";
-            this.contextMenuStrip3_Bestellung.Size = new System.Drawing.Size(217, 28);
+            this.contextMenuStrip3_Bestellung.Size = new System.Drawing.Size(186, 26);
             this.contextMenuStrip3_Bestellung.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip3_Bestellung_Opening);
             // 
             // toolStripMenuItem1_delete
             // 
             this.toolStripMenuItem1_delete.Name = "toolStripMenuItem1_delete";
-            this.toolStripMenuItem1_delete.Size = new System.Drawing.Size(216, 24);
+            this.toolStripMenuItem1_delete.Size = new System.Drawing.Size(185, 22);
             this.toolStripMenuItem1_delete.Text = "Bestellung LÖSCHEN";
             this.toolStripMenuItem1_delete.Click += new System.EventHandler(this.toolStripMenuItem1_delete_Click);
             // 
@@ -959,7 +959,7 @@
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox2.Location = new System.Drawing.Point(121, 0);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 34);
+            this.textBox2.Size = new System.Drawing.Size(200, 29);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -979,7 +979,7 @@
             this.textBox3_projekt.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox3_projekt.Location = new System.Drawing.Point(0, 0);
             this.textBox3_projekt.Name = "textBox3_projekt";
-            this.textBox3_projekt.Size = new System.Drawing.Size(104, 34);
+            this.textBox3_projekt.Size = new System.Drawing.Size(104, 29);
             this.textBox3_projekt.TabIndex = 15;
             this.textBox3_projekt.TextChanged += new System.EventHandler(this.textBox3_projekt_TextChanged);
             // 
@@ -1001,9 +1001,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(143, 0);
+            this.label2.Location = new System.Drawing.Point(121, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 29);
+            this.label2.Size = new System.Drawing.Size(120, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Bestellungen";
             // 
@@ -1013,19 +1013,19 @@
             this.contextMenuStrip2_nextNr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.contextMenuStrip2_nextNr.Name = "contextMenuStrip2_nextNr";
-            this.contextMenuStrip2_nextNr.Size = new System.Drawing.Size(266, 28);
+            this.contextMenuStrip2_nextNr.Size = new System.Drawing.Size(225, 26);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(265, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem1.Text = "nächste freie Bestellnummer";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // panel16
             // 
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel16.Location = new System.Drawing.Point(89, 0);
+            this.panel16.Location = new System.Drawing.Point(67, 0);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(54, 30);
             this.panel16.TabIndex = 12;
@@ -1039,7 +1039,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkGray;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 29);
+            this.label5.Size = new System.Drawing.Size(67, 24);
             this.label5.TabIndex = 2;
             this.label5.Text = "Projekt";
             // 
@@ -1094,14 +1094,14 @@
             this.bestellungPositionenDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.bestellungPositionenDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bestellungPositionenDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.bestellungPositionenDataGridView.Location = new System.Drawing.Point(0, 29);
+            this.bestellungPositionenDataGridView.Location = new System.Drawing.Point(0, 24);
             this.bestellungPositionenDataGridView.MultiSelect = false;
             this.bestellungPositionenDataGridView.Name = "bestellungPositionenDataGridView";
             this.bestellungPositionenDataGridView.ReadOnly = true;
             this.bestellungPositionenDataGridView.RowHeadersVisible = false;
             this.bestellungPositionenDataGridView.RowHeadersWidth = 51;
             this.bestellungPositionenDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bestellungPositionenDataGridView.Size = new System.Drawing.Size(959, 242);
+            this.bestellungPositionenDataGridView.Size = new System.Drawing.Size(959, 247);
             this.bestellungPositionenDataGridView.TabIndex = 0;
             this.bestellungPositionenDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungPositionenDataGridView_CellDoubleClick);
             this.bestellungPositionenDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.bestellungPositionenDataGridView_CellValueChanged);
@@ -1240,7 +1240,7 @@
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 29);
+            this.label3.Size = new System.Drawing.Size(159, 24);
             this.label3.TabIndex = 1;
             this.label3.Text = "Bestell-Positionen";
             // 
@@ -1262,7 +1262,7 @@
             this.label_speichern.ForeColor = System.Drawing.Color.DarkGray;
             this.label_speichern.Location = new System.Drawing.Point(246, 3);
             this.label_speichern.Name = "label_speichern";
-            this.label_speichern.Size = new System.Drawing.Size(618, 29);
+            this.label_speichern.Size = new System.Drawing.Size(486, 24);
             this.label_speichern.TabIndex = 4;
             this.label_speichern.Text = "Liefertermin laut AB und Preise können geändert werden";
             // 
@@ -1319,7 +1319,7 @@
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(567, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 18);
+            this.label4.Size = new System.Drawing.Size(83, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Kurzanleitung";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1334,7 +1334,7 @@
             this.label_Datum.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_Datum.Location = new System.Drawing.Point(0, 1);
             this.label_Datum.Name = "label_Datum";
-            this.label_Datum.Size = new System.Drawing.Size(44, 15);
+            this.label_Datum.Size = new System.Drawing.Size(33, 12);
             this.label_Datum.TabIndex = 4;
             this.label_Datum.Text = "Datum";
             this.label_Datum.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1431,7 +1431,7 @@
             // 
             // Form1_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1370, 750);

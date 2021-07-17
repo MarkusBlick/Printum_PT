@@ -8,7 +8,7 @@ namespace PrintumProjektverwaltung.Helper
     {
         internal static void deleteFolder(string rootOrdner)
         {
-            string archiv = @"\\192.168.26.250\PT-99-Vorl\PrintumProjekte gelöscht";
+            string archiv = @"\\printumserver.print.local\PT-99-Vorl\PrintumProjekte gelöscht";
             try
             {
                 Directory.Move(rootOrdner, archiv);

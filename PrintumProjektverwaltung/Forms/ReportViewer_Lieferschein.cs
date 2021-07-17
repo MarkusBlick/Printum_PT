@@ -206,10 +206,10 @@ namespace PrintumProjektverwaltung.Forms
 
                     // Switch für die Entwicklungsumgebung, 
                     // .. die ist nicht im Firmennetzt deshalb funktionieren nur nackte IPs
-                    if (!Directory.Exists(@"\\PRINTUMSERVER\PT-99-Vorl") && derPfad != null)
+                    if (!Directory.Exists(@"\\printumserver.print.local\PT-99-Vorl") && derPfad != null)
                     {
                         string help = q.First().RootOrdner;
-                        derPfad = help.Replace(@"\\PRINTUMSERVER\", @"\\192.168.26.250\");
+                        derPfad = help.Replace(@"\\printumserver.print.local\", @"\\192.168.26.250\");
                     }
                 }
             }

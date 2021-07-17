@@ -64,8 +64,9 @@
         /// </summary>
         public Impersonator()
         {
-           // ImpersonateValidUser("PRINT\\erp", "192.168.26.250", "Bernd$Finest");
-           ImpersonateValidUser("erpadmin", "PRINT.local", "Bernd$Finest+");
+            // ImpersonateValidUser("PRINT\\erp", "192.168.26.250", "Bernd$Finest");
+            //ImpersonateValidUser("erpadmin", "PRINT.local", "Bernd$Finest+");
+            ImpersonateValidUser("erp", "print", "Bernd$Finest");
         }
 
 

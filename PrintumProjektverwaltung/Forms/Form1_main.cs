@@ -13,6 +13,7 @@ using Microsoft.Exchange.WebServices.Data;
 using DevExpress.XtraReports.UI;
 using PrintumProjektverwaltung.DAL;
 using System.Diagnostics;
+using PrintumProjektverwaltung.Helper;
 
 namespace PrintumProjektverwaltung.Forms
 {
@@ -44,14 +45,16 @@ namespace PrintumProjektverwaltung.Forms
 
             // Switch für die Entwicklungsumgebung, 
             // .. die ist nicht im Firmennetzt deshalb funktionieren nur nackte IPs
-            if (Directory.Exists(@"\\PRINTUMSERVER\PT-99-Vorl"))
+            if (Directory.Exists(@"\\printumserver.print.local\PT-99-Vorl"))
             {
-                folderroot = @"\\PRINTUMSERVER\";
+                folderroot = @"\\printumserver.print.local\";
             }
             else
             {
                 folderroot = @"\\192.168.26.250\";
             }
+
+            LogHelper.WriteDebugLog("Start mit: " + folderroot);
 
 
             // Konstruktor usw für die Outlookadressen
@@ -318,12 +321,39 @@ namespace PrintumProjektverwaltung.Forms
                 if (currP.RootOrdner != null)
                 {
                     var pfad = currP.RootOrdner.Trim();
-                    if (this.folderroot.Contains("192.168.26.250"))
+                    if (Directory.Exists(pfad))
                     {
-                        pfad = pfad.Replace("PRINTUMSERVER", "192.168.26.250");
+                        System.Diagnostics.Process.Start(pfad);
+                    }
+                    else
+                    {
+                        if (this.folderroot.Contains("192.168.26.250"))
+                        {
+                            pfad = pfad.Replace("PRINTUMSERVER", "192.168.26.250");
+                            if (Directory.Exists(pfad))
+                            {
+                                System.Diagnostics.Process.Start(pfad);
+                            }
+                            else
+                            {
+                                string mes = "Dieser Ordner existiert nicht!\r\n" + pfad;
+                                LogHelper.WriteDebugLog(mes);
+                                MessageBox.Show(mes);
+                            }
+                        }
+                        else
+                        {
+                            string mes = "Dieser Ordner existiert nicht!\r\n" + pfad;
+                            LogHelper.WriteDebugLog(mes);
+                            MessageBox.Show(mes);
+                        }
+
+
                     }
 
-                    System.Diagnostics.Process.Start(pfad);
+
+
+
                 }
 
             }
@@ -472,9 +502,9 @@ namespace PrintumProjektverwaltung.Forms
 
                                 // Switch für die Entwicklungsumgebung, 
                                 // .. die ist nicht im Firmennetzt deshalb funktionieren nur nackte IPs
-                                if ((!File.Exists(pfad)) && pfad.Contains(@"\\PRINTUMSERVER\"))
+                                if ((!File.Exists(pfad)) && pfad.Contains(@"\\printumserver.print.local\"))
                                 {
-                                    pfad = pfad.Replace(@"\\PRINTUMSERVER\", @"\\192.168.26.250\");
+                                    pfad = pfad.Replace(@"\\printumserver.print.local\", @"\\192.168.26.250\");
                                 }
 
                                 if (File.Exists(pfad))
@@ -877,7 +907,7 @@ namespace PrintumProjektverwaltung.Forms
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Process.Start(@"\\192.168.26.250\PT-99-Vorl\Dokumente\Kurzanleitung PriPro.pdf");
+            Process.Start(@"\\printumserver.print.local\PT-99-Vorl\Dokumente\Kurzanleitung PriPro.pdf");
         }
 
 
